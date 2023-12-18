@@ -1038,3 +1038,4 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\webcil\SiaesLibraryShared.wasm
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\compressed\e8d2t7qkal.gz
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\compressed\e3ekz3m1j0.gz
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.sourcelink.json

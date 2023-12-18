@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\SiaesCliente.styles.css"
     },
     {
+      "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\aes png.png",
+      "PackagePath": "staticwebassets\\aes png.png"
+    },
+    {
       "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
@@ -35,6 +39,18 @@
     {
       "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\js\\common.js",
+      "PackagePath": "staticwebassets\\js\\common.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SiaesCliente.Microsoft.AspNetCore.StaticWebAssets.props",

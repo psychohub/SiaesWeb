@@ -9,3 +9,4 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\refint\SiaesLibraryShared.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.pdb
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\ref\SiaesLibraryShared.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.sourcelink.json
