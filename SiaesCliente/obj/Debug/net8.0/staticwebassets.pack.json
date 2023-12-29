@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\images\\ezgif.com-gif-maker-6.gif",
+      "PackagePath": "staticwebassets\\images\\ezgif.com-gif-maker-6.gif"
+    },
+    {
       "Id": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

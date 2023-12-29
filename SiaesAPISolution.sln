@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiaesServer", "SiaesWeb\SiaesServer.csproj", "{55ECF024-C2EF-42A0-A87E-17CD45AB28B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiaesServer", "SiaesWeb\SiaesServer.csproj", "{55ECF024-C2EF-42A0-A87E-17CD45AB28B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiaesCliente", "SiaesCliente\SiaesCliente.csproj", "{AD5EE1AF-10C0-417F-9BA5-71527146B682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiaesCliente", "SiaesCliente\SiaesCliente.csproj", "{AD5EE1AF-10C0-417F-9BA5-71527146B682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiaesLibraryShared", "SiaesLibraryShared\SiaesLibraryShared.csproj", "{9019E2CE-F207-45B7-9368-3CDC9E1CD0C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SiaesLibraryShared", "SiaesLibraryShared\SiaesLibraryShared.csproj", "{9019E2CE-F207-45B7-9368-3CDC9E1CD0C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

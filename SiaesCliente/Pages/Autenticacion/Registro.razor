@@ -1,0 +1,105 @@
+﻿@page "/registrar-usuario"
+
+<h3>Registrar Usuario</h3>
+
+<EditForm Model="@usuarioParaRegistro" OnValidSubmit="RegistrarUsuario" class="pt-4">
+    <DataAnnotationsValidator />
+         <div class="py-4">
+        <div class=" row form-group ">
+            <div class="col-6 offset-3 ">
+                <div class="card border">
+                    <div class="card-body px-lg-5 pt-4">
+                        <h3 class="col-12 text-success text-center py-2">
+                            <strong>Registrar Usuario</strong>
+                        </h3>
+
+                        @if (MostrarErroresRegistro)
+                        {
+                            <div>
+                                @foreach (var error in Errores)
+                                {
+                                    <p class="text-danger text-center">@error</p>
+                                }
+                            </div>
+                        }
+
+                        <hr style="background-color:aliceblue" />
+
+
+                        <div class="form-group">
+                            <label for="Usuario">Usuario:</label>
+                            <InputText @bind-Value="usuarioParaRegistro.Usuario" class="form-control" placeholder="Usuario..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.Usuario)" />
+                         
+                        </div>
+                        <div class="py-2">
+                            <label for="Nombre">Nombre:</label>
+                            <InputText @bind-Value="usuarioParaRegistro.Nombre" class="form-control" placeholder="Nombre..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.Nombre)" />
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="Apellidos">Apellidos:</label>
+                            <InputText @bind-Value="usuarioParaRegistro.Apellidos" class="form-control" placeholder="Apellidos..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.Apellidos)" />
+                          
+                        </div>
+                        <div class="form-group">
+                            <label for="Correo" style="font-size: large">Correo electrónico:</label>
+                            <InputText type="email" @bind-Value="usuarioParaRegistro.Correo" class="form-control" placeholder="Correo..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.Correo)" />
+                           
+                        </div>
+
+                        <div class="form-group">
+                            <label for="CodEstablecimiento" style="font-size: large">Cod_Establecimiento:</label>
+                            <InputNumber @bind-Value="usuarioParaRegistro.CodEstablecimiento" class="form-control" placeholder="Unidad Ejecutora..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.CodEstablecimiento)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Clave" style="font-size: large">Clave:</label>
+                            <InputText type="password" @bind-Value="usuarioParaRegistro.Clave" class="form-control" placeholder="Clave..." />
+                            <ValidationMessage For="(()=>usuarioParaRegistro.Clave)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Perfil" style="font-size: large">Perfil:</label>
+                            <InputSelect class="form-control" @bind-Value="usuarioParaRegistro.Perfil">
+                                <option value="3">Usuario</option>
+                                <option value="2">AdministradorCuenta</option>
+                                <option value="1">Administrador</option>
+                            </InputSelect>
+                        </div>
+                        <div class="form-group">
+                            <label for="Estado" style="font-size: large">Estado:</label>
+                            <InputSelect class="form-control" @bind-Value="usuarioParaRegistro.Estado">
+                                <option value="1">Activo</option>
+                                <option value="0">Inactivo</option>
+                            </InputSelect>
+                        </div>
+                        <div class="form-group">
+                            <label for="FechaCaducidad">Fecha de Caducidad:</label>
+                            <InputDate @bind-Value="usuarioParaRegistro.FechaCaducidad" class="form-control" />
+                        </div>
+ 
+                        <hr style="background-color:aliceblue" />
+                        <div class="py-2">
+                            @if (EstaProcesando)
+                            {
+                                <button type="submit" class="btn btn-success btn-block disabled"><i class="fas fa-sign-in-alt"></i> Porfavor espere...</button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Registrarse</button>
+                            }
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</EditForm>

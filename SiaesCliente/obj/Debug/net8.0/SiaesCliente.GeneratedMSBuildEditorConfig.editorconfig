@@ -26,8 +26,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Registro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxSZWdpc3Ryby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/RedireccionarAlAcceso.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY2Npb25hckFsQWNjZXNvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/_Imports.razor]
