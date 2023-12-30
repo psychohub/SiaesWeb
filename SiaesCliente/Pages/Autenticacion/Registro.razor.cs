@@ -29,7 +29,7 @@ namespace SiaesCliente.Pages.Autenticacion
             if (result.registroCorrecto)
             {
                 EstaProcesando = false;
-                navigationManager.NavigateTo("/RegistroUsuariosInforme");
+                navigationManager.NavigateTo("/registrar-usuario");
             }
             else
             {

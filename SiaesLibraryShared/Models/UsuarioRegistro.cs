@@ -9,8 +9,11 @@ namespace SiaesLibraryShared.Models
 {
     public class UsuarioRegistro
     {
+        [Key]
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "El usuario es obligatorio")]
-        public string Usuario { get; set; } = string.Empty;
+        public string NombreUsuario { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El nombre es obligatorio")]
         public string Nombre { get; set; } = string.Empty;
@@ -29,5 +32,11 @@ namespace SiaesLibraryShared.Models
         public int Perfil { get; set; } 
         public int Estado { get; set; } 
         public DateTime FechaCaducidad { get; set; } = DateTime.Now;
+        public string? UsuarioCreacion { get; set; } = string.Empty;
+
+        public string? UsuarioModificacion { get; set; } = string.Empty;
+        public DateTime? FechaCreacion { get; set; } = DateTime.Now;
+        public DateTime? FechaActualizacion { get; set; } = DateTime.Now;
+
     }
 }

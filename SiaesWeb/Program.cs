@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+
 using SiaesLibraryShared.Contracts;
 using SiaesServer.Data;
 using SiaesServer.Repositories;
@@ -14,11 +15,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
+
 //star
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string not found"));
 });
+
+
+
+
 
 builder.Services.AddScoped<ITanu, TanuRepository>();
 
