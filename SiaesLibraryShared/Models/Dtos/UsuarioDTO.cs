@@ -31,5 +31,7 @@ namespace SiaesLibraryShared.Models.Dtos
         public string? UsuarioModificacion { get; set; } = string.Empty;
         public DateTime? FechaCreacion { get; set; } = DateTime.Now;
         public DateTime? FechaActualizacion { get; set; } = DateTime.Now;
+        public List<UsuarioEstablecimientoDTO> UsuarioEstablecimientos { get; set; }
+        public List<UsuarioPerfilDTO> UsuarioPerfiles { get; set; }
     }
 }

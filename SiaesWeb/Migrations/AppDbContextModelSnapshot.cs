@@ -22,6 +22,22 @@ namespace SiaesServer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("SiaesLibraryShared.Models.Establecimiento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CodEstablecimiento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Establecimientos");
+                });
+
             modelBuilder.Entity("SiaesLibraryShared.Models.Model_Tanu", b =>
                 {
                     b.Property<int>("Id")
@@ -101,7 +117,23 @@ namespace SiaesServer.Migrations
                     b.ToTable("Cuadro1_Tanu");
                 });
 
-            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioRegistro", b =>
+            modelBuilder.Entity("SiaesLibraryShared.Models.Perfil", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Perfiles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -140,12 +172,12 @@ namespace SiaesServer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Perfil")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Usuario")
+                    b.Property<string>("NombreUsuario")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Perfil")
+                        .HasColumnType("int");
 
                     b.Property<string>("UsuarioCreacion")
                         .HasColumnType("nvarchar(max)");
@@ -155,7 +187,92 @@ namespace SiaesServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RegistrarUsuario");
+                    b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
+                {
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EstablecimientoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsuarioId", "EstablecimientoId");
+
+                    b.HasIndex("EstablecimientoId");
+
+                    b.ToTable("UsuarioEstablecimientos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioPerfil", b =>
+                {
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PerfilId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsuarioId", "PerfilId");
+
+                    b.HasIndex("PerfilId");
+
+                    b.ToTable("UsuarioPerfiles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.Establecimiento", "Establecimiento")
+                        .WithMany("UsuarioEstablecimientos")
+                        .HasForeignKey("EstablecimientoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
+                        .WithMany("UsuarioEstablecimientos")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Establecimiento");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioPerfil", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.Perfil", "Perfil")
+                        .WithMany("UsuarioPerfiles")
+                        .HasForeignKey("PerfilId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
+                        .WithMany("UsuarioPerfiles")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Perfil");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Establecimiento", b =>
+                {
+                    b.Navigation("UsuarioEstablecimientos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Perfil", b =>
+                {
+                    b.Navigation("UsuarioPerfiles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
+                {
+                    b.Navigation("UsuarioEstablecimientos");
+
+                    b.Navigation("UsuarioPerfiles");
                 });
 #pragma warning restore 612, 618
         }

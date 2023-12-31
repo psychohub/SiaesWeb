@@ -11,5 +11,7 @@ namespace SiaesServer.Repositories.IRepositories
 
         Task<UsuarioLoginRespuestaDTO> Login(UsuarioLoginDTO usuarioLoginDTO);
         Task<Usuario> Registro(UsuarioRegistroDTO usuarioRegistroDTO);
+
+        Task<bool> ExisteAsociacionUsuarioEstablecimientoPerfil(UsuarioAsociacionDTO usuarioAsociacionDTO);
     }
 }

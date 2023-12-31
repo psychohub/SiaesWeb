@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
 using SiaesServer.Data;
@@ -99,20 +100,44 @@ namespace SiaesServer.Repositories
                 Apellidos = usuarioRegistroDTO.Apellidos,
                 Correo = usuarioRegistroDTO.Correo,
                 CodEstablecimiento = usuarioRegistroDTO.CodEstablecimiento,
-                Clave = usuarioRegistroDTO.Clave,
+                Clave = passwordEncriptado, // Asigna la contraseña encriptada aquí
                 Perfil = usuarioRegistroDTO.Perfil,
                 Estado = usuarioRegistroDTO.Estado,
                 FechaCaducidad = usuarioRegistroDTO.FechaCaducidad,
                 UsuarioCreacion = usuarioRegistroDTO.UsuarioCreacion,
                 FechaCreacion = usuarioRegistroDTO.FechaCreacion
-               
             };
 
-    
-
             _bd.Usuario.Add(usuario);
-            usuario.Clave = passwordEncriptado;
             await _bd.SaveChangesAsync();
+
+            // Insertar en la tabla UsuarioEstablecimientos
+            UsuarioEstablecimiento usuarioEstablecimiento = new UsuarioEstablecimiento()
+            {
+                UsuarioId = usuario.Id,
+                EstablecimientoId = usuarioRegistroDTO.CodEstablecimiento
+            };
+            _bd.UsuarioEstablecimientos.Add(usuarioEstablecimiento);
+
+            // Insertar en la tabla UsuarioPerfiles
+            UsuarioPerfil usuarioPerfil = new UsuarioPerfil()
+            {
+                UsuarioId = usuario.Id,
+                PerfilId = usuarioRegistroDTO.Perfil
+            };
+            _bd.UsuarioPerfiles.Add(usuarioPerfil);
+
+            // Insertar en la tabla UsuarioEstablecimientoPerfil
+            UsuarioEstablecimientoPerfil usuarioEstablecimientoPerfil = new UsuarioEstablecimientoPerfil()
+            {
+                UsuarioId = usuario.Id,
+                EstablecimientoId = usuarioRegistroDTO.CodEstablecimiento,
+                PerfilId = usuarioRegistroDTO.Perfil
+            };
+            _bd.UsuarioEstablecimientoPerfil.Add(usuarioEstablecimientoPerfil);
+
+            await _bd.SaveChangesAsync();  // Guardar los cambios en las tablas de relaciones
+
             return usuario;
         }
 
@@ -126,6 +151,13 @@ namespace SiaesServer.Repositories
             for (int i = 0; i < data.Length; i++)
                 resp += data[i].ToString("x2").ToLower();
             return resp;
+        }
+
+        public async Task<bool> ExisteAsociacionUsuarioEstablecimientoPerfil(UsuarioAsociacionDTO usuarioAsociacionDTO)
+        {
+            return await _bd.UsuarioEstablecimientoPerfil.AnyAsync(uep => uep.NombreUsuario == usuarioAsociacionDTO.NombreUsuario
+                     && uep.EstablecimientoId == usuarioAsociacionDTO.CodEstablecimiento
+                     && uep.PerfilId == usuarioAsociacionDTO.Perfil);
         }
     }
 }

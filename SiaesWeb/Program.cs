@@ -2,7 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 using SiaesLibraryShared.Contracts;
 using SiaesServer.Data;
+using SiaesServer.Mappers;
 using SiaesServer.Repositories;
+using SiaesServer.Repositories.IRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,15 +24,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default") ?? throw new InvalidOperationException("Connection string not found"));
 });
 
+//end
 
-
-
+// Add services to the container
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 builder.Services.AddScoped<ITanu, TanuRepository>();
 
-//end
 
-
+//Agregar Automapper
+builder.Services.AddAutoMapper(typeof(SiaesMapper));
 
 
 var app = builder.Build();
