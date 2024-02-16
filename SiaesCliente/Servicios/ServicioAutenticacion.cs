@@ -76,6 +76,11 @@ namespace SiaesCliente.Servicios
             }
         }
 
+        public Task<RespuestaRegistro> RegistrarUsuario(Usuario usuarioParaRegistro)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Salir()
         {
             await _localStorage.RemoveItemAsync(Inicializar.Token_Local);

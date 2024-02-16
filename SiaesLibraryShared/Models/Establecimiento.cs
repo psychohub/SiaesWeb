@@ -9,7 +9,12 @@ namespace SiaesLibraryShared.Models
     public class Establecimiento
     {
         public int Id { get; set; }
-        public string CodEstablecimiento { get; set; }
+
+        public int UsuarioId { get; set; }
+        public int CodEstablecimiento { get; set; }
+
+        public Usuario Usuario { get; set; }
+        public ICollection<UsuarioEstablecimientoPerfil> UsuarioEstablecimientoPerfiles { get; set; }
         public ICollection<UsuarioEstablecimiento> UsuarioEstablecimientos { get; set; }
     }
 }

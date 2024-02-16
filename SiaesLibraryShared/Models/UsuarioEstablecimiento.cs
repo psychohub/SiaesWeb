@@ -12,5 +12,8 @@ namespace SiaesLibraryShared.Models
         public Usuario Usuario { get; set; }
         public int EstablecimientoId { get; set; }
         public Establecimiento Establecimiento { get; set; }
+
+
+        public ICollection<UsuarioEstablecimientoPerfil> UsuarioEstablecimientoPerfiles { get; set; }
     }
 }

@@ -36,6 +36,14 @@ namespace SiaesServer.Data
                 .WithMany(e => e.UsuarioEstablecimientos)
                 .HasForeignKey(ue => ue.EstablecimientoId);
 
+            modelBuilder.Entity<UsuarioEstablecimiento>()
+                 .Property(ue => ue.UsuarioId)
+                .HasColumnName("UsuarioId"); 
+
+            modelBuilder.Entity<UsuarioEstablecimiento>()
+                .Property(ue => ue.EstablecimientoId)
+                .HasColumnName("EstablecimientoId");
+
             modelBuilder.Entity<UsuarioPerfil>()
                 .HasKey(up => new { up.UsuarioId, up.PerfilId });
 
@@ -48,6 +56,9 @@ namespace SiaesServer.Data
                 .HasOne(up => up.Perfil)
                 .WithMany(p => p.UsuarioPerfiles)
                 .HasForeignKey(up => up.PerfilId);
+
+       
+
         }
 
     }

@@ -111,13 +111,29 @@ namespace SiaesServer.Repositories
             _bd.Usuario.Add(usuario);
             await _bd.SaveChangesAsync();
 
+            // Insertar en la tabla Establecimientos
+            Establecimiento establecimiento = new Establecimiento()
+            {
+                UsuarioId = usuario.Id,
+                CodEstablecimiento = usuarioRegistroDTO.CodEstablecimiento
+
+            };
+            _bd.Establecimientos.Add(establecimiento);
+            await _bd.SaveChangesAsync();
+
+            // Obtener el ID del establecimiento recién insertado
+            int establecimientoId = establecimiento.Id;
+
             // Insertar en la tabla UsuarioEstablecimientos
             UsuarioEstablecimiento usuarioEstablecimiento = new UsuarioEstablecimiento()
             {
                 UsuarioId = usuario.Id,
-                EstablecimientoId = usuarioRegistroDTO.CodEstablecimiento
+                EstablecimientoId = establecimientoId
+
             };
             _bd.UsuarioEstablecimientos.Add(usuarioEstablecimiento);
+            await _bd.SaveChangesAsync();
+
 
             // Insertar en la tabla UsuarioPerfiles
             UsuarioPerfil usuarioPerfil = new UsuarioPerfil()
@@ -126,17 +142,9 @@ namespace SiaesServer.Repositories
                 PerfilId = usuarioRegistroDTO.Perfil
             };
             _bd.UsuarioPerfiles.Add(usuarioPerfil);
+            await _bd.SaveChangesAsync();
 
-            // Insertar en la tabla UsuarioEstablecimientoPerfil
-            UsuarioEstablecimientoPerfil usuarioEstablecimientoPerfil = new UsuarioEstablecimientoPerfil()
-            {
-                UsuarioId = usuario.Id,
-                EstablecimientoId = usuarioRegistroDTO.CodEstablecimiento,
-                PerfilId = usuarioRegistroDTO.Perfil
-            };
-            _bd.UsuarioEstablecimientoPerfil.Add(usuarioEstablecimientoPerfil);
 
-            await _bd.SaveChangesAsync();  // Guardar los cambios en las tablas de relaciones
 
             return usuario;
         }

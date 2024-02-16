@@ -64,6 +64,11 @@ namespace SiaesServer.Controllers
                 _respuestasAPI.ErrorsMessages.Add("Error al registrar usuario");
                 return BadRequest(_respuestasAPI);
             }
+            if (_respuestasAPI == null)
+            {
+                _respuestasAPI = new RespuestasAPI();
+            }
+
             _respuestasAPI.StatusCode = HttpStatusCode.OK;
             _respuestasAPI.IsSuccess = true;
             return Ok(_respuestasAPI);
@@ -91,7 +96,7 @@ namespace SiaesServer.Controllers
         }
 
 
-        //Métodos o endpoints de la API por si el estudiante quiere usarlos,
+        //Métodos o endpoints de la API 
         [Authorize]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
