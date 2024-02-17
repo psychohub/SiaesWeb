@@ -14,7 +14,7 @@ namespace SiaesLibraryShared.Models.Dtos
         [Required(ErrorMessage = "El password es obligatorio")]
         public string Password { get; set; }
         [Required(ErrorMessage = "El establecimiento es obligatorio")]
-        public string Establecimiento { get; set; }
-        public string SelectedPerfil { get; set; }
+        public int Establecimiento { get; set; }
+        public int SelectedPerfil { get; set; }
     }
 }

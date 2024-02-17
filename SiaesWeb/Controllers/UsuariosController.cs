@@ -22,9 +22,11 @@ namespace SiaesServer.Controllers
         {
             _usRepo = usRepo;
             _mapper = mapper;
+            this._respuestasAPI = new();
         }
 
-        [HttpPost("Registro")]
+        [Authorize]
+        [HttpPost("registro")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -74,12 +76,18 @@ namespace SiaesServer.Controllers
             return Ok(_respuestasAPI);
         }
 
+   
         [HttpPost("login")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login([FromBody] UsuarioLoginDTO usuarioLoginDTO)
         {
+            int establecimiento = usuarioLoginDTO.Establecimiento; // Aquí se obtiene el valor como entero
+            int selectedPerfil = usuarioLoginDTO.SelectedPerfil;
+
+
+
             var respuestaLogin = await _usRepo.Login(usuarioLoginDTO);
             if (respuestaLogin.Usuario == null || string.IsNullOrEmpty(respuestaLogin.Token))
             {

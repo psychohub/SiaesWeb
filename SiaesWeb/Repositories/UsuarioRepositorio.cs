@@ -17,9 +17,10 @@ namespace SiaesServer.Repositories
     {
         private readonly AppDbContext _bd;
         private string claveSecreta;
-        public UsuarioRepositorio(AppDbContext db)
+        public UsuarioRepositorio(AppDbContext bd, IConfiguration config)
         {
-            _bd = db;
+            _bd = bd;
+            claveSecreta = config.GetValue<string>("ApiSettings:Secreta");
         }
 
         public Usuario GetUsuario(int usuarioId)
@@ -51,8 +52,11 @@ namespace SiaesServer.Repositories
             var passwordEncriptado = obtenermd5(usuarioLoginDTO.Password);
 
             var usuario = _bd.Usuario.FirstOrDefault(
-                u => u.NombreUsuario.ToLower() == usuarioLoginDTO.NombreUsuario.ToLower() 
-                && u.Clave == passwordEncriptado);
+                u => u.NombreUsuario.ToLower() == usuarioLoginDTO.NombreUsuario.ToLower()
+                && u.Clave == passwordEncriptado
+                && u.CodEstablecimiento == usuarioLoginDTO.Establecimiento
+                && u.Perfil == usuarioLoginDTO.SelectedPerfil
+                && u.Estado == 1);
             //Validamos si el usuario no existe con la combinación de usuario y contraseña correcta
             if (usuario == null)
             {
