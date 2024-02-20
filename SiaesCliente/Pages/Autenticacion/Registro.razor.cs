@@ -10,6 +10,7 @@ namespace SiaesCliente.Pages.Autenticacion
     public partial class Registro
     {
 
+
         private Usuario usuarioParaRegistro = new Usuario();
         public bool EstaProcesando { get; set; } = false;
         public bool MostrarErroresRegistro { get; set; }
@@ -28,15 +29,29 @@ namespace SiaesCliente.Pages.Autenticacion
             MostrarErroresRegistro = false;
             EstaProcesando = true;
 
-            usuarioParaRegistro.NombreUsuario = LimpiarYPrevenirInyeccion(usuarioParaRegistro.NombreUsuario);
-            usuarioParaRegistro.Nombre = LimpiarYPrevenirInyeccion(usuarioParaRegistro.Nombre);
-            usuarioParaRegistro.Apellidos = LimpiarYPrevenirInyeccion(usuarioParaRegistro.Apellidos);
+            var usuarioParaRegistroAPI = new UsuarioParaRegistroAPI
+            {
+                nombreUsuario = usuarioParaRegistro.NombreUsuario,
+                nombre = usuarioParaRegistro.Nombre,
+                apellidos = usuarioParaRegistro.Apellidos,
+                correo = usuarioParaRegistro.Correo,
+                codEstablecimiento = usuarioParaRegistro.CodEstablecimiento,
+                clave = usuarioParaRegistro.Clave,
+                perfil = usuarioParaRegistro.Perfil,
+                estado = usuarioParaRegistro.Estado,
+                fechaCaducidad = usuarioParaRegistro.FechaCaducidad,
+                usuarioCreacion = usuarioParaRegistro.NombreUsuario,
+                fechaCreacion = (DateTime)usuarioParaRegistro.FechaCreacion
+            };
 
-            var result = await servicioAutenticacion.RegistrarUsuario(usuarioParaRegistro);
+
+
+            var result = await servicioAutenticacion.RegistrarUsuarioAPI(usuarioParaRegistroAPI);
             if (result.registroCorrecto)
             {
                 EstaProcesando = false;
-                navigationManager.NavigateTo("/registrar-usuario");
+                navigationManager.NavigateTo("/acceder");
+         
             }
             else
             {
@@ -48,14 +63,16 @@ namespace SiaesCliente.Pages.Autenticacion
 
         private string LimpiarYPrevenirInyeccion(string valor)
         {
-            // Limpiar espacios en blanco, convertir a minúsculas y prevenir inyección de código malicioso
             if (!string.IsNullOrEmpty(valor))
             {
                 valor = valor.Trim().ToLower();
-                valor = Regex.Replace(valor, "<.*?>", String.Empty);
+                valor = Regex.Replace(valor, "<.*?>", String.Empty); // Elimina etiquetas HTML maliciosas
+                valor = valor.Replace("*", ""); // Excluye el carácter '*' de la eliminación
             }
             return valor;
         }
+
+
 
 
 

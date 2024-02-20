@@ -19,8 +19,4 @@
     <ProjectReference Include="..\SiaesLibraryShared\SiaesLibraryShared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Servicios\IServicio\" />
-  </ItemGroup>
-
 </Project>

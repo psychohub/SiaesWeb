@@ -10,9 +10,11 @@ namespace SiaesLibraryShared.Contracts
     public interface IServicioAutenticacion
     {
         Task<RespuestaRegistro> RegistrarUsuario(Usuario usuarioParaRegistro);
+        Task<RespuestaRegistro> RegistrarUsuarioAPI(UsuarioParaRegistroAPI usuarioParaRegistro);
 
         Task<RespuestaAutenticacion> Acceder(UsuarioAutenticacion usuarioDesdeAutenticacion);
 
         Task Salir();
+        Task RegistrarUsuario(UsuarioParaRegistroAPI usuarioParaRegistroAPI);
     }
 }

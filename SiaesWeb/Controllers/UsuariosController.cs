@@ -25,7 +25,7 @@ namespace SiaesServer.Controllers
             this._respuestasAPI = new();
         }
 
-        [Authorize]
+      
         [HttpPost("registro")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
