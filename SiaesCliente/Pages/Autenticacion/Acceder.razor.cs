@@ -28,17 +28,9 @@ namespace SiaesCliente.Pages.Autenticacion
             MostrarErroresAutenticacion = false;
             EstaProcesando = true;
 
-        
-
-            //var usuarioParaRegistroAPI = new UsuarioParaRegistroAPI
-            //{
-            //    nombreUsuario = usuarioAutenticacion.NombreUsuario,
-            //    clave = usuarioAutenticacion.Clave,
-            //    codEstablecimiento = usuarioAutenticacion.CodEstablecimiento,
-            //    perfil = usuarioAutenticacion.Perfil,
-            //};
 
 
+     
 
             var result = await servicioAutenticacion.Acceder(usuarioAutenticacion);
             if (result.IsSuccess)

@@ -34,23 +34,61 @@ namespace SiaesCliente.Servicios
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
             var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/login", bodyContent);
             var contentTemp = await response.Content.ReadAsStringAsync();
-            var resultado = (JObject)JsonConvert.DeserializeObject(contentTemp);
+            var resultado = JsonConvert.DeserializeObject<JObject>(contentTemp);
 
-            if (response.IsSuccessStatusCode)
-            {
-                var Token = resultado["result"]["token"].Value<string>();
-                var Usuario = resultado["result"]["usuario"]["NombreUsuario"].Value<string>();
-
-                await _localStorage.SetItemAsync(Inicializar.Token_Local, Token);
-                await _localStorage.SetItemAsync(Inicializar.Datos_Usuario_Local, Usuario);
-                ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
-                _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
-                return new RespuestaAutenticacion { IsSuccess = true };
-            }
-            else
+            if (resultado == null)
             {
                 return new RespuestaAutenticacion { IsSuccess = false };
             }
+
+            var result = resultado["result"] as JObject;
+            if (result != null)
+            {
+                var usuario = result["usuario"] as JObject;
+                if (usuario != null)
+                {
+                    var Token = result["token"]?.Value<string>();
+                    var Usuario = usuario["nombreUsuario"]?.Value<string>();
+
+                    if (!string.IsNullOrEmpty(Token) && !string.IsNullOrEmpty(Usuario))
+                    {
+                        // Realizar acciones con Token y Usuario
+                        await _localStorage.SetItemAsync(Inicializar.Token_Local, Token);
+                        await _localStorage.SetItemAsync(Inicializar.Datos_Usuario_Local, Usuario);
+                        ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
+                        _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
+                        return new RespuestaAutenticacion { IsSuccess = true };
+                    }
+                }
+            }
+
+            return new RespuestaAutenticacion { IsSuccess = false };
+
+
+
+
+
+            //var content = JsonConvert.SerializeObject(usuarioDesdeAutenticacion);
+            //var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
+            //var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/login", bodyContent);
+            //var contentTemp = await response.Content.ReadAsStringAsync();
+            //var resultado = (JObject)JsonConvert.DeserializeObject(contentTemp);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    var Token = resultado["result"]["token"].Value<string>();
+            //    var Usuario = resultado["result"]["usuario"]["NombreUsuario"].Value<string>();
+
+            //    await _localStorage.SetItemAsync(Inicializar.Token_Local, Token);
+            //    await _localStorage.SetItemAsync(Inicializar.Datos_Usuario_Local, Usuario);
+            //    ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
+            //    _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
+            //    return new RespuestaAutenticacion { IsSuccess = true };
+            //}
+            //else
+            //{
+            //    return new RespuestaAutenticacion { IsSuccess = false };
+            //}
         }
 
         public async Task<(bool registroCorrecto, List<string>? Errores)> RegistrarUsuario(UsuarioParaRegistroAPI usuarioParaRegistro)

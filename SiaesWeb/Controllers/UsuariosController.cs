@@ -25,7 +25,7 @@ namespace SiaesServer.Controllers
             this._respuestasAPI = new();
         }
 
-      
+        [Authorize]
         [HttpPost("registro")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -83,8 +83,8 @@ namespace SiaesServer.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login([FromBody] UsuarioLoginDTO usuarioLoginDTO)
         {
-            int establecimiento = usuarioLoginDTO.Establecimiento; // Aquí se obtiene el valor como entero
-            int selectedPerfil = usuarioLoginDTO.SelectedPerfil;
+            int establecimiento = usuarioLoginDTO.CodEstablecimiento; // Aquí se obtiene el valor como entero
+            int selectedPerfil = usuarioLoginDTO.Perfil;
 
 
 

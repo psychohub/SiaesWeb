@@ -49,13 +49,13 @@ namespace SiaesServer.Repositories
 
         public async Task<UsuarioLoginRespuestaDTO> Login(UsuarioLoginDTO usuarioLoginDTO)
         {
-            var passwordEncriptado = obtenermd5(usuarioLoginDTO.Password);
+            var passwordEncriptado = obtenermd5(usuarioLoginDTO.Clave);
 
             var usuario = _bd.Usuario.FirstOrDefault(
                 u => u.NombreUsuario.ToLower() == usuarioLoginDTO.NombreUsuario.ToLower()
                 && u.Clave == passwordEncriptado
-                && u.CodEstablecimiento == usuarioLoginDTO.Establecimiento
-                && u.Perfil == usuarioLoginDTO.SelectedPerfil
+                && u.CodEstablecimiento == usuarioLoginDTO.CodEstablecimiento
+                && u.Perfil == usuarioLoginDTO.Perfil
                 && u.Estado == 1);
             //Validamos si el usuario no existe con la combinación de usuario y contraseña correcta
             if (usuario == null)

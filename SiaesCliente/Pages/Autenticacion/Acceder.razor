@@ -10,7 +10,7 @@
                 <div class="card border">
                     <div class="card-body px-lg-5 pt-4">
                         <h3 class="col-12 text-success text-center py-2">
-                            <strong>Registrar Usuario</strong>
+                            <strong>Inicia sesión</strong>
                         </h3>
                         @if (MostrarErroresAutenticacion)
                         {
@@ -27,7 +27,7 @@
                             <ValidationMessage For="(()=>usuarioAutenticacion.Clave)"></ValidationMessage>
                         </div>
                         <div class="form-group">
-                            <label for="CodEstablecimiento" style="font-size: large">Cod_Establecimiento:</label>
+                            <label for="CodEstablecimiento" style="font-size: large">Unidad Programatica:</label>
                             <InputNumber @bind-Value="usuarioAutenticacion.CodEstablecimiento" class="form-control" placeholder="Unidad Ejecutora..." />
                             <ValidationMessage For="(()=>usuarioAutenticacion.CodEstablecimiento)" />
                         </div>
@@ -40,12 +40,12 @@
                             </InputSelect>
                         </div>
 
-
+                        <br/>
                         <div class="row">
                             <div class="col-6">
                                 @if (EstaProcesando)
                                 {
-                                    <button type="submit" class="btn btn-success disabled" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Porfavor espera...</button>
+                                    <button type="submit" class="btn btn-success disabled" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Por favor espera...</button>
                                 }
                                 else
                                 {
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-6">
                                 <a href="/registrarse"
-                                   class="btn btn-primary text-white" style="vertical-align:middle;line-height:30px;"><i class="fas fa-user-plus"></i> Registrar nuevo usuario</a>
+                                   class="btn btn-primary text-white" style="vertical-align:middle;line-height:30px;"><i class="fas fa-user-plus"></i> Olvidó contraseña</a>
                             </div>
                         </div>
 

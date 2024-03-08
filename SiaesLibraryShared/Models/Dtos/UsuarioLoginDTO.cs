@@ -10,11 +10,15 @@ namespace SiaesLibraryShared.Models.Dtos
     public class UsuarioLoginDTO
     {
         [Required(ErrorMessage = "El usuario es obligatorio")]
-        public string NombreUsuario { get; set; }
-        [Required(ErrorMessage = "El password es obligatorio")]
-        public string Password { get; set; }
+        public string NombreUsuario { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "La clave es obligatoria")]
+        public string Clave { get; set; } = string.Empty; // Este debe corresponder a 'Password' en el DTO
+
         [Required(ErrorMessage = "El establecimiento es obligatorio")]
-        public int Establecimiento { get; set; }
-        public int SelectedPerfil { get; set; }
+        public int CodEstablecimiento { get; set; } // Este debe corresponder a 'Establecimiento' en el DTO
+
+        public int Perfil { get; set; } // Este corresponde a 'SelectedPerfil' en el DTO
     }
 }
+
