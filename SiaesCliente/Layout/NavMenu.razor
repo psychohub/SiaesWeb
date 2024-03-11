@@ -1,10 +1,13 @@
-﻿
+﻿@inject ILocalStorageService _localStorage
+@inject NavigationManager navigationManager
+
+
 <RadzenLayout Style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body' 'rz-sidebar rz-footer'">
     <RadzenHeader>
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
             <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
             <RadzenMenu>
-                <RadzenMenuItem Text="SIAES" Path="/" Icon="home">
+                <RadzenMenuItem Text="SIAES" Path="/inicio" Icon="home">
                 </RadzenMenuItem>
                 <RadzenMenuItem Text="Registrar" Icon="payment">
                     <RadzenMenuItem Text="Cuadros" Path="checkbox" Icon="assignment"></RadzenMenuItem>
@@ -15,7 +18,7 @@
                     <RadzenMenuItem Text="Listar Cuadros" Path="dropdown" Icon="assignment_turned_in"></RadzenMenuItem>
                 </RadzenMenuItem>
                 <RadzenMenuItem Text="Configuración" Icon="build">
-                    <RadzenMenuItem Text="Salir" Path="tabs" Icon="exit_to_app"></RadzenMenuItem>
+                    <RadzenPanelMenuItem Text="Salir" Path="/salir" Icon="exit_to_app" OnClick="@HandleLogoutClick"></RadzenPanelMenuItem>
                     <RadzenMenuItem Text="Cambiar contraseña" Path="panel" Icon="https"></RadzenMenuItem>
                 </RadzenMenuItem>
                 <RadzenMenuItem Text="Documentación" Icon="chrome_reader_mode">
@@ -28,7 +31,7 @@
                 <RadzenMenuItem Text="Usuario" Icon="account_box">
                     <RadzenMenuItem Text="Unidad" Path="tabs" Icon="tab"></RadzenMenuItem>
                     <RadzenMenuItem Text="Soporte" Path="panel" Icon="content_paste"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Salir" Path="fieldset" Icon="account_balance_wallet"></RadzenMenuItem>
+                    <RadzenPanelMenuItem Text="Salir" Path="/salir" Icon="exit_to_app" OnClick="@HandleLogoutClick"></RadzenPanelMenuItem>
                 </RadzenMenuItem>
             </RadzenMenu>
         </RadzenStack>
@@ -44,7 +47,7 @@
                 <RadzenPanelMenuItem Text="Listar Cuadros" Path="dropdown" Icon="assignment_turned_in"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Configuración" Icon="build">
-                <RadzenPanelMenuItem Text="Salir" Path="tabs" Icon="exit_to_app"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Salir" Path="/salir" Icon="exit_to_app"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Cambiar contraseña" Path="panel" Icon="https"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
             <RadzenPanelMenuItem Text="Documentación" Icon="chrome_reader_mode">
@@ -52,14 +55,21 @@
                 <RadzenPanelMenuItem Text="Soporte al cliente" Path="tabs" Icon="pageview"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Manual de usuarios" Path="panel" Icon="offline_pin"></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
-            <RadzenPanelMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
-                <RadzenPanelMenuItem Text="Registrar usuario" Path="/registrar_usuario" Icon="face"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Asociar usuario" Path="tabs" Icon="hourglass_full"></RadzenPanelMenuItem>
-            </RadzenPanelMenuItem>
+            <AuthorizeView>
+                <Authorized>
+                    @if (Perfil == 1 || Perfil == 2)
+                    {
+                        <RadzenPanelMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
+                            <RadzenPanelMenuItem Text="Registrar usuario" Path="/registrar_usuario" Icon="face"></RadzenPanelMenuItem>
+                            <RadzenPanelMenuItem Text="Asociar usuario" Path="tabs" Icon="hourglass_full"></RadzenPanelMenuItem>
+                        </RadzenPanelMenuItem>
+                    }
+                </Authorized>
+            </AuthorizeView>
             <RadzenPanelMenuItem Text="Usuario" Icon="account_box">
                 <RadzenPanelMenuItem Text="Unidad" Path="tabs" Icon="tab"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Soporte" Path="panel" Icon="content_paste"></RadzenPanelMenuItem>
-                <RadzenPanelMenuItem Text="Salir" Path="fieldset" Icon="account_balance_wallet"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Salir" Path="/salir"  Icon="exit_to_app"  OnClick="@HandleLogoutClick" ></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
         </RadzenPanelMenu>
     </RadzenSidebar>
@@ -77,4 +87,19 @@
 @code {
     bool sidebarExpanded = false;
     [Parameter] public RenderFragment BodyContent { get; set; } = default!;
+
+     private int Perfil { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var perfilString = await _localStorage.GetItemAsync<string>("perfil");
+        if (int.TryParse(perfilString, out int perfil))
+        {
+            Perfil = perfil;
+        }
+    }
+    private void HandleLogoutClick(MouseEventArgs args)
+    {
+        navigationManager.NavigateTo("/salir", true);
+    }
 }

@@ -97,9 +97,18 @@ namespace SiaesServer.Controllers
                 return BadRequest(_respuestasAPI);
             }
 
+            int perfil = respuestaLogin.Usuario.Perfil;
             _respuestasAPI.StatusCode = HttpStatusCode.OK;
             _respuestasAPI.IsSuccess = true;
-            _respuestasAPI.Result = respuestaLogin;
+            _respuestasAPI.Result = new
+            {
+                Usuario = respuestaLogin.Usuario,
+                Token = respuestaLogin.Token,
+                Perfil = perfil,
+                NombreUsuario = respuestaLogin.Usuario.NombreUsuario,
+                Unidad = respuestaLogin.Usuario.CodEstablecimiento
+            };
+
             return Ok(_respuestasAPI);
         }
 

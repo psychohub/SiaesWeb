@@ -26,12 +26,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Layout/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Acceder.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxBY2NlZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Registro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxSZWdpc3Ryby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Salir.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxTYWxpci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Home.razor]

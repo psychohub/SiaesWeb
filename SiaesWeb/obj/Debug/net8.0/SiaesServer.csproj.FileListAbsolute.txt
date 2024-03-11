@@ -168,7 +168,6 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesLibraryShared.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesCliente.pdb
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesLibraryShared.pdb
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets\msbuild.SiaesServer.Microsoft.AspNetCore.StaticWebAssets.props

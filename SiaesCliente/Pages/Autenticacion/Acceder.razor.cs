@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
+using SiaesLibraryShared.Models.Dtos;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -16,32 +18,41 @@ namespace SiaesCliente.Pages.Autenticacion
 
         public string Errores { get; set; }
 
+     
+
         [Inject]
         public IServicioAutenticacion servicioAutenticacion { get; set; }
 
         [Inject]
         public NavigationManager navigationManager { get; set; }
 
-
+        [Inject]
+        private ILocalStorageService _localStorage { get; set; }
         private async Task AccesoUsuario()
         {
             MostrarErroresAutenticacion = false;
             EstaProcesando = true;
 
-
-
-     
-
             var result = await servicioAutenticacion.Acceder(usuarioAutenticacion);
+
             if (result.IsSuccess)
             {
+
+                
                 EstaProcesando = false;
                 var urlAbsoluta = new Uri(navigationManager.Uri);
                 var parametroQuery = HttpUtility.ParseQueryString(urlAbsoluta.Query);
                 UrlRetorno = parametroQuery["returnUrl"];
-                if(string.IsNullOrEmpty(UrlRetorno))
+                var perfil = result.Usuario?.Perfil;
+                var nombreUsuario = result.Usuario?.Nombre;
+                var unidad = result.Usuario?.CodEstablecimiento;
+                await _localStorage.SetItemAsync("perfil", perfil);
+                await _localStorage.SetItemAsync("nombreUsuario", nombreUsuario);
+                await _localStorage.SetItemAsync("unidad", unidad);
+
+                if (string.IsNullOrEmpty(UrlRetorno))
                 {
-                    navigationManager.NavigateTo("/");
+                    navigationManager.NavigateTo("/inicio");
                 }
                 else
                 {

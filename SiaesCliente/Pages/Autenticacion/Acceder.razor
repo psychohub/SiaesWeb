@@ -1,6 +1,9 @@
-﻿@page "/acceder"
+﻿@page "/"
+@page "/acceder"
 
-<h3>Login</h3>
+
+
+@layout LoginLayout
 
 <EditForm Model="usuarioAutenticacion" OnValidSubmit="AccesoUsuario">
     <DataAnnotationsValidator />

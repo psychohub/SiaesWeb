@@ -1,11 +1,14 @@
-﻿<Router AppAssembly="@typeof(App).Assembly">
+﻿
+@using SiaesCliente.Pages.Autenticacion
+
+<Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
             <Authorizing>
                 <p>Por favor, espere mientras autorizamos el usuario</p>
             </Authorizing>
             <NotAuthorized>
-                <SiaesCliente.Pages.RedireccionarAlAcceso></SiaesCliente.Pages.RedireccionarAlAcceso>
+                <RedirectToLogin />
             </NotAuthorized>
         </AuthorizeRouteView>
     </Found>
@@ -17,4 +20,3 @@
         </CascadingAuthenticationState>
     </NotFound>
 </Router>
-
