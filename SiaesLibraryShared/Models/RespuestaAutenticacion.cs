@@ -11,7 +11,10 @@ namespace SiaesLibraryShared.Models
         public bool IsSuccess { get; set; }
         public string? Token { get; set; }
 
+        public string NombreUsuario { get; set; } = string.Empty;
         public Usuario? Usuario { get; set; }
+        public int? Perfil { get; set; }
+        public int? CodEstablecimiento { get; set; }
         public IEnumerable<string>? Errores { get; set; }
     }
 }

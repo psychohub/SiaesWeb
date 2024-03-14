@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iYs0rmuRoDIgZBEajHiWZ/YU9q6n1kS/5W4iCr5ISXU=",
+  "Hash": "gAGQQxuQ4A32bjZHmv67V2FJQHOkSHM71155KuNlpBs=",
   "Source": "SiaesCliente",
   "BasePath": "/",
   "Mode": "Root",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-wcag.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-wcag.css",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\default-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\default-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent.css",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-base.css",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-dark.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-dark.css",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-dark.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-dark.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-dark-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/fluent-dark-base.css",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\fluent-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\fluent-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-wcag.css",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\humanistic-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\humanistic-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material.css",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3.css",
       "AssetKind": "All",
@@ -299,13 +299,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-base.css",
       "AssetKind": "All",
@@ -318,13 +318,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-dark.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-dark.css",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-dark.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-dark.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-dark-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material3-dark-base.css",
       "AssetKind": "All",
@@ -356,13 +356,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material3-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material3-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -375,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-dark.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark.css",
       "AssetKind": "All",
@@ -394,13 +394,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-dark.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-dark.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-dark-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark-base.css",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-wcag.css",
       "AssetKind": "All",
@@ -432,13 +432,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\material-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\material-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software.css",
       "AssetKind": "All",
@@ -451,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -470,13 +470,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-wcag.css",
       "AssetKind": "All",
@@ -489,13 +489,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\software-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\software-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard.css",
       "AssetKind": "All",
@@ -508,13 +508,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -527,13 +527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard-wcag.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-wcag.css",
       "AssetKind": "All",
@@ -546,13 +546,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\css\\standard-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\css\\standard-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialIcons-Regular.woff",
       "AssetKind": "All",
@@ -565,13 +565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\MaterialIcons-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-300.woff",
       "AssetKind": "All",
@@ -584,13 +584,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-700.woff",
       "AssetKind": "All",
@@ -603,13 +603,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v15-latin-regular.woff",
       "AssetKind": "All",
@@ -622,13 +622,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v15-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-300.woff",
       "AssetKind": "All",
@@ -641,13 +641,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-300.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-500.woff",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-500.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-700.woff",
       "AssetKind": "All",
@@ -679,13 +679,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-700.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/roboto-v30-latin-regular.woff",
       "AssetKind": "All",
@@ -698,13 +698,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\roboto-v30-latin-regular.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Black.woff",
       "AssetKind": "All",
@@ -717,13 +717,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Black.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BlackIt.woff",
       "AssetKind": "All",
@@ -736,13 +736,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-BlackIt.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Bold.woff",
       "AssetKind": "All",
@@ -755,13 +755,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Bold.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-BoldIt.woff",
       "AssetKind": "All",
@@ -774,13 +774,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-BoldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLight.woff",
       "AssetKind": "All",
@@ -793,13 +793,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLight.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-ExtraLightIt.woff",
       "AssetKind": "All",
@@ -812,13 +812,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-ExtraLightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-It.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-It.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-It.woff",
       "AssetKind": "All",
@@ -831,13 +831,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-It.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-It.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Light.woff",
       "AssetKind": "All",
@@ -850,13 +850,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Light.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-LightIt.woff",
       "AssetKind": "All",
@@ -869,13 +869,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-LightIt.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Regular.woff",
       "AssetKind": "All",
@@ -888,13 +888,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Regular.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-Semibold.woff",
       "AssetKind": "All",
@@ -907,13 +907,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-Semibold.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSansPro-SemiboldIt.woff",
       "AssetKind": "All",
@@ -926,13 +926,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\fonts\\SourceSansPro-SemiboldIt.woff"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -945,7 +945,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.24.7\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\Radzen.Blazor.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -983,7 +983,7 @@
       "AssetTraitValue": "boot",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.2\\build\\net8.0\\blazor.webassembly.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.3\\build\\net8.0\\blazor.webassembly.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
@@ -1021,7 +1021,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -1040,15 +1040,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.2ut74yairi.js",
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.3.euzytt4eav.js",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.2.2ut74yairi.js",
+      "RelativePath": "_framework/dotnet.native.8.0.3.euzytt4eav.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1059,7 +1059,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -1078,15 +1078,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.t7kurnwtui.js",
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.3.0k8oovor72.js",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.2.t7kurnwtui.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.3.0k8oovor72.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1097,7 +1097,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -1116,7 +1116,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
@@ -1135,7 +1135,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -1154,7 +1154,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -1173,7 +1173,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.3\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -4976,6 +4976,25 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Principal.Windows.wasm"
     },
     {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\0k8oovor72.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.3.0k8oovor72.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.3.0k8oovor72.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.3.0k8oovor72.js"
+    },
+    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\0vjqrbav7r.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -5033,25 +5052,6 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\1do61s5yrk.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
-    },
-    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\1e5oi0kwet.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -5107,6 +5107,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\1vzn7mlng9.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\22shotsp63.gz",
@@ -5202,25 +5221,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.DependencyInjection.Abstractions.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\2ut74yairi.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.2.2ut74yairi.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.2ut74yairi.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.2ut74yairi.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\2ve5j9e29j.gz",
@@ -5736,6 +5736,25 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.SecureString.wasm"
     },
     {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\7adg8j5zba.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
+    },
+    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\7g1ma62kpe.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -6059,25 +6078,6 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Win32.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\a6ewb28isa.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
-    },
-    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\aa5u22e9c6.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -6133,6 +6133,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\mscorlib.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\agorbivoh6.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\ajs70xtlzc.gz",
@@ -6228,25 +6247,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.Compression.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\c6ilcl2tg4.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\cb6gj6emvp.gz",
@@ -6553,25 +6553,6 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\eq9onaund5.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
-    },
-    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\erdpc5e0j6.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -6589,6 +6570,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.DispatchProxy.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\euzytt4eav.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.3.euzytt4eav.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.3.euzytt4eav.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.3.euzytt4eav.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\fb4kb7zds4.gz",
@@ -6665,6 +6665,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\g64v3od6sp.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\g82wm7ea7r.gz",
@@ -6760,25 +6779,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\h67mbhd4dd.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\he5o52dkeo.gz",
@@ -7389,23 +7389,23 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Drawing.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\nhh5xqrljy.gz",
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\ncm768go9a.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/blazor.webassembly.js.gz",
-      "AssetKind": "All",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js"
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\no0f59p6qf.gz",
@@ -7520,6 +7520,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\netstandard.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\obvkxv0ois.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\oc9fnhpj1a.gz",
@@ -7653,25 +7672,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Radzen.Blazor.wasm"
-    },
-    {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\prjf5s6czl.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\pw60x3b6y3.gz",
@@ -8073,25 +8073,6 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Primitives.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\t7kurnwtui.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.2.t7kurnwtui.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.t7kurnwtui.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.t7kurnwtui.js"
-    },
-    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\th4ugxksvf.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -8166,6 +8147,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Xml.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\tnpwoezpsz.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\u2kqobvwv2.gz",
@@ -8548,25 +8548,6 @@
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Claims.wasm"
     },
     {
-      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\wvw40n9jao.gz",
-      "SourceId": "SiaesCliente",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
-    },
-    {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\ww80ph0wte.gz",
       "SourceId": "SiaesCliente",
       "SourceType": "Computed",
@@ -8584,6 +8565,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\x30550v8bx.gz",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/blazor.webassembly.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\obj\\Debug\\net8.0\\compressed\\x3zkhvrmg0.gz",
@@ -9078,6 +9078,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\css\\custom-styles.css",
+      "SourceId": "SiaesCliente",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/custom-styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\custom-styles.css"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\wwwroot\\favicon.png",

@@ -20,6 +20,10 @@ namespace SiaesServer.Data
         public DbSet<UsuarioPerfil> UsuarioPerfiles { get; set; }
         public DbSet<UsuarioEstablecimientoPerfil> UsuarioEstablecimientoPerfil { get; set; }
 
+        public DbSet<Rol> Roles { get; set; }
+        public DbSet<SubArea> SubAreas { get; set; }
+        public DbSet<UsuarioRolSubArea> UsuarioRolesSubAreas { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -57,7 +61,54 @@ namespace SiaesServer.Data
                 .WithMany(p => p.UsuarioPerfiles)
                 .HasForeignKey(up => up.PerfilId);
 
-       
+            modelBuilder.Entity<UsuarioEstablecimientoPerfil>()
+                .HasKey(uep => new { uep.UsuarioId, uep.EstablecimientoId, uep.PerfilId });
+
+            modelBuilder.Entity<UsuarioEstablecimientoPerfil>()
+                .HasOne(uep => uep.Usuario)
+                .WithMany(u => u.UsuarioEstablecimientoPerfiles)
+                .HasForeignKey(uep => uep.UsuarioId);
+
+            modelBuilder.Entity<UsuarioEstablecimientoPerfil>()
+                .HasOne(uep => uep.Establecimiento)
+                .WithMany(e => e.UsuarioEstablecimientoPerfiles)
+                .HasForeignKey(uep => uep.EstablecimientoId);
+
+            modelBuilder.Entity<UsuarioEstablecimientoPerfil>()
+                .HasOne(uep => uep.Perfil)
+                .WithMany()
+                .HasForeignKey(uep => uep.PerfilId);
+
+            modelBuilder.Entity<Rol>().ToTable("T_Roles");
+
+            modelBuilder.Entity<SubArea>().ToTable("T_SubArea");
+
+            modelBuilder.Entity<Rol>()
+                .HasKey(r => r.IdRol);
+
+            modelBuilder.Entity<Rol>()
+                .Property(r => r.Descripcion_Rol)
+                .HasMaxLength(50);
+
+            modelBuilder.Entity<SubArea>()
+                .HasKey(sa => sa.IdSubArea);
+
+            modelBuilder.Entity<SubArea>()
+                .Property(sa => sa.DescripcionSubArea)
+                .HasMaxLength(150);
+
+            modelBuilder.Entity<UsuarioRolSubArea>()
+                .HasKey(urs => new { urs.Id, urs.RolId, urs.SubAreaId });
+
+            modelBuilder.Entity<UsuarioRolSubArea>()
+                .HasOne(urs => urs.Rol)
+                .WithMany()
+                .HasForeignKey(urs => urs.RolId);
+
+            modelBuilder.Entity<UsuarioRolSubArea>()
+                .HasOne(urs => urs.SubArea)
+                .WithMany()
+                .HasForeignKey(urs => urs.SubAreaId);
 
         }
 

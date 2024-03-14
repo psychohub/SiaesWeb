@@ -10,7 +10,7 @@ using System.Net;
 
 namespace SiaesServer.Controllers
 {
-    [Route("api/registrar_usuario")]
+    [Route("api/siaes")]
     [ApiController]
     public class UsuariosController : ControllerBase
     {
@@ -97,14 +97,19 @@ namespace SiaesServer.Controllers
                 return BadRequest(_respuestasAPI);
             }
 
-            int perfil = respuestaLogin.Usuario.Perfil;
+ 
             _respuestasAPI.StatusCode = HttpStatusCode.OK;
             _respuestasAPI.IsSuccess = true;
+            _respuestasAPI.StatusCode = HttpStatusCode.OK;
+            _respuestasAPI.IsSuccess = true;
+            _respuestasAPI.NombreUsuario = respuestaLogin.Usuario.NombreUsuario;
+            _respuestasAPI.Perfil = respuestaLogin.Usuario.Perfil;
+            _respuestasAPI.CodEstablecimiento = respuestaLogin.Usuario.CodEstablecimiento;
             _respuestasAPI.Result = new
             {
                 Usuario = respuestaLogin.Usuario,
                 Token = respuestaLogin.Token,
-                Perfil = perfil,
+                Perfil = respuestaLogin.Usuario.Perfil,
                 NombreUsuario = respuestaLogin.Usuario.NombreUsuario,
                 Unidad = respuestaLogin.Usuario.CodEstablecimiento
             };
@@ -112,6 +117,78 @@ namespace SiaesServer.Controllers
             return Ok(_respuestasAPI);
         }
 
+
+        // Métodos para obtener roles y subáreas
+        [HttpGet("roles")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<Rol>>> GetRoles()
+        {
+            var roles = await _usRepo.GetRoles();
+            return Ok(roles);
+        }
+
+        [HttpGet("subareas")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<IEnumerable<SubArea>>> GetSubAreas()
+        {
+
+            var subAreas = await _usRepo.GetSubAreas();
+            return Ok(subAreas);
+        }
+
+        // Método para asociar un usuario con un rol y una subárea
+        [HttpPut("asociar")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<RespuestasAPI>> AsociarUsuario(Usuario usuario)
+        {
+            var usuarioExistente = await _usRepo.GetUsuarioByNombreUsuario(usuario.NombreUsuario);
+            if (usuarioExistente == null)
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.NotFound;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add("El usuario no existe");
+                return NotFound(_respuestasAPI);
+            }
+
+            usuarioExistente.IdRol = usuario.IdRol;
+            usuarioExistente.IdSubArea = usuario.IdSubArea;
+
+            var usuarioActualizado = await _usRepo.ActualizarUsuario(usuarioExistente);
+            if (usuarioActualizado == null)
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add("Error al asociar usuario");
+                return BadRequest(_respuestasAPI);
+            }
+
+            _respuestasAPI.StatusCode = HttpStatusCode.OK;
+            _respuestasAPI.IsSuccess = true;
+            _respuestasAPI.Result = usuarioActualizado;
+            return Ok(_respuestasAPI);
+        }
+
+        [HttpGet("nombreUsuario/{nombreUsuario}")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<Usuario>> GetUsuarioByNombreUsuario(string nombreUsuario)
+        {
+            var usuario = await _usRepo.GetUsuarioByNombreUsuario(nombreUsuario);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return Ok(usuario);
+        }
 
         //Métodos o endpoints de la API 
         [Authorize]

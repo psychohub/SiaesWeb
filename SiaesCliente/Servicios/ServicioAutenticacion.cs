@@ -10,6 +10,7 @@ using System.Text;
 using System.Linq.Dynamic.Core.Tokenizer;
 using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
+using SiaesLibraryShared.Models.Dtos;
 
 namespace SiaesCliente.Servicios
 {
@@ -32,7 +33,7 @@ namespace SiaesCliente.Servicios
         {
             var content = JsonConvert.SerializeObject(usuarioDesdeAutenticacion);
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/login", bodyContent);
+            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/siaes/login", bodyContent);
             var contentTemp = await response.Content.ReadAsStringAsync();
             var resultado = JsonConvert.DeserializeObject<JObject>(contentTemp);
 
@@ -49,53 +50,32 @@ namespace SiaesCliente.Servicios
                 {
                     var Token = result["token"]?.Value<string>();
                     var Usuario = usuario["nombreUsuario"]?.Value<string>();
+                    var Perfil = usuario["perfil"]?.Value<int>();
+                    var CodEstablecimiento = usuario["codEstablecimiento"]?.Value<int>();
 
-                    if (!string.IsNullOrEmpty(Token) && !string.IsNullOrEmpty(Usuario))
+                    if (!string.IsNullOrEmpty(Token) && !string.IsNullOrEmpty(Usuario) && Perfil.HasValue && CodEstablecimiento.HasValue)
                     {
-                        // Realizar acciones con Token y Usuario
+                        // Realizar acciones con Token, Usuario, Perfil y CodEstablecimiento
                         await _localStorage.SetItemAsync(Inicializar.Token_Local, Token);
                         await _localStorage.SetItemAsync(Inicializar.Datos_Usuario_Local, Usuario);
+                        await _localStorage.SetItemAsync("perfil", Perfil.Value);
+                        await _localStorage.SetItemAsync("unidad", CodEstablecimiento.Value);
                         ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
                         _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
-                        return new RespuestaAutenticacion { IsSuccess = true };
+                        return new RespuestaAutenticacion { IsSuccess = true, Perfil = Perfil.Value, CodEstablecimiento = CodEstablecimiento.Value };
                     }
                 }
             }
 
             return new RespuestaAutenticacion { IsSuccess = false };
-
-
-
-
-
-            //var content = JsonConvert.SerializeObject(usuarioDesdeAutenticacion);
-            //var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            //var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/login", bodyContent);
-            //var contentTemp = await response.Content.ReadAsStringAsync();
-            //var resultado = (JObject)JsonConvert.DeserializeObject(contentTemp);
-
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    var Token = resultado["result"]["token"].Value<string>();
-            //    var Usuario = resultado["result"]["usuario"]["NombreUsuario"].Value<string>();
-
-            //    await _localStorage.SetItemAsync(Inicializar.Token_Local, Token);
-            //    await _localStorage.SetItemAsync(Inicializar.Datos_Usuario_Local, Usuario);
-            //    ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
-            //    _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
-            //    return new RespuestaAutenticacion { IsSuccess = true };
-            //}
-            //else
-            //{
-            //    return new RespuestaAutenticacion { IsSuccess = false };
-            //}
+          
         }
 
         public async Task<(bool registroCorrecto, List<string>? Errores)> RegistrarUsuario(UsuarioParaRegistroAPI usuarioParaRegistro)
         {
             var content = JsonConvert.SerializeObject(usuarioParaRegistro);
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/login", bodyContent);
+            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/siaes/registro", bodyContent);
             var contentTemp = await response.Content.ReadAsStringAsync();
             var resultado = (JObject)JsonConvert.DeserializeObject(contentTemp);
 
@@ -124,7 +104,7 @@ namespace SiaesCliente.Servicios
         {
             var content = JsonConvert.SerializeObject(usuarioParaRegistro);
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/registro", bodyContent);
+            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/siaes/registro", bodyContent);
             var contentTemp = await response.Content.ReadAsStringAsync();
             var resultado = JsonConvert.DeserializeObject<RespuestaRegistro>(contentTemp);
             try
@@ -149,12 +129,26 @@ namespace SiaesCliente.Servicios
 
         public async Task<RespuestaRegistro> RegistrarUsuarioAPI(UsuarioParaRegistroAPI usuarioParaRegistro)
         {
-        
+            // Obtener el token de autenticación desde el almacenamiento local
+            var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
+
+            // Verificar si el token está disponible
+            if (string.IsNullOrEmpty(token))
+            {
+                // Si el token no está disponible, puedes manejar el caso de acuerdo a tus necesidades
+                // Por ejemplo, puedes devolver un error o redirigir al usuario a la página de inicio de sesión
+                return new RespuestaRegistro { registroCorrecto = false, Errores = new List<string> { "No se encontró el token de autenticación" } };
+            }
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
             var content = JsonConvert.SerializeObject(usuarioParaRegistro);
             var bodyContent = new StringContent(content, Encoding.UTF8, "application/json");
-            var response = await _cliente.PostAsync($"{Inicializar.UrlBaseApi}api/registrar_usuario/registro", bodyContent);
+
+            var response = await client.PostAsync($"{Inicializar.UrlBaseApi}api/siaes/registro", bodyContent);
             var contentTemp = await response.Content.ReadAsStringAsync();
-            var resultado = JsonConvert.DeserializeObject<RespuestaRegistro>(contentTemp);
+
             try
             {
                 if (!response.IsSuccessStatusCode)
@@ -164,6 +158,7 @@ namespace SiaesCliente.Servicios
                 }
                 else
                 {
+                    var resultado = JsonConvert.DeserializeObject<RespuestaRegistro>(contentTemp);
                     return new RespuestaRegistro { registroCorrecto = true };
                 }
             }

@@ -20,5 +20,9 @@ namespace SiaesLibraryShared.Models
         public List<string> ErrorsMessages { get; set; }
         public object Result { get; set; }
 
+        public string NombreUsuario { get; set; } = string.Empty;
+        public int CodEstablecimiento { get; set; }
+        public int Perfil { get; set; }
+
     }
 }

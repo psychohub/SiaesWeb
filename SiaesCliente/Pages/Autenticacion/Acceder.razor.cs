@@ -11,6 +11,7 @@ namespace SiaesCliente.Pages.Autenticacion
     public  partial  class Acceder
     {
         private UsuarioAutenticacion usuarioAutenticacion = new UsuarioAutenticacion();
+
         public bool EstaProcesando { get; set; } = false;
         public bool MostrarErroresAutenticacion { get; set; }
 
@@ -35,6 +36,7 @@ namespace SiaesCliente.Pages.Autenticacion
 
             var result = await servicioAutenticacion.Acceder(usuarioAutenticacion);
 
+
             if (result.IsSuccess)
             {
 
@@ -43,9 +45,12 @@ namespace SiaesCliente.Pages.Autenticacion
                 var urlAbsoluta = new Uri(navigationManager.Uri);
                 var parametroQuery = HttpUtility.ParseQueryString(urlAbsoluta.Query);
                 UrlRetorno = parametroQuery["returnUrl"];
-                var perfil = result.Usuario?.Perfil;
-                var nombreUsuario = result.Usuario?.Nombre;
-                var unidad = result.Usuario?.CodEstablecimiento;
+
+                var perfil = result.Perfil;
+                var nombreUsuario = result.Usuario;
+                var unidad = result.CodEstablecimiento;
+    
+
                 await _localStorage.SetItemAsync("perfil", perfil);
                 await _localStorage.SetItemAsync("nombreUsuario", nombreUsuario);
                 await _localStorage.SetItemAsync("unidad", unidad);

@@ -52,11 +52,11 @@ namespace SiaesServer.Repositories
             var passwordEncriptado = obtenermd5(usuarioLoginDTO.Clave);
 
             var usuario = _bd.Usuario.FirstOrDefault(
-                u => u.NombreUsuario.ToLower() == usuarioLoginDTO.NombreUsuario.ToLower()
-                && u.Clave == passwordEncriptado
-                && u.CodEstablecimiento == usuarioLoginDTO.CodEstablecimiento
-                && u.Perfil == usuarioLoginDTO.Perfil
-                && u.Estado == 1);
+            u => u.NombreUsuario.ToLower() == usuarioLoginDTO.NombreUsuario.ToLower()
+            && u.Clave == passwordEncriptado
+            && u.CodEstablecimiento == usuarioLoginDTO.CodEstablecimiento
+            && u.Perfil == usuarioLoginDTO.Perfil
+            && u.Estado == 1);
             //Validamos si el usuario no existe con la combinación de usuario y contraseña correcta
             if (usuario == null)
             {
@@ -91,20 +91,20 @@ namespace SiaesServer.Repositories
             return usuarioLoginRespuestaDTO;
         }
 
-       
+
 
         public async Task<Usuario> Registro(UsuarioRegistroDTO usuarioRegistroDTO)
         {
             var passwordEncriptado = obtenermd5(usuarioRegistroDTO.Clave);
 
-            Usuario usuario = new Usuario()
+            UsuarioRegistro usuarioRegistro = new UsuarioRegistro()
             {
                 NombreUsuario = usuarioRegistroDTO.NombreUsuario,
                 Nombre = usuarioRegistroDTO.Nombre,
                 Apellidos = usuarioRegistroDTO.Apellidos,
                 Correo = usuarioRegistroDTO.Correo,
                 CodEstablecimiento = usuarioRegistroDTO.CodEstablecimiento,
-                Clave = passwordEncriptado, // Asigna la contraseña encriptada aquí
+                Clave = passwordEncriptado,
                 Perfil = usuarioRegistroDTO.Perfil,
                 Estado = usuarioRegistroDTO.Estado,
                 FechaCaducidad = usuarioRegistroDTO.FechaCaducidad,
@@ -112,43 +112,62 @@ namespace SiaesServer.Repositories
                 FechaCreacion = usuarioRegistroDTO.FechaCreacion
             };
 
-            _bd.Usuario.Add(usuario);
-            await _bd.SaveChangesAsync();
-
-            // Insertar en la tabla Establecimientos
-            Establecimiento establecimiento = new Establecimiento()
+            // Mapear las propiedades de UsuarioRegistro a Usuario
+            Usuario usuario = new Usuario()
             {
-                UsuarioId = usuario.Id,
-                CodEstablecimiento = usuarioRegistroDTO.CodEstablecimiento
-
+                NombreUsuario = usuarioRegistro.NombreUsuario,
+                Nombre = usuarioRegistro.Nombre,
+                Apellidos = usuarioRegistro.Apellidos,
+                Correo = usuarioRegistro.Correo,
+                CodEstablecimiento = usuarioRegistro.CodEstablecimiento,
+                Clave = usuarioRegistro.Clave,
+                Perfil = usuarioRegistro.Perfil,
+                Estado = usuarioRegistro.Estado,
+                FechaCaducidad = usuarioRegistro.FechaCaducidad,
+                UsuarioCreacion = usuarioRegistro.UsuarioCreacion,
+                FechaCreacion = usuarioRegistro.FechaCreacion,
+                IdRol = 6,
+                IdSubArea = 5
             };
-            _bd.Establecimientos.Add(establecimiento);
-            await _bd.SaveChangesAsync();
 
-            // Obtener el ID del establecimiento recién insertado
-            int establecimientoId = establecimiento.Id;
-
-            // Insertar en la tabla UsuarioEstablecimientos
-            UsuarioEstablecimiento usuarioEstablecimiento = new UsuarioEstablecimiento()
+            using (var transaction = await _bd.Database.BeginTransactionAsync())
             {
-                UsuarioId = usuario.Id,
-                EstablecimientoId = establecimientoId
+                try
+                {
+                    _bd.Usuario.Add(usuario);
+                    await _bd.SaveChangesAsync();
 
-            };
-            _bd.UsuarioEstablecimientos.Add(usuarioEstablecimiento);
-            await _bd.SaveChangesAsync();
+                    Establecimiento establecimiento = new Establecimiento()
+                    {
+                        UsuarioId = usuario.Id,
+                        CodEstablecimiento = usuarioRegistroDTO.CodEstablecimiento
+                    };
+                    _bd.Establecimientos.Add(establecimiento);
 
+                    //UsuarioEstablecimiento usuarioEstablecimiento = new UsuarioEstablecimiento()
+                    //{
+                    //    UsuarioId = usuario.Id,
+                    //    EstablecimientoId = establecimiento.Id
+                    //};
+                    //_bd.UsuarioEstablecimientos.Add(usuarioEstablecimiento);
 
-            // Insertar en la tabla UsuarioPerfiles
-            UsuarioPerfil usuarioPerfil = new UsuarioPerfil()
-            {
-                UsuarioId = usuario.Id,
-                PerfilId = usuarioRegistroDTO.Perfil
-            };
-            _bd.UsuarioPerfiles.Add(usuarioPerfil);
-            await _bd.SaveChangesAsync();
+                    UsuarioPerfil usuarioPerfil = new UsuarioPerfil()
+                    {
+                        UsuarioId = usuario.Id,
+                        PerfilId = usuarioRegistroDTO.Perfil
+                    };
+                    _bd.UsuarioPerfiles.Add(usuarioPerfil);
 
+                    await _bd.SaveChangesAsync();
 
+                    await transaction.CommitAsync();
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            }
 
             return usuario;
         }
@@ -170,6 +189,73 @@ namespace SiaesServer.Repositories
             return await _bd.UsuarioEstablecimientoPerfil.AnyAsync(uep => uep.NombreUsuario == usuarioAsociacionDTO.NombreUsuario
                      && uep.EstablecimientoId == usuarioAsociacionDTO.CodEstablecimiento
                      && uep.PerfilId == usuarioAsociacionDTO.Perfil);
+        }
+
+        public async Task<IEnumerable<Rol>> GetRoles()
+        {
+            try
+            {
+                return await _bd.Roles.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Registrar o manejar la excepción
+                throw new Exception($"Error al obtener los roles: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<IEnumerable<SubArea>> GetSubAreas()
+        {
+            try
+            {
+                return await _bd.SubAreas.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Registrar o manejar la excepción
+                throw new Exception($"Error al obtener las subareas: {ex.Message}", ex);
+            }
+         
+        }
+
+        public async Task<Usuario?> GetUsuarioById(int id)
+        {
+            return await _bd.Usuario
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Id.Equals(id));
+        }
+
+        public async Task<IEnumerable<Usuario>> ActualizarUsuario(Usuario usuario)
+        {
+            var usuariosExistentes = await _bd.Usuario
+                .Where(u => u.NombreUsuario == usuario.NombreUsuario)
+                .ToListAsync();
+
+            if (usuariosExistentes.Count == 0)
+            {
+                throw new Exception("No se encontraron usuarios con el nombre de usuario especificado");
+            }
+
+            foreach (var usuarioExistente in usuariosExistentes)
+            {
+                if (usuario.IdRol != 0)
+                {
+                    usuarioExistente.IdRol = usuario.IdRol;
+                }
+
+                if (usuario.IdSubArea != 0)
+                {
+                    usuarioExistente.IdSubArea = usuario.IdSubArea;
+                }
+            }
+
+            await _bd.SaveChangesAsync();
+            return usuariosExistentes;
+        }
+
+        public async Task<Usuario?> GetUsuarioByNombreUsuario(string nombreUsuario)
+        {
+            return await _bd.Usuario.FirstOrDefaultAsync(u => u.NombreUsuario == nombreUsuario);
         }
     }
 }

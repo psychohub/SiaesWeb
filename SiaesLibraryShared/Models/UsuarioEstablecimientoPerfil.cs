@@ -8,16 +8,15 @@ namespace SiaesLibraryShared.Models
 {
     public class UsuarioEstablecimientoPerfil
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public int UsuarioId { get; set; }
-        public string NombreUsuario { get; set; } = string.Empty;
-        public int EstablecimientoId { get; set; }  
+        public Usuario Usuario { get; set; }
+        public int EstablecimientoId { get; set; }
+        public Establecimiento Establecimiento { get; set; }
         public int PerfilId { get; set; }
+        public Perfil Perfil { get; set; }
+        public string NombreUsuario { get; set; }
 
-        // Propiedades de navegación
-    
-        public Usuario Usuario { get; set; }  
-        public Establecimiento Establecimiento { get; set; }  
-        public Perfil Perfil { get; set; } 
+       
     }
 }

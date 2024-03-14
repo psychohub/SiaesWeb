@@ -1,37 +1,36 @@
 ﻿@inject ILocalStorageService _localStorage
 @inject NavigationManager navigationManager
 
-
 <RadzenLayout Style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body' 'rz-sidebar rz-footer'">
     <RadzenHeader>
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
             <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
             <RadzenMenu>
-                <RadzenMenuItem Text="SIAES" Path="/inicio" Icon="home">
-                </RadzenMenuItem>
-                <RadzenMenuItem Text="Registrar" Icon="payment">
-                    <RadzenMenuItem Text="Cuadros" Path="checkbox" Icon="assignment"></RadzenMenuItem>
-                </RadzenMenuItem>
-                <RadzenMenuItem Text="Reportes" Icon="save">
-                    <RadzenMenuItem Text="Reportes" Path="datagrid" Icon="assessment"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Mostrar Cuadros" Path="datalist" Icon="assignment_late"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Listar Cuadros" Path="dropdown" Icon="assignment_turned_in"></RadzenMenuItem>
-                </RadzenMenuItem>
-                <RadzenMenuItem Text="Configuración" Icon="build">
-                    <RadzenPanelMenuItem Text="Salir" Path="/salir" Icon="exit_to_app" OnClick="@HandleLogoutClick"></RadzenPanelMenuItem>
-                    <RadzenMenuItem Text="Cambiar contraseña" Path="panel" Icon="https"></RadzenMenuItem>
-                </RadzenMenuItem>
-                <RadzenMenuItem Text="Documentación" Icon="chrome_reader_mode">
-                    <RadzenMenuItem Text="Resumen cuadro por encargado" Path="tabs" Icon="note_add"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Soporte al cliente" Path="tabs" Icon="pageview"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Manual de usuarios" Path="panel" Icon="offline_pin"></RadzenMenuItem>
-                </RadzenMenuItem>
-                <RadzenMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
-                </RadzenMenuItem>
+                <RadzenMenuItem Text="SIAES" Path="/inicio" Icon="home"></RadzenMenuItem>
+                <!-- Otros elementos del menú -->
+                <AuthorizeView>
+                    <Authorized>
+                        @if (Perfil == 1 || Perfil == 2)
+                        {
+                            <RadzenMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
+                                <RadzenMenuItem Text="Registrar usuario" Path="/registrarUsuario" Icon="face"></RadzenMenuItem>
+                                <RadzenMenuItem Text="Asociar usuario" Path="/asociarUsuario" Icon="hourglass_full"></RadzenMenuItem>
+                            </RadzenMenuItem>
+                        }
+                    </Authorized>
+                </AuthorizeView>
                 <RadzenMenuItem Text="Usuario" Icon="account_box">
-                    <RadzenMenuItem Text="Unidad" Path="tabs" Icon="tab"></RadzenMenuItem>
-                    <RadzenMenuItem Text="Soporte" Path="panel" Icon="content_paste"></RadzenMenuItem>
-                    <RadzenPanelMenuItem Text="Salir" Path="/salir" Icon="exit_to_app" OnClick="@HandleLogoutClick"></RadzenPanelMenuItem>
+                    @if (!string.IsNullOrEmpty(Usuario) && !string.IsNullOrEmpty(Unidad))
+                    {
+                        <RadzenMenuItem Text="Nombre de usuario" Icon="panel" Class="menu-item-user">
+                            <span style="color: #000000; display: block; text-align: center;">@Usuario</span>
+                        </RadzenMenuItem>
+                        <RadzenMenuItem Text="Unidad" Icon="panel" Class="menu-item-user">
+                            <span style="color: #000000; display: block; text-align: center;">@Unidad</span>
+                        </RadzenMenuItem>
+                        <RadzenMenuItem Text="Soporte" Path="panel" Icon="content_paste"></RadzenMenuItem>
+                        <RadzenMenuItem Text="Salir" Path="/salir" Icon="exit_to_app" OnClick="@HandleLogoutClick"></RadzenMenuItem>
+                    }
                 </RadzenMenuItem>
             </RadzenMenu>
         </RadzenStack>
@@ -60,14 +59,19 @@
                     @if (Perfil == 1 || Perfil == 2)
                     {
                         <RadzenPanelMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
-                            <RadzenPanelMenuItem Text="Registrar usuario" Path="/registrar_usuario" Icon="face"></RadzenPanelMenuItem>
-                            <RadzenPanelMenuItem Text="Asociar usuario" Path="tabs" Icon="hourglass_full"></RadzenPanelMenuItem>
+                            <RadzenPanelMenuItem Text="Registrar usuario" Path="/registrarUsuario" Icon="face"></RadzenPanelMenuItem>
+                            <RadzenPanelMenuItem Text="Asociar usuario" Path="/asociarUsuario" Icon="hourglass_full"></RadzenPanelMenuItem>
                         </RadzenPanelMenuItem>
                     }
                 </Authorized>
             </AuthorizeView>
             <RadzenPanelMenuItem Text="Usuario" Icon="account_box">
-                <RadzenPanelMenuItem Text="Unidad" Path="tabs" Icon="tab"></RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Nombre de usuario" Icon="panel" Class="menu-item-user">
+                    <span style="color: #000000; display: block; text-align: center;">@Usuario</span>
+                </RadzenPanelMenuItem>
+                <RadzenPanelMenuItem Text="Unidad" Icon="panel" Class="menu-item-user">
+                    <span style="color: #000000; display: block; text-align: center;">@Unidad</span>
+                </RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Soporte" Path="panel" Icon="content_paste"></RadzenPanelMenuItem>
                 <RadzenPanelMenuItem Text="Salir" Path="/salir"  Icon="exit_to_app"  OnClick="@HandleLogoutClick" ></RadzenPanelMenuItem>
             </RadzenPanelMenuItem>
@@ -84,22 +88,41 @@
     </RadzenFooter>
 </RadzenLayout>
 
+
 @code {
     bool sidebarExpanded = false;
     [Parameter] public RenderFragment BodyContent { get; set; } = default!;
 
-     private int Perfil { get; set; }
+    private int? Perfil { get; set; }
+    private string Usuario { get; set; } = string.Empty;
+    private string Unidad { get; set; } = string.Empty;
 
-    protected override async Task OnInitializedAsync()
+    private async Task CargarDatosUsuario()
     {
+        Usuario = await _localStorage.GetItemAsStringAsync("nombreUsuario");
+        Unidad = await _localStorage.GetItemAsStringAsync("unidad");
         var perfilString = await _localStorage.GetItemAsync<string>("perfil");
-        if (int.TryParse(perfilString, out int perfil))
+
+        if (int.TryParse(perfilString, out var perfil))
         {
             Perfil = perfil;
         }
+        else
+        {
+            Perfil = null; // Asegúrate de manejar correctamente el estado nulo
+        }
+
+        StateHasChanged(); // No necesitas usar InvokeAsync si no estás llamando desde un hilo no principal
     }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CargarDatosUsuario();
+    }
+
     private void HandleLogoutClick(MouseEventArgs args)
     {
         navigationManager.NavigateTo("/salir", true);
     }
 }
+    

@@ -25,9 +25,10 @@
                             <ValidationMessage For="(()=>usuarioAutenticacion.NombreUsuario)"></ValidationMessage>
                         </div>
 
-                        <div class="form-row py-2">
-                            <InputText @bind-Value="usuarioAutenticacion.Clave" type="password" placeholder="Password..."  class="form-control mb-2" />
-                            <ValidationMessage For="(()=>usuarioAutenticacion.Clave)"></ValidationMessage>
+                        <div class="form-row py-2 position-relative">
+                            <InputText @bind-Value="usuarioAutenticacion.Clave" type="@(mostrarPassword ? "text" : "password")" placeholder="Password..." class="form-control mb-2" />
+                            <i class="@(mostrarPassword ? "fas fa-eye-slash" : "fas fa-eye")" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;" @onclick="TogglePasswordVisibility"></i>
+                            <ValidationMessage For="()=>usuarioAutenticacion.Clave"></ValidationMessage>
                         </div>
                         <div class="form-group">
                             <label for="CodEstablecimiento" style="font-size: large">Unidad Programatica:</label>
@@ -68,3 +69,21 @@
     </div>
 
 </EditForm>
+
+@code {
+    private bool mostrarPassword = false;
+
+    private void TogglePasswordVisibility()
+    {
+        mostrarPassword = !mostrarPassword;
+    }
+
+
+ 
+
+    protected override void OnInitialized()
+    {
+        usuarioAutenticacion.Perfil = 3;
+        base.OnInitialized();
+    }
+}

@@ -8,6 +8,7 @@ using SiaesCliente;
 using SiaesCliente.Servicios;
 using SiaesLibraryShared.Contracts;
 
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -16,11 +17,14 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 //Agregar Servicios aquí
-builder.Services.AddScoped<IServicioAutenticacion, ServicioAutenticacion>();
 
+
+builder.Services.AddScoped<IServicioAutenticacion, ServicioAutenticacion>();
+builder.Services.AddScoped<IServicioUsuarioRepositorio, ServicioUsuarioRepositorio>();
 
 //Para usar el LocalStorage
 builder.Services.AddBlazoredLocalStorage();
+
 
 
 //Agregar para la autenticacion y autorizacion

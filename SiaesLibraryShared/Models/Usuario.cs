@@ -27,6 +27,9 @@ namespace SiaesLibraryShared.Models
         public string Clave { get; set; } = string.Empty;
         public int Perfil { get; set; }
         public int Estado { get; set; }
+
+        public int IdRol { get; set; }
+        public int IdSubArea { get; set; }
         public DateTime FechaCaducidad { get; set; } = DateTime.Now;
         public string? UsuarioCreacion { get; set; } = string.Empty;
 
@@ -38,5 +41,7 @@ namespace SiaesLibraryShared.Models
         public ICollection<UsuarioPerfil> UsuarioPerfiles { get; set; }
 
         public ICollection<UsuarioEstablecimientoPerfil> UsuarioEstablecimientoPerfiles { get; set; }
+
+      
     }
 }

@@ -17,7 +17,7 @@ namespace SiaesServer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -30,10 +30,15 @@ namespace SiaesServer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CodEstablecimiento")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CodEstablecimiento")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UsuarioId");
 
                     b.ToTable("Establecimientos");
                 });
@@ -133,6 +138,38 @@ namespace SiaesServer.Migrations
                     b.ToTable("Perfiles");
                 });
 
+            modelBuilder.Entity("SiaesLibraryShared.Models.Rol", b =>
+                {
+                    b.Property<int>("IdRol")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRol"));
+
+                    b.Property<string>("Descripcion_Rol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdRol");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.SubArea", b =>
+                {
+                    b.Property<int>("IdSubArea")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSubArea"));
+
+                    b.Property<string>("DescripcionSubArea")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdSubArea");
+
+                    b.ToTable("SubAreas");
+                });
+
             modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -168,6 +205,12 @@ namespace SiaesServer.Migrations
                     b.Property<DateTime?>("FechaCreacion")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("IdRol")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSubArea")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -193,16 +236,57 @@ namespace SiaesServer.Migrations
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
                 {
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
 
                     b.Property<int>("EstablecimientoId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("EstablecimientoId");
 
                     b.HasKey("UsuarioId", "EstablecimientoId");
 
                     b.HasIndex("EstablecimientoId");
 
                     b.ToTable("UsuarioEstablecimientos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimientoPerfil", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EstablecimientoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombreUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PerfilId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioEstablecimientoEstablecimientoId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioEstablecimientoUsuarioId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EstablecimientoId");
+
+                    b.HasIndex("PerfilId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.HasIndex("UsuarioEstablecimientoUsuarioId", "UsuarioEstablecimientoEstablecimientoId");
+
+                    b.ToTable("UsuarioEstablecimientoPerfil");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioPerfil", b =>
@@ -220,6 +304,45 @@ namespace SiaesServer.Migrations
                     b.ToTable("UsuarioPerfiles");
                 });
 
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioRolSubArea", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("RolId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubAreaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RolId");
+
+                    b.HasIndex("SubAreaId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("UsuarioRolesSubAreas");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Establecimiento", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
                 {
                     b.HasOne("SiaesLibraryShared.Models.Establecimiento", "Establecimiento")
@@ -235,6 +358,37 @@ namespace SiaesServer.Migrations
                         .IsRequired();
 
                     b.Navigation("Establecimiento");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimientoPerfil", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.Establecimiento", "Establecimiento")
+                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .HasForeignKey("EstablecimientoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Perfil", "Perfil")
+                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .HasForeignKey("PerfilId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
+                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.UsuarioEstablecimiento", null)
+                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .HasForeignKey("UsuarioEstablecimientoUsuarioId", "UsuarioEstablecimientoEstablecimientoId");
+
+                    b.Navigation("Establecimiento");
+
+                    b.Navigation("Perfil");
 
                     b.Navigation("Usuario");
                 });
@@ -258,21 +412,67 @@ namespace SiaesServer.Migrations
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioRolSubArea", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.Rol", "Rol")
+                        .WithMany("UsuarioRolesSubAreas")
+                        .HasForeignKey("RolId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.SubArea", "SubArea")
+                        .WithMany("UsuarioRolesSubAreas")
+                        .HasForeignKey("SubAreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId");
+
+                    b.Navigation("Rol");
+
+                    b.Navigation("SubArea");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("SiaesLibraryShared.Models.Establecimiento", b =>
                 {
+                    b.Navigation("UsuarioEstablecimientoPerfiles");
+
                     b.Navigation("UsuarioEstablecimientos");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Perfil", b =>
                 {
+                    b.Navigation("UsuarioEstablecimientoPerfiles");
+
                     b.Navigation("UsuarioPerfiles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.Rol", b =>
+                {
+                    b.Navigation("UsuarioRolesSubAreas");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.SubArea", b =>
+                {
+                    b.Navigation("UsuarioRolesSubAreas");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
                 {
+                    b.Navigation("UsuarioEstablecimientoPerfiles");
+
                     b.Navigation("UsuarioEstablecimientos");
 
                     b.Navigation("UsuarioPerfiles");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
+                {
+                    b.Navigation("UsuarioEstablecimientoPerfiles");
                 });
 #pragma warning restore 612, 618
         }

@@ -10,6 +10,7 @@ namespace SiaesCliente.Pages.Autenticacion
     public partial class Registro
     {
 
+    
 
         private Usuario usuarioParaRegistro = new Usuario();
         public bool EstaProcesando { get; set; } = false;
@@ -49,15 +50,18 @@ namespace SiaesCliente.Pages.Autenticacion
             var result = await servicioAutenticacion.RegistrarUsuarioAPI(usuarioParaRegistroAPI);
             if (result.registroCorrecto)
             {
+
                 EstaProcesando = false;
-                navigationManager.NavigateTo("/acceder");
-         
+                LimpiarFormulario();
+
+
             }
             else
             {
                 EstaProcesando = false;
                 Errores = result.Errores!;
                 MostrarErroresRegistro = true;
+               
             }
         }
 
@@ -74,7 +78,18 @@ namespace SiaesCliente.Pages.Autenticacion
 
 
 
-
+        private void LimpiarFormulario()
+        {
+            usuarioParaRegistro.NombreUsuario = string.Empty;
+            usuarioParaRegistro.Nombre = string.Empty;
+            usuarioParaRegistro.Apellidos = string.Empty;
+            usuarioParaRegistro.Correo = string.Empty;
+            usuarioParaRegistro.CodEstablecimiento = 0;
+            usuarioParaRegistro.Clave = string.Empty;
+            usuarioParaRegistro.Perfil = 3; // Valor predeterminado para "Usuario"
+            usuarioParaRegistro.Estado = 1; // Valor predeterminado para "Activo"
+            usuarioParaRegistro.FechaCaducidad = DateTime.Now;
+        }
 
     }
 

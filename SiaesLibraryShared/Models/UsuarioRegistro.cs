@@ -25,18 +25,21 @@ namespace SiaesLibraryShared.Models
         public string Correo { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El codigo es obligatorio")]
+        [RegularExpression(@"^\d{1,4}$", ErrorMessage = "El CodEstablecimiento debe contener como máximo 4 dígitos")]
         public int CodEstablecimiento { get; set; }
 
         [Required(ErrorMessage = "La clave es requerida")]
         public string Clave { get; set; } = string.Empty;
-        public int Perfil { get; set; } 
-        public int Estado { get; set; } 
+
+        public int Perfil { get; set; }
+
+        public int Estado { get; set; }
+
         public DateTime FechaCaducidad { get; set; } = DateTime.Now;
+
         public string? UsuarioCreacion { get; set; } = string.Empty;
 
-        public string? UsuarioModificacion { get; set; } = string.Empty;
         public DateTime? FechaCreacion { get; set; } = DateTime.Now;
-        public DateTime? FechaActualizacion { get; set; } = DateTime.Now;
 
     }
 }
