@@ -7,7 +7,22 @@
             <RadzenSidebarToggle Click="@(() => sidebarExpanded = !sidebarExpanded)" />
             <RadzenMenu>
                 <RadzenMenuItem Text="SIAES" Path="/inicio" Icon="home"></RadzenMenuItem>
-                <!-- Otros elementos del menú -->
+                <RadzenMenuItem Text="Registrar" Icon="payment">
+                    <RadzenMenuItem Text="Cuadros" Path="checkbox" Icon="assignment"></RadzenMenuItem>
+                </RadzenMenuItem>
+                <RadzenMenuItem Text="Reportes" Icon="save">
+                    <RadzenMenuItem Text="Reportes" Path="datagrid" Icon="assessment"></RadzenMenuItem>
+                    <RadzenMenuItem Text="Mostrar Cuadros" Path="datalist" Icon="assignment_late"></RadzenMenuItem>
+                    <RadzenMenuItem Text="Listar Cuadros" Path="dropdown" Icon="assignment_turned_in"></RadzenMenuItem>
+                </RadzenMenuItem>
+                <RadzenMenuItem Text="Configuración" Icon="build">
+                    <RadzenMenuItem Text="Cambiar contraseña" Path="panel" Icon="https"></RadzenMenuItem>
+                </RadzenMenuItem>
+                <RadzenMenuItem Text="Documentación" Icon="chrome_reader_mode">
+                    <RadzenMenuItem Text="Resumen cuadro por encargado" Path="tabs" Icon="note_add"></RadzenMenuItem>
+                    <RadzenMenuItem Text="Soporte al cliente" Path="tabs" Icon="pageview"></RadzenMenuItem>
+                    <RadzenMenuItem Text="Manual de usuarios" Path="panel" Icon="offline_pin"></RadzenMenuItem>
+                </RadzenMenuItem>
                 <AuthorizeView>
                     <Authorized>
                         @if (Perfil == 1 || Perfil == 2)
@@ -15,6 +30,7 @@
                             <RadzenMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
                                 <RadzenMenuItem Text="Registrar usuario" Path="/registrarUsuario" Icon="face"></RadzenMenuItem>
                                 <RadzenMenuItem Text="Asociar usuario" Path="/asociarUsuario" Icon="hourglass_full"></RadzenMenuItem>
+                                <RadzenMenuItem Text="Registrar Usuario Informe" Path="/registrarUsuarioInforme" Icon="assessment"></RadzenMenuItem>
                             </RadzenMenuItem>
                         }
                     </Authorized>
@@ -61,6 +77,7 @@
                         <RadzenPanelMenuItem Text="Mantenimiento" Icon="assignment_turned_in">
                             <RadzenPanelMenuItem Text="Registrar usuario" Path="/registrarUsuario" Icon="face"></RadzenPanelMenuItem>
                             <RadzenPanelMenuItem Text="Asociar usuario" Path="/asociarUsuario" Icon="hourglass_full"></RadzenPanelMenuItem>
+                            <RadzenPanelMenuItem Text="Registrar Usuario Informe" Path="/registrarUsuarioInforme" Icon="assessment"></RadzenPanelMenuItem>
                         </RadzenPanelMenuItem>
                     }
                 </Authorized>

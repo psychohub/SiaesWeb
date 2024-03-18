@@ -47,12 +47,13 @@ namespace SiaesCliente.Pages.Autenticacion
                 UrlRetorno = parametroQuery["returnUrl"];
 
                 var perfil = result.Perfil;
-                var nombreUsuario = result.Usuario;
+                var nombreUsuario = result.NombreUsuario;
                 var unidad = result.CodEstablecimiento;
     
 
                 await _localStorage.SetItemAsync("perfil", perfil);
                 await _localStorage.SetItemAsync("nombreUsuario", nombreUsuario);
+                Console.WriteLine($"Nombre de usuario almacenado: {nombreUsuario}");
                 await _localStorage.SetItemAsync("unidad", unidad);
 
                 if (string.IsNullOrEmpty(UrlRetorno))

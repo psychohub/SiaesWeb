@@ -1,0 +1,41 @@
+﻿@page "/registroUsuarioInforme"
+
+
+<h3>Registro de Usuario Informe</h3>
+
+
+
+<div>
+    <label>Nombre de usuario:</label>
+    <input type="text" @bind-value="nombreUsuario" />
+</div>
+
+<div>
+    <label>Código de establecimiento:</label>
+    <input type="number" @bind-value="codEstablecimiento" />
+</div>
+
+<div>
+    <label>Informes disponibles:</label>
+    <select multiple>
+        @foreach (var informe in informesDisponibles)
+        {
+            <option value="@informe">@informe</option>
+        }
+    </select>
+</div>
+
+<div>
+    <label>Informes asociados:</label>
+    <select multiple>
+        @foreach (var informe in informesAsociados)
+        {
+            <option value="@informe">@informe</option>
+        }
+    </select>
+</div>
+
+
+@code {
+
+}

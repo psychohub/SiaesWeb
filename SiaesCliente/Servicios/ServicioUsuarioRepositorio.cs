@@ -6,6 +6,7 @@ using SiaesCliente.Helpers;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
 using System.Net;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 
@@ -29,6 +30,19 @@ namespace SiaesCliente.Servicios
 
         public async Task<AsociarUsuarioResponse> ActualizarUsuario(Usuario usuario)
         {
+            // Obtener el token de autenticación desde el almacenamiento local
+            var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
+
+            // Verificar si el token está disponible
+            // Verificar si el token está disponible
+            if (string.IsNullOrEmpty(token))
+            {
+                // Lanzar una excepción con el mensaje de error
+                throw new Exception("No se encontró el token de autenticación");
+            }
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _cliente.PutAsJsonAsync($"{Inicializar.UrlBaseApi}api/siaes/asociar", usuario);
 
             try
@@ -50,14 +64,14 @@ namespace SiaesCliente.Servicios
             {
                 // Manejar errores de la solicitud HTTP
                 var errorMessage = await response.Content.ReadAsStringAsync();
-                // Registrar el error o realizar otras acciones necesarias
+
                 throw new Exception($"Error al actualizar el usuario: {errorMessage}", ex);
             }
             catch (JsonException ex)
             {
                 // Manejar errores de deserialización JSON
                 var errorMessage = await response.Content.ReadAsStringAsync();
-                // Registrar el error o realizar otras acciones necesarias
+
                 throw new Exception($"Error al deserializar la respuesta JSON: {errorMessage}", ex);
             }
             catch (Exception ex)

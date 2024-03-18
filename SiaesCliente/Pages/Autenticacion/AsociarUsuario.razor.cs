@@ -34,8 +34,10 @@ namespace SiaesCliente.Pages.Autenticacion
 
         public async Task GuardarAsociacion()
         {
-            // Verificar si el usuario existe
-            var usuario = await servicioUsuarioRepositorio.GetUsuarioByNombreUsuario(asociarUsuarioModel.NombreUsuario);
+            try
+            {
+                // Verificar si el usuario existe
+                var usuario = await servicioUsuarioRepositorio.GetUsuarioByNombreUsuario(asociarUsuarioModel.NombreUsuario);
             if (usuario == null)
             {
                 // Mostrar mensaje de que el usuario no existe
@@ -63,6 +65,12 @@ namespace SiaesCliente.Pages.Autenticacion
                 MostrarErroresRegistro = true;
 
             }
+            }
+            catch (Exception ex)
+            {
+                // Capturar y manejar la excepción
+                MostrarErroresRegistro = true;
+            }
         }
 
         public class AsociarUsuarioModel
@@ -74,9 +82,12 @@ namespace SiaesCliente.Pages.Autenticacion
 
         private void LimpiarFormulario()
         {
-            asociarUsuarioModel = new AsociarUsuarioModel();
-            MostrarErroresRegistro = false;
-            EstaProcesando = false;
+            // Limpiar el InputText "nombreUsuario"
+            asociarUsuarioModel.NombreUsuario = string.Empty;
+
+            // Restablecer los InputSelect "rol" y "subArea" a la opción predeterminada
+            asociarUsuarioModel.IdRol = 0;
+            asociarUsuarioModel.IdSubArea = 0;
         }
 
 

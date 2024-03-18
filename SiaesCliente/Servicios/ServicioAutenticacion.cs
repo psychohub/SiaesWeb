@@ -62,7 +62,14 @@ namespace SiaesCliente.Servicios
                         await _localStorage.SetItemAsync("unidad", CodEstablecimiento.Value);
                         ((AuthStateProvider)_estadoProveedorAutenticacion).NotificarUsuarioLogueado(Token);
                         _cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", Token);
-                        return new RespuestaAutenticacion { IsSuccess = true, Perfil = Perfil.Value, CodEstablecimiento = CodEstablecimiento.Value };
+                        return new RespuestaAutenticacion
+                        {
+                            IsSuccess = true,
+                            Token = Token,
+                            NombreUsuario = Usuario,
+                            Perfil = Perfil.Value,
+                            CodEstablecimiento = CodEstablecimiento.Value
+                        };
                     }
                 }
             }

@@ -33,6 +33,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Add services to the container
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ITanu, TanuRepository>();
+builder.Services.AddScoped<IIEMUsuarioInforme, IEMUsuarioInformeRepositorio>();
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 

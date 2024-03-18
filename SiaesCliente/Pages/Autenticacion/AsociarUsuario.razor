@@ -1,5 +1,5 @@
 ﻿@page "/asociarUsuario"
-
+@attribute [Authorize]
 <h3>Asociar Usuario</h3>
 
 <EditForm Model="@asociarUsuarioModel" OnValidSubmit="GuardarAsociacion" >

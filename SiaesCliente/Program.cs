@@ -21,6 +21,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<IServicioAutenticacion, ServicioAutenticacion>();
 builder.Services.AddScoped<IServicioUsuarioRepositorio, ServicioUsuarioRepositorio>();
+builder.Services.AddScoped<IServicioIEMUsuarioInforme, ServicioIEMUsuarioInforme>();
 
 //Para usar el LocalStorage
 builder.Services.AddBlazoredLocalStorage();

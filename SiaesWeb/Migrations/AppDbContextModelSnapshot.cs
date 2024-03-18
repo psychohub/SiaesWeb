@@ -17,7 +17,7 @@ namespace SiaesServer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -41,6 +41,53 @@ namespace SiaesServer.Migrations
                     b.HasIndex("UsuarioId");
 
                     b.ToTable("Establecimientos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.IEMInforme", b =>
+                {
+                    b.Property<string>("COD_INFORME")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DSC_INFORME")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Log_Activo")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Log_Activo_SACCE")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Tipo")
+                        .HasColumnType("int");
+
+                    b.HasKey("COD_INFORME");
+
+                    b.ToTable("IEMInformes");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.IEMUsuarioInforme", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("COD_INFORME")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Cod_Establecimiento")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Log_Activo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Usuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("IEMUsuariosInformes");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Model_Tanu", b =>
@@ -147,11 +194,12 @@ namespace SiaesServer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRol"));
 
                     b.Property<string>("Descripcion_Rol")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("IdRol");
 
-                    b.ToTable("Roles");
+                    b.ToTable("T_Roles", (string)null);
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.SubArea", b =>
@@ -163,11 +211,12 @@ namespace SiaesServer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSubArea"));
 
                     b.Property<string>("DescripcionSubArea")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("IdSubArea");
 
-                    b.ToTable("SubAreas");
+                    b.ToTable("T_SubArea", (string)null);
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
@@ -252,39 +301,31 @@ namespace SiaesServer.Migrations
 
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimientoPerfil", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<int>("EstablecimientoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PerfilId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("NombreUsuario")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PerfilId")
+                    b.Property<int?>("PerfilId1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UsuarioEstablecimientoEstablecimientoId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UsuarioEstablecimientoUsuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
+                    b.HasKey("UsuarioId", "EstablecimientoId", "PerfilId");
 
                     b.HasIndex("EstablecimientoId");
 
                     b.HasIndex("PerfilId");
 
-                    b.HasIndex("UsuarioId");
-
-                    b.HasIndex("UsuarioEstablecimientoUsuarioId", "UsuarioEstablecimientoEstablecimientoId");
+                    b.HasIndex("PerfilId1");
 
                     b.ToTable("UsuarioEstablecimientoPerfil");
                 });
@@ -307,10 +348,7 @@ namespace SiaesServer.Migrations
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioRolSubArea", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("RolId")
                         .HasColumnType("int");
@@ -318,14 +356,24 @@ namespace SiaesServer.Migrations
                     b.Property<int>("SubAreaId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("RolIdRol")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SubAreaIdSubArea")
+                        .HasColumnType("int");
+
                     b.Property<int?>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id", "RolId", "SubAreaId");
 
                     b.HasIndex("RolId");
 
+                    b.HasIndex("RolIdRol");
+
                     b.HasIndex("SubAreaId");
+
+                    b.HasIndex("SubAreaIdSubArea");
 
                     b.HasIndex("UsuarioId");
 
@@ -371,10 +419,14 @@ namespace SiaesServer.Migrations
                         .IsRequired();
 
                     b.HasOne("SiaesLibraryShared.Models.Perfil", "Perfil")
-                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .WithMany()
                         .HasForeignKey("PerfilId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Perfil", null)
+                        .WithMany("UsuarioEstablecimientoPerfiles")
+                        .HasForeignKey("PerfilId1");
 
                     b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
                         .WithMany("UsuarioEstablecimientoPerfiles")
@@ -384,7 +436,9 @@ namespace SiaesServer.Migrations
 
                     b.HasOne("SiaesLibraryShared.Models.UsuarioEstablecimiento", null)
                         .WithMany("UsuarioEstablecimientoPerfiles")
-                        .HasForeignKey("UsuarioEstablecimientoUsuarioId", "UsuarioEstablecimientoEstablecimientoId");
+                        .HasForeignKey("UsuarioId", "EstablecimientoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Establecimiento");
 
@@ -415,16 +469,24 @@ namespace SiaesServer.Migrations
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioRolSubArea", b =>
                 {
                     b.HasOne("SiaesLibraryShared.Models.Rol", "Rol")
-                        .WithMany("UsuarioRolesSubAreas")
+                        .WithMany()
                         .HasForeignKey("RolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SiaesLibraryShared.Models.SubArea", "SubArea")
+                    b.HasOne("SiaesLibraryShared.Models.Rol", null)
                         .WithMany("UsuarioRolesSubAreas")
+                        .HasForeignKey("RolIdRol");
+
+                    b.HasOne("SiaesLibraryShared.Models.SubArea", "SubArea")
+                        .WithMany()
                         .HasForeignKey("SubAreaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.SubArea", null)
+                        .WithMany("UsuarioRolesSubAreas")
+                        .HasForeignKey("SubAreaIdSubArea");
 
                     b.HasOne("SiaesLibraryShared.Models.Usuario", "Usuario")
                         .WithMany()

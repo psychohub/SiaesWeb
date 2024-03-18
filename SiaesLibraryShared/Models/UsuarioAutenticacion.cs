@@ -10,7 +10,7 @@ namespace SiaesLibraryShared.Models
     public class UsuarioAutenticacion
     {
         [Required(ErrorMessage = "El usuario es obligatorio")]
-        public string NombreUsuario { get; set; } = string.Empty;
+        public string NombreUsuario { get; set; }
         public int? CodEstablecimiento { get; set; }
 
         [Required(ErrorMessage = "La clave es obligatoria")]

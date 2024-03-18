@@ -24,6 +24,11 @@ namespace SiaesServer.Data
         public DbSet<SubArea> SubAreas { get; set; }
         public DbSet<UsuarioRolSubArea> UsuarioRolesSubAreas { get; set; }
 
+        public DbSet<IEMInforme> IEMInformes { get; set; }
+        public DbSet<IEMUsuarioInforme> IEMUsuariosInformes { get; set; }
+
+    
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

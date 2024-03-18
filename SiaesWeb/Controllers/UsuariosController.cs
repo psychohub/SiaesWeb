@@ -140,7 +140,9 @@ namespace SiaesServer.Controllers
             return Ok(subAreas);
         }
 
+
         // Método para asociar un usuario con un rol y una subárea
+        [Authorize]
         [HttpPut("asociar")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -176,6 +178,7 @@ namespace SiaesServer.Controllers
             return Ok(_respuestasAPI);
         }
 
+        [Authorize]
         [HttpGet("nombreUsuario/{nombreUsuario}")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
