@@ -1,3 +1,10 @@
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.csproj.AssemblyReference.cache
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfoInputs.cache
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfo.cs
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.csproj.CoreCompileInputs.cache
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.sourcelink.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesCliente.staticwebassets.runtime.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\appsettings.json
@@ -164,13 +171,6 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesLibraryShared.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesCliente.pdb
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesLibraryShared.pdb
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.csproj.AssemblyReference.cache
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfoInputs.cache
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfo.cs
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.csproj.CoreCompileInputs.cache
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.sourcelink.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\staticwebassets\msbuild.SiaesServer.Microsoft.AspNetCore.StaticWebAssets.props

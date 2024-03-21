@@ -8,6 +8,7 @@ using SiaesServer.Data;
 using SiaesServer.Mappers;
 using SiaesServer.Repositories;
 using SiaesServer.Repositories.IRepositories;
+using SiaesServer.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,9 +32,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 //end
 
 // Add services to the container
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ITanu, TanuRepository>();
 builder.Services.AddScoped<IIEMUsuarioInforme, IEMUsuarioInformeRepositorio>();
+
+
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 

@@ -13,6 +13,8 @@ namespace SiaesServer.Mappers
             CreateMap<Perfil, PerfilDTO>().ReverseMap();
             CreateMap<UsuarioEstablecimiento, UsuarioEstablecimientoDTO>().ReverseMap();
             CreateMap<UsuarioPerfil, UsuarioPerfilDTO>().ReverseMap();
+            CreateMap<IEMInforme, IEMInformeDTO>().ReverseMap();
+            CreateMap<IEMUsuarioInforme, IEMUsuarioInformeDTO>().ReverseMap();
         }
     }
 }

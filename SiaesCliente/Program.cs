@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SiaesCliente;
 using SiaesCliente.Servicios;
 using SiaesLibraryShared.Contracts;
+using SiaesLibraryShared.Models;
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

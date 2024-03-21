@@ -1,41 +1,82 @@
 ﻿@page "/registroUsuarioInforme"
 
+<h3>Asociar Usuario a Informe</h3>
 
-<h3>Registro de Usuario Informe</h3>
+<EditForm Model="@model" OnValidSubmit="RegistrarUsuarioInforme" class="pt-4">
+    <DataAnnotationsValidator />
+    <div class="py-4">
+        <div class=" row form-group ">
+            <div class="col-6 offset-3 ">
+                <div class="card border">
+                    <div class="card-body px-lg-5 pt-4">
+                        <h3 class="col-12 text-success text-center py-2">
+                            <strong>Registrar Usuario</strong>
+                        </h3>
+                        @if (MostrarErroresRegistro)
+                        {
+                            <div>
+                                @foreach (var error in Errores)
+                                {
+                                    <p class="text-danger text-center">@error</p>
+                                }
+                            </div>
+                        }
+                        <hr style="background-color:aliceblue" />
+                        <div class="form-group">
+                            <label for="usuario">Usuario:</label>
+                            <InputText id="usuario" class="form-control" @bind-Value="@model.NombreUsuario" />
+                        </div>
+                        <div class="form-group">
+                            <label for="establecimiento">Establecimiento:</label>
+                            <InputNumber id="establecimiento" class="form-control" @bind-Value="@model.CodEstablecimiento" />
+                        </div>
+                        <hr style="background-color:aliceblue" />
+                        <div class="py-2">
+                            @if (EstaProcesando)
+                            {
+                                <button type="submit" class="btn btn-success btn-block disabled"><i class="fas fa-sign-in-alt"></i> Por favor espere...</button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Buscar</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
 
-
-
-<div>
-    <label>Nombre de usuario:</label>
-    <input type="text" @bind-value="nombreUsuario" />
-</div>
-
-<div>
-    <label>Código de establecimiento:</label>
-    <input type="number" @bind-value="codEstablecimiento" />
-</div>
-
-<div>
-    <label>Informes disponibles:</label>
-    <select multiple>
-        @foreach (var informe in informesDisponibles)
-        {
-            <option value="@informe">@informe</option>
-        }
-    </select>
-</div>
-
-<div>
-    <label>Informes asociados:</label>
-    <select multiple>
-        @foreach (var informe in informesAsociados)
-        {
-            <option value="@informe">@informe</option>
-        }
-    </select>
-</div>
-
-
-@code {
-
+@if (model.InformesAsociados.Any() || model.InformesDisponibles.Any())
+{
+    <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4">¡Informes!</h1>
+    </div>
+    <div class="container">
+        <div class="OuterMostClass row">
+            <div class="outerClass col-xs-6">
+                <select size="10" multiple>
+                    @foreach (var informe in model.InformesDisponibles)
+                    {
+                        <option value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                    }
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button type="button" class="btn btn-success btn-sm" @onclick="@(() => AsociarInforme(null))">Asignar &gt;&gt;</button>
+                    <button type="button" class="btn btn-danger btn-sm" @onclick="@(() => DesasociarInforme(null))">&lt;&lt; Quitar</button>
+                </div>
+            </div>
+            <div class="outerClass2 col-xs-6">
+                <select size="10" multiple>
+                    @foreach (var informe in model.InformesAsociados)
+                    {
+                        <option value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
 }

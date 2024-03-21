@@ -115,6 +115,11 @@ namespace SiaesServer.Data
                 .WithMany()
                 .HasForeignKey(urs => urs.SubAreaId);
 
+            modelBuilder.Entity<IEMUsuarioInforme>()
+                .HasOne(ui => ui.Informe)
+                .WithMany()
+                .HasForeignKey(ui => ui.COD_INFORME);
+
         }
 
     }

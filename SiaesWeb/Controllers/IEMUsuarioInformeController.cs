@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Radzen.Blazor.Rendering;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
+using SiaesLibraryShared.Models.Dtos;
+using SiaesServer.Repositories.IRepositories;
 using System.Net;
 
 namespace SiaesServer.Controllers
@@ -11,34 +14,36 @@ namespace SiaesServer.Controllers
     [ApiController]
     public class IEMUsuarioInformeController : ControllerBase
     {
-        private readonly IServicioIEMUsuarioInforme _servicioIEMUsuarioInforme;
+        private readonly IIEMUsuarioInforme _usRepo;
         protected RespuestasAPI _respuestasAPI;
         private readonly IMapper _mapper;
 
-        public IEMUsuarioInformeController(IServicioIEMUsuarioInforme servicioIEMUsuarioInforme, IMapper mapper)
+        public IEMUsuarioInformeController(IIEMUsuarioInforme usRepo, IMapper mapper)
         {
-            _servicioIEMUsuarioInforme = servicioIEMUsuarioInforme;
+            _usRepo = usRepo;
             _mapper = mapper;
             this._respuestasAPI = new();
         }
 
-        [HttpGet("informes/{nombreUsuario}/{codEstablecimiento}")]
+        [Authorize]
+        [HttpGet("informes")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<IEMUsuarioInforme>>> GetInformesAsociados(string nombreUsuario, int codEstablecimiento)
+        public async Task<ActionResult<IEnumerable<IEMInforme>>> ObtenerTodosLosInformes()
         {
-            var informesAsociados = await _servicioIEMUsuarioInforme.ObtenerInformesAsociados(nombreUsuario, codEstablecimiento);
-            return Ok(informesAsociados);
+            var informesTotales = await _usRepo.ObtenerTodosLosInformes();
+            return Ok(informesTotales);
         }
 
+        [Authorize]
         [HttpPost("asociar/{nombreUsuario}/{codEstablecimiento}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> AsociarInformes(string nombreUsuario, int codEstablecimiento, [FromBody] List<string> codigosInforme)
         {
-            var resultado = await _servicioIEMUsuarioInforme.AsociarInformes(nombreUsuario, codEstablecimiento, codigosInforme);
+            var resultado = await _usRepo.AsociarInformes(nombreUsuario, codEstablecimiento, codigosInforme);
             if (resultado)
             {
                 return Ok();
@@ -52,13 +57,14 @@ namespace SiaesServer.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("desasociar/{nombreUsuario}/{codEstablecimiento}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DesasociarInformes(string nombreUsuario, int codEstablecimiento, [FromBody] List<string> codigosInforme)
         {
-            var resultado = await _servicioIEMUsuarioInforme.DesasociarInformes(nombreUsuario, codEstablecimiento, codigosInforme);
+            var resultado = await _usRepo.DesasociarInformes(nombreUsuario, codEstablecimiento, codigosInforme);
             if (resultado)
             {
                 return Ok();
@@ -70,6 +76,28 @@ namespace SiaesServer.Controllers
                 _respuestasAPI.ErrorsMessages.Add("Error al desasociar informes");
                 return BadRequest(_respuestasAPI);
             }
+        }
+
+        [Authorize]
+        [HttpGet("informes/disponibles/{nombreUsuario}/{codEstablecimiento}")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<IEMInforme>>> ObtenerInformesDisponibles(string nombreUsuario, int codEstablecimiento)
+        {
+            var informesDisponibles = await _usRepo.ObtenerInformesDisponibles(nombreUsuario, codEstablecimiento);
+            return Ok(informesDisponibles);
+        }
+
+        [Authorize]
+        [HttpGet("informes/asociados/{nombreUsuario}/{codEstablecimiento}")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<IEMInforme>>> ObtenerInformesAsociados(string nombreUsuario, int codEstablecimiento)
+        {
+            var informesDisponibles = await _usRepo.ObtenerInformesAsociados(nombreUsuario, codEstablecimiento);
+            return Ok(informesDisponibles);
         }
     }
 }

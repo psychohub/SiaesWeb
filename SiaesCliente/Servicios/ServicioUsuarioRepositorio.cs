@@ -33,7 +33,7 @@ namespace SiaesCliente.Servicios
             // Obtener el token de autenticación desde el almacenamiento local
             var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
 
-            // Verificar si el token está disponible
+
             // Verificar si el token está disponible
             if (string.IsNullOrEmpty(token))
             {

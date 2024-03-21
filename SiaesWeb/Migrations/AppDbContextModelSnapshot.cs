@@ -79,6 +79,9 @@ namespace SiaesServer.Migrations
                     b.Property<int?>("Cod_Establecimiento")
                         .HasColumnType("int");
 
+                    b.Property<string>("InformeCOD_INFORME")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int?>("Log_Activo")
                         .HasColumnType("int");
 
@@ -86,6 +89,8 @@ namespace SiaesServer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("InformeCOD_INFORME");
 
                     b.ToTable("IEMUsuariosInformes");
                 });
@@ -389,6 +394,15 @@ namespace SiaesServer.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.IEMUsuarioInforme", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.IEMInforme", "Informe")
+                        .WithMany()
+                        .HasForeignKey("InformeCOD_INFORME");
+
+                    b.Navigation("Informe");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
