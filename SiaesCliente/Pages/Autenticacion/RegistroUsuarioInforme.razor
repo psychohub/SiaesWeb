@@ -1,5 +1,7 @@
 ﻿@page "/registroUsuarioInforme"
 
+
+
 <h3>Asociar Usuario a Informe</h3>
 
 <EditForm Model="@model" OnValidSubmit="RegistrarUsuarioInforme" class="pt-4">
@@ -48,32 +50,34 @@
     </div>
 </EditForm>
 
-@if (model.InformesAsociados.Any() || model.InformesDisponibles.Any())
+@if (model.TodosLosInformes.Any())
 {
     <div class="text-center">
         <h1 class="h4 text-gray-900 mb-4">¡Informes!</h1>
     </div>
+
     <div class="container">
-        <div class="OuterMostClass row">
-            <div class="outerClass col-xs-6">
-                <select size="10" multiple>
+        <div class="row">
+            <div class="col-md-5">
+                <h5>Informes Disponibles</h5>
+                <select size="10" class="form-control" @bind="@model.InformesDisponiblesSeleccionados">
                     @foreach (var informe in model.InformesDisponibles)
                     {
-                        <option value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                        <option  value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
                     }
                 </select>
             </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <button type="button" class="btn btn-success btn-sm" @onclick="@(() => AsociarInforme(null))">Asignar &gt;&gt;</button>
-                    <button type="button" class="btn btn-danger btn-sm" @onclick="@(() => DesasociarInforme(null))">&lt;&lt; Quitar</button>
-                </div>
+            <div class="col-md-2 text-center">
+                <button type="button" class="btn btn-success btn-sm" @onclick="AsociarInforme" @onclick:stopPropagation="true">Asignar &gt;&gt;</button>
+                <br/>
+                <button type="button" class="btn btn-danger btn-sm" @onclick="DesasociarInforme" @onclick:stopPropagation="true">&lt;&lt; Quitar</button>
             </div>
-            <div class="outerClass2 col-xs-6">
-                <select size="10" multiple>
+            <div class="col-md-5">
+                <h5>Informes Asociados</h5>
+                <select size="10" class="form-control" @bind="@model.InformesAsociadosSeleccionados">
                     @foreach (var informe in model.InformesAsociados)
                     {
-                        <option value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                        <option type="button" value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
                     }
                 </select>
             </div>

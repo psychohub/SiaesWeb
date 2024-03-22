@@ -1,6 +1,7 @@
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\bin\Debug\net8.0\SiaesLibraryShared.deps.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\bin\Debug\net8.0\SiaesLibraryShared.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\bin\Debug\net8.0\SiaesLibraryShared.pdb
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.csproj.AssemblyReference.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.AssemblyInfoInputs.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesLibraryShared\obj\Debug\net8.0\SiaesLibraryShared.AssemblyInfo.cs

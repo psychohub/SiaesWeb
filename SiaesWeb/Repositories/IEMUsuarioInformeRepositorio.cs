@@ -94,35 +94,44 @@ namespace SiaesServer.Repositories
     return false;
 }
 
+        public async Task<IEMInforme> ObtenerInformePorCodigo(string codigoInforme)
+        {
+            var informe = await _bd.IEMInformes
+        .FirstOrDefaultAsync(i => i.Log_Activo == 1 && i.Tipo == 1 && i.COD_INFORME == codigoInforme);
+
+            return informe;
+        }
+
         public async Task<List<IEMUsuarioInforme>> ObtenerInformesAsociados(string nombreUsuario, int codEstablecimiento)
         {
-            return await _bd.IEMUsuariosInformes
-        .Where(i => i.Usuario == nombreUsuario && i.Cod_Establecimiento == codEstablecimiento)
-        .Include(i => i.Informe) 
-        .ToListAsync();
+            var informesAsociados = await _bd.IEMUsuariosInformes
+          .Where(i => i.Usuario == nombreUsuario && i.Cod_Establecimiento == codEstablecimiento)
+          .ToListAsync();
+
+            return informesAsociados;
         }
 
         public async Task<IEnumerable<IEMInforme>> ObtenerInformesDisponibles(string nombreUsuario, int codEstablecimiento)
         {
-            var informesTotales = await _bd.IEMInformes
-         .Where(i => i.Log_Activo == 1 && i.Tipo == 1)
-         .ToListAsync();
-
-            var informesAsociados = await _bd.IEMUsuariosInformes
-                .Where(i => i.Usuario == nombreUsuario && i.Cod_Establecimiento == codEstablecimiento)
-                .Select(i => i.Informe)
-                .ToListAsync();
-
-            var informesDisponibles = informesTotales.Except(informesAsociados);
+            var informesDisponibles = await _bd.IEMInformes
+       .Where(i => !_bd.IEMUsuariosInformes
+           .Where(ui => ui.Usuario == nombreUsuario && ui.Cod_Establecimiento == codEstablecimiento)
+           .Select(ui => ui.COD_INFORME)
+           .Contains(i.COD_INFORME))
+       .ToListAsync();
 
             return informesDisponibles;
         }
 
+ 
+
+ 
         public async Task<IEnumerable<IEMInforme>> ObtenerTodosLosInformes()
         {
-            return await _bd.IEMInformes
-              .Where(i => i.Log_Activo == 1 && i.Tipo == 1)
+            var informesCodigo = await _bd.IEMInformes
+             .Where(i => i.Log_Activo == 1 && i.Tipo == 1 )
               .ToListAsync();
+            return informesCodigo;
         }
     }
 }

@@ -3,6 +3,7 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfoInputs.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.AssemblyInfo.cs
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.csproj.CoreCompileInputs.cache
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.sourcelink.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SiaesCliente.staticwebassets.runtime.json

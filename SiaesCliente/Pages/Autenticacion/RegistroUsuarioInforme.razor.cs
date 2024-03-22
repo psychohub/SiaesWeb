@@ -1,21 +1,16 @@
 ﻿using Microsoft.AspNetCore.Components;
-using SiaesCliente.Servicios;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
-using System.Reflection;
 
 namespace SiaesCliente.Pages.Autenticacion
 {
     public partial class RegistroUsuarioInforme : ComponentBase
     {
-        private string nombreUsuario = string.Empty;
-        private int? codEstablecimiento;
-        private bool EstaProcesando = false;
-        private bool MostrarErroresRegistro = false;
-        private List<string> Errores = new List<string>();
-        private List<IEMInforme> informesDisponibles = new List<IEMInforme>();
-        private List<IEMInforme> informesAsociados = new List<IEMInforme>();
-        private IEMUsuarioInforme usuarioInforme = new IEMUsuarioInforme();
+      
+        private bool EstaProcesando { get; set; }
+        private bool MostrarErroresRegistro { get; set; }
+        private List<string> Errores { get; set; } = new List<string>();
+
 
         [Inject] private IServicioIEMUsuarioInforme servicioIEMUsuarioInforme { get; set; }
 
@@ -30,34 +25,33 @@ namespace SiaesCliente.Pages.Autenticacion
         {
             if (!string.IsNullOrEmpty(model.NombreUsuario) && model.CodEstablecimiento > 0)
             {
-                var informesAsociadosUsuario = await servicioIEMUsuarioInforme.ObtenerInformesAsociados(model.NombreUsuario, model.CodEstablecimiento);
-                model.InformesAsociados = informesAsociadosUsuario.Select(x => x.Informe).ToList();
+                model.InformesAsociados = await servicioIEMUsuarioInforme.ObtenerInformesAsociados(model.NombreUsuario, model.CodEstablecimiento);
+                model.InformesDisponibles = (List<IEMInforme>)await servicioIEMUsuarioInforme.ObtenerInformesDisponibles(model.NombreUsuario, model.CodEstablecimiento);
+
+                var todosLosInformes = await servicioIEMUsuarioInforme.ObtenerTodosLosInformes();
+                model.TodosLosInformes = todosLosInformes.ToDictionary(i => i.COD_INFORME, i => i.DSC_INFORME);
             }
         }
 
-        private async Task AsociarInforme(IEMInforme informe)
+        private async Task AsociarInforme()
         {
-            if (informe != null)
+            var codigosInforme = new List<string> { model.InformesDisponiblesSeleccionados };
+            var resultado = await servicioIEMUsuarioInforme.AsociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
+            if (resultado)
             {
-                var resultado = await servicioIEMUsuarioInforme.AsociarInformes(model.NombreUsuario, model.CodEstablecimiento, new List<string> { informe.COD_INFORME });
-                if (resultado)
-                {
-                    await CargarInformesAsociados();
-                    model.InformesDisponibles = (await servicioIEMUsuarioInforme.ObtenerInformesDisponibles(model.NombreUsuario, model.CodEstablecimiento)).ToList();
-                }
+                await CargarInformesAsociados();
+                model.InformesDisponiblesSeleccionados = string.Empty;
             }
         }
 
-        private async Task DesasociarInforme(IEMInforme informe)
+        private async Task DesasociarInforme()
         {
-            if (informe != null)
+            var codigosInforme = new List<string> { model.InformesAsociadosSeleccionados };
+            var resultado = await servicioIEMUsuarioInforme.DesasociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
+            if (resultado)
             {
-                var resultado = await servicioIEMUsuarioInforme.DesasociarInformes(model.NombreUsuario, model.CodEstablecimiento, new List<string> { informe.COD_INFORME });
-                if (resultado)
-                {
-                    await CargarInformesAsociados();
-                    model.InformesDisponibles = (await servicioIEMUsuarioInforme.ObtenerInformesDisponibles(model.NombreUsuario, model.CodEstablecimiento)).ToList();
-                }
+                await CargarInformesAsociados();
+                model.InformesAsociadosSeleccionados = string.Empty;
             }
         }
 
@@ -70,7 +64,6 @@ namespace SiaesCliente.Pages.Autenticacion
             if (!string.IsNullOrEmpty(model.NombreUsuario) && model.CodEstablecimiento > 0)
             {
                 await CargarInformesAsociados();
-                model.InformesDisponibles = (await servicioIEMUsuarioInforme.ObtenerInformesDisponibles(model.NombreUsuario, model.CodEstablecimiento)).ToList();
                 EstaProcesando = false;
             }
             else
@@ -88,6 +81,9 @@ namespace SiaesCliente.Pages.Autenticacion
             public int CodEstablecimiento { get; set; }
             public List<IEMInforme> InformesAsociados { get; set; } = new List<IEMInforme>();
             public List<IEMInforme> InformesDisponibles { get; set; } = new List<IEMInforme>();
+            public string InformesDisponiblesSeleccionados { get; set; }
+            public string InformesAsociadosSeleccionados { get; set; }
+            public Dictionary<string, string> TodosLosInformes { get; set; } = new Dictionary<string, string>();
         }
     }
 }

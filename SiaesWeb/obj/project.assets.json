@@ -2235,6 +2235,9 @@
       "SiaesLibraryShared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
         "compile": {
           "bin/placeholder/SiaesLibraryShared.dll": {}
         },
@@ -6055,6 +6058,7 @@
       "Microsoft.EntityFrameworkCore >= 8.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.3",
+      "Newtonsoft.Json >= 13.0.3",
       "SiaesCliente >= 1.0.0",
       "SiaesLibraryShared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
@@ -6149,6 +6153,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.3, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

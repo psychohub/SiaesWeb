@@ -8,6 +8,7 @@ namespace SiaesServer.Repositories.IRepositories
         Task<bool> AsociarInformes(string nombreUsuario, int codEstablecimiento, List<string> codigosInforme);
         Task<bool> DesasociarInformes(string nombreUsuario, int codEstablecimiento, List<string> codigosInforme);
         Task<IEnumerable<IEMInforme>> ObtenerInformesDisponibles(string nombreUsuario, int codEstablecimiento);
+        Task<IEMInforme> ObtenerInformePorCodigo(string codigoInforme);
         Task<IEnumerable<IEMInforme>> ObtenerTodosLosInformes();
     }
 }

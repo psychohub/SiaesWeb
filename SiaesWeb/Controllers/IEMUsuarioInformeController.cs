@@ -37,6 +37,17 @@ namespace SiaesServer.Controllers
         }
 
         [Authorize]
+        [HttpGet("informes/codigo/{codigoInforme}")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEMInforme>> ObtenerInformePorCodigo(string codigoInforme)
+        {
+            var informe = await _usRepo.ObtenerInformePorCodigo(codigoInforme);
+            return Ok(informe);
+        }
+
+        [Authorize]
         [HttpPost("asociar/{nombreUsuario}/{codEstablecimiento}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

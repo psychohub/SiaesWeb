@@ -38,16 +38,8 @@ namespace SiaesServer.Services
 
         public async Task<IEnumerable<IEMInforme>> ObtenerInformesDisponibles(string nombreUsuario, int codEstablecimiento)
         {
-            // Obtener la lista de todos los informes disponibles
-            var informesTotales = await ObtenerTodosLosInformes();
-
-            // Obtener la lista de informes asociados al usuario y establecimiento
-            var informesAsociados = await ObtenerInformesAsociados(nombreUsuario, codEstablecimiento);
-
-            // Comparar ambas listas y obtener los informes disponibles (no asociados)
-            var informesDisponibles = informesTotales.Except(informesAsociados.Select(i => i.Informe));
-
-            return informesDisponibles;
+            var informesDisponibles = await _usuarioInformeRepositorio.ObtenerInformesDisponibles(nombreUsuario, codEstablecimiento);
+            return informesDisponibles.ToList();
         }
 
         public async Task<IEnumerable<IEMInforme>> ObtenerTodosLosInformes()
@@ -55,6 +47,16 @@ namespace SiaesServer.Services
             return await _usuarioInformeRepositorio.ObtenerTodosLosInformes();
 
 
+        }
+
+        Task<List<IEMInforme>> IServicioIEMUsuarioInforme.ObtenerInformesAsociados(string nombreUsuario, int codEstablecimiento)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEMInforme> ObtenerInformePorCodigo(string codigoInforme)
+        {
+            throw new NotImplementedException();
         }
     }
 }

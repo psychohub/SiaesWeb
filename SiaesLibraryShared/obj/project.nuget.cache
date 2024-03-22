@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bMB3926VOZd+LroUGPA5/SLFcQs4Yk/VbksQ0hRlNtV09LeVBVIVnHvntNdHNbZRmlJjfhvUkrWtes5ogGMd4g==",
+  "dgSpecHash": "FOcZ9iu4TKlWpFwycrzp5W8fe1Y/bgeSmBIMeQmUXXHcUhGgfhpaHBfEmt5DqrNtTmyG1nVxU2zMNPK4RlFm5w==",
   "success": true,
   "projectFilePath": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesLibraryShared\\SiaesLibraryShared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\huber\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
