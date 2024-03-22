@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using SiaesCliente.Helpers;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
 
@@ -36,22 +37,36 @@ namespace SiaesCliente.Pages.Autenticacion
         private async Task AsociarInforme()
         {
             var codigosInforme = new List<string> { model.InformesDisponiblesSeleccionados };
-            var resultado = await servicioIEMUsuarioInforme.AsociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
+            try
+            {
+                var resultado = await servicioIEMUsuarioInforme.AsociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
             if (resultado)
             {
                 await CargarInformesAsociados();
                 model.InformesDisponiblesSeleccionados = string.Empty;
+            }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger.LogError(ex);
             }
         }
 
         private async Task DesasociarInforme()
         {
             var codigosInforme = new List<string> { model.InformesAsociadosSeleccionados };
-            var resultado = await servicioIEMUsuarioInforme.DesasociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
+            try
+            {
+                var resultado = await servicioIEMUsuarioInforme.DesasociarInformes(model.NombreUsuario, model.CodEstablecimiento, codigosInforme);
             if (resultado)
             {
                 await CargarInformesAsociados();
                 model.InformesAsociadosSeleccionados = string.Empty;
+            }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogger.LogError(ex);
             }
         }
 

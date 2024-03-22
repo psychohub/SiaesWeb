@@ -63,12 +63,12 @@
                 <select size="10" class="form-control" @bind="@model.InformesDisponiblesSeleccionados">
                     @foreach (var informe in model.InformesDisponibles)
                     {
-                        <option  value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                        <option value="@informe.DSC_INFORME">@informe.DSC_INFORME</option>
                     }
                 </select>
             </div>
             <div class="col-md-2 text-center">
-                <button type="button" class="btn btn-success btn-sm" @onclick="AsociarInforme" @onclick:stopPropagation="true">Asignar &gt;&gt;</button>
+                <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 20px;" @onclick="AsociarInforme" @onclick:stopPropagation="true">Asignar &gt;&gt;</button>
                 <br/>
                 <button type="button" class="btn btn-danger btn-sm" @onclick="DesasociarInforme" @onclick:stopPropagation="true">&lt;&lt; Quitar</button>
             </div>
@@ -77,7 +77,7 @@
                 <select size="10" class="form-control" @bind="@model.InformesAsociadosSeleccionados">
                     @foreach (var informe in model.InformesAsociados)
                     {
-                        <option type="button" value="@informe.COD_INFORME">@informe.DSC_INFORME</option>
+                        <option type="button" value="@informe.DSC_INFORME">@informe.DSC_INFORME</option>
                     }
                 </select>
             </div>

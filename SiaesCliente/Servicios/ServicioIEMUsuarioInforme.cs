@@ -32,7 +32,6 @@ namespace SiaesCliente.Servicios
             // Obtener el token de autenticación desde el almacenamiento local
             var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
 
-
             // Verificar si el token está disponible
             if (string.IsNullOrEmpty(token))
             {
@@ -43,7 +42,8 @@ namespace SiaesCliente.Servicios
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _cliente.PostAsJsonAsync($"{Inicializar.UrlBaseApi}api/siaes/asociar/{nombreUsuario}/{codEstablecimiento}", codigosInforme);
-
+            response.EnsureSuccessStatusCode();
+            var contentTemp = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
             {
                 return true;
@@ -59,7 +59,6 @@ namespace SiaesCliente.Servicios
             // Obtener el token de autenticación desde el almacenamiento local
             var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
 
-
             // Verificar si el token está disponible
             if (string.IsNullOrEmpty(token))
             {
@@ -73,7 +72,7 @@ namespace SiaesCliente.Servicios
             {
                 Method = HttpMethod.Delete,
                 RequestUri = new Uri($"{Inicializar.UrlBaseApi}api/siaes/desasociar/{nombreUsuario}/{codEstablecimiento}"),
-               
+                Content = new StringContent(JsonConvert.SerializeObject(codigosInforme), Encoding.UTF8, "application/json")
             });
 
             if (response.IsSuccessStatusCode)
@@ -84,6 +83,7 @@ namespace SiaesCliente.Servicios
             {
                 return false;
             }
+
         }
 
         public async Task<IEMInforme> ObtenerInformePorCodigo(string codigoInforme)
