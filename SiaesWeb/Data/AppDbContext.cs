@@ -27,7 +27,18 @@ namespace SiaesServer.Data
         public DbSet<IEMInforme> IEMInformes { get; set; }
         public DbSet<IEMUsuarioInforme> IEMUsuariosInformes { get; set; }
 
-    
+        public DbSet<TProceso> TProcesos { get; set; }
+        public DbSet<TSubProceso> TSubProcesos { get; set; }
+        public DbSet<TActividadSustantiva> TActividadesSustantivas { get; set; }
+        public DbSet<TDetalleProceso> TDetallesProcesos { get; set; }
+        public DbSet<TDetalleProcesoSubArea> TDetallesProcesosSubAreas { get; set; }
+        public DbSet<TActividadMacro> TActividadesMacro { get; set; }
+        public DbSet<TUbicacion> TUbicaciones { get; set; }
+        public DbSet<TRegistroDiario> TRegistrosDiarios { get; set; }
+
+        public DbSet<Bitacora> Bitacora { get; set; }
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,7 +58,7 @@ namespace SiaesServer.Data
 
             modelBuilder.Entity<UsuarioEstablecimiento>()
                  .Property(ue => ue.UsuarioId)
-                .HasColumnName("UsuarioId"); 
+                .HasColumnName("UsuarioId");
 
             modelBuilder.Entity<UsuarioEstablecimiento>()
                 .Property(ue => ue.EstablecimientoId)
@@ -115,7 +126,68 @@ namespace SiaesServer.Data
                 .WithMany()
                 .HasForeignKey(urs => urs.SubAreaId);
 
-        
+            modelBuilder.Entity<TDetalleProceso>()
+            .HasOne(dp => dp.Proceso)
+            .WithMany(p => p.DetallesProcesos)
+            .HasForeignKey(dp => dp.IdProceso)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TDetalleProceso>()
+                .HasOne(dp => dp.SubProceso)
+                .WithMany(sp => sp.DetallesProcesos)
+                .HasForeignKey(dp => dp.IdSubProceso)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TDetalleProceso>()
+                .HasOne(dp => dp.ActividadSustantiva)
+                .WithMany(a => a.DetallesProcesos)
+                .HasForeignKey(dp => dp.IdActividad)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TDetalleProcesoSubArea>()
+                .HasOne(dpsa => dpsa.DetalleProceso)
+                .WithMany(dp => dp.DetallesProcesosSubAreas)
+                .HasForeignKey(dpsa => dpsa.IdDetalleProceso)
+                .OnDelete(DeleteBehavior.Restrict);
+
+           modelBuilder.Entity<TDetalleProcesoSubArea>()
+                 .HasOne(dpsa => dpsa.SubArea)
+                 .WithMany()
+                 .HasForeignKey(dpsa => dpsa.IdSubArea)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+           modelBuilder.Entity<TRegistroDiario>()
+                .HasOne<Usuario>()
+                .WithMany()
+                .HasForeignKey(rd => rd.IdFuncionario)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TRegistroDiario>()
+                .HasOne(rd => rd.DetalleProceso)
+                .WithMany(dp => dp.RegistrosDiarios)
+                .HasForeignKey(rd => rd.IdDetalleProceso)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TRegistroDiario>()
+                .HasOne(rd => rd.ActividadMacro)
+                .WithMany(am => am.RegistrosDiarios)
+                .HasForeignKey(rd => rd.IdActividadMacro)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TRegistroDiario>()
+                 .HasOne(rd => rd.SubArea)
+                 .WithMany()
+                 .HasForeignKey(rd => rd.IdSubArea)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TRegistroDiario>()
+                .HasOne(rd => rd.Ubicacion)
+                .WithMany(u => u.RegistrosDiarios)
+                .HasForeignKey(rd => rd.IdUbicacion)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Bitacora>()
+           .ToTable("Bitacora");
 
         }
 

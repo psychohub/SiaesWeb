@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SiaesCliente.Helpers;
+using SiaesCliente.Servicios;
 using SiaesLibraryShared.Contracts;
 using SiaesServer.Data;
 using SiaesServer.Mappers;
@@ -36,6 +38,8 @@ builder.Services.AddHttpClient();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<ITanu, TanuRepository>();
 builder.Services.AddScoped<IIEMUsuarioInforme, IEMUsuarioInformeRepositorio>();
+builder.Services.AddScoped<IServicioBitacora, ServicioBitacora>();
+builder.Services.AddScoped<IBitacora, BitacoraRepositorio>();
 
 
 
@@ -43,6 +47,8 @@ var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 
 //Agregar Automapper
 builder.Services.AddAutoMapper(typeof(SiaesMapper));
+
+
 
 
 
@@ -111,7 +117,9 @@ builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 }));
 
 
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

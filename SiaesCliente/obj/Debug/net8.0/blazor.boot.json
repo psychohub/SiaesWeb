@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SiaesCliente",
   "resources": {
-    "hash": "sha256-4FA4Zq7AhJqgcSpgRhWJSeFw1fA9CK7LsClLETARaGc=",
+    "hash": "sha256-9bc9tmunJP1LC2uB93/E/9QmXlN0YU3xAn0pCYn9z4s=",
     "jsModuleNative": {
       "dotnet.native.8.0.3.euzytt4eav.js": "sha256-D4sYBYmDfH/YekgYRgX959/2RG6k28sJSHmcsn+iikk="
     },
@@ -213,12 +213,12 @@
       "mscorlib.wasm": "sha256-/xjZuJwCmantx5vGyH5ZZ8keySSTeu+YHKQRJbZzcuM=",
       "netstandard.wasm": "sha256-vuFKmCGJbyv85DrzI6S1ZvCikuhIllH6hqbXIL+fUAA=",
       "System.Private.CoreLib.wasm": "sha256-SZkozEDkHEFN0VaDmhl2HOenGaqTOmHqEGkraz3Aejc=",
-      "SiaesLibraryShared.wasm": "sha256-lnkQg7eTDu30J/I8XJUE5c85J9y3zxvFG1B1NwpObe8=",
-      "SiaesCliente.wasm": "sha256-K7Rkl1tDTa5Q6oieuRAcOfcnnLe6tZ3n000k/+eY/qo="
+      "SiaesLibraryShared.wasm": "sha256-PRf4a81RdPh71bBNY4nNwX4bKMIthHbml5NnNnoZQlY=",
+      "SiaesCliente.wasm": "sha256-hMOyLXmy0SnyyVct6wWfaguY6dmdCKsSNRrU2uDrMwY="
     },
     "pdb": {
-      "SiaesLibraryShared.pdb": "sha256-w+AYrEJJLNJOY99aVyOuq+orBurxRdQn19MGCShlQ9U=",
-      "SiaesCliente.pdb": "sha256-sD7XIGIoVzWHWzO5XuUnn4zUl60cXb+0dJp29ES5nLc="
+      "SiaesLibraryShared.pdb": "sha256-/GQc4v0mXop15ALwPczNumtLFnwJf/0qlAC6v3EDJWQ=",
+      "SiaesCliente.pdb": "sha256-ZJvJt0ZKDZP/jw8hVvx10vmV10aGKkXlj5fXzu1za+M="
     }
   },
   "cacheBootResources": true,

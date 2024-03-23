@@ -1,5 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using SiaesCliente.Helpers;
 using SiaesLibraryShared.Contracts;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
@@ -29,6 +31,12 @@ namespace SiaesCliente.Pages.Autenticacion
 
         [Inject]
         private ILocalStorageService _localStorage { get; set; }
+
+        [Inject]
+        IJSRuntime JSRuntime { get; set; }
+
+        [Inject]
+        IServicioBitacora ServicioBitacora { get; set; }
         private async Task AccesoUsuario()
         {
             MostrarErroresAutenticacion = false;
@@ -55,7 +63,7 @@ namespace SiaesCliente.Pages.Autenticacion
                 await _localStorage.SetItemAsync("nombreUsuario", nombreUsuario);
                 Console.WriteLine($"Nombre de usuario almacenado: {nombreUsuario}");
                 await _localStorage.SetItemAsync("unidad", unidad);
-
+                await BitacoraHelper.RegistrarAccionEnBitacora("Acceso", 1, "Usuario", nombreUsuario, JSRuntime);
                 if (string.IsNullOrEmpty(UrlRetorno))
                 {
                     navigationManager.NavigateTo("/inicio");

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SiaesServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8747ad0c5bee5cfcfde56a9da9f718dd32be8424")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3518124b4cbf689c6b5d846d7b5abedeb92d4fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("SiaesServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SiaesServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

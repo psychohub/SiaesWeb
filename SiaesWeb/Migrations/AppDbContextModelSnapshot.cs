@@ -79,9 +79,6 @@ namespace SiaesServer.Migrations
                     b.Property<int?>("Cod_Establecimiento")
                         .HasColumnType("int");
 
-                    b.Property<string>("InformeCOD_INFORME")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int?>("Log_Activo")
                         .HasColumnType("int");
 
@@ -89,8 +86,6 @@ namespace SiaesServer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("InformeCOD_INFORME");
 
                     b.ToTable("IEMUsuariosInformes");
                 });
@@ -222,6 +217,206 @@ namespace SiaesServer.Migrations
                     b.HasKey("IdSubArea");
 
                     b.ToTable("T_SubArea", (string)null);
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TActividadMacro", b =>
+                {
+                    b.Property<int>("IdActividadMacro")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdActividadMacro"));
+
+                    b.Property<string>("DescripcionMacro")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("IdActividadMacro");
+
+                    b.ToTable("TActividadesMacro");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TActividadSustantiva", b =>
+                {
+                    b.Property<int>("IdActividad")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdActividad"));
+
+                    b.Property<string>("DescripcionActividad")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.HasKey("IdActividad");
+
+                    b.ToTable("TActividadesSustantivas");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TDetalleProceso", b =>
+                {
+                    b.Property<int>("IdDetalleProceso")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDetalleProceso"));
+
+                    b.Property<int>("IdActividad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdProceso")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSubProceso")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdDetalleProceso");
+
+                    b.HasIndex("IdActividad");
+
+                    b.HasIndex("IdProceso");
+
+                    b.HasIndex("IdSubProceso");
+
+                    b.ToTable("TDetallesProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TDetalleProcesoSubArea", b =>
+                {
+                    b.Property<int>("IdDetalleProcesoSubArea")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDetalleProcesoSubArea"));
+
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("IdDetalleProceso")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdSubArea")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdDetalleProcesoSubArea");
+
+                    b.HasIndex("IdDetalleProceso");
+
+                    b.HasIndex("IdSubArea");
+
+                    b.ToTable("TDetallesProcesosSubAreas");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TProceso", b =>
+                {
+                    b.Property<int>("IdProceso")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProceso"));
+
+                    b.Property<string>("DescripcionProceso")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("IdProceso");
+
+                    b.ToTable("TProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TRegistroDiario", b =>
+                {
+                    b.Property<int>("IdRegistro")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRegistro"));
+
+                    b.Property<DateTime>("FechaActividad")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IdActividadMacro")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdDetalleProceso")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdFuncionario")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdSubArea")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdUbicacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("JustificacionRegAtrasado")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Observacion")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<decimal>("TiempoInvertido")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("IdRegistro");
+
+                    b.HasIndex("IdActividadMacro");
+
+                    b.HasIndex("IdDetalleProceso");
+
+                    b.HasIndex("IdFuncionario");
+
+                    b.HasIndex("IdSubArea");
+
+                    b.HasIndex("IdUbicacion");
+
+                    b.ToTable("TRegistrosDiarios");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TSubProceso", b =>
+                {
+                    b.Property<int>("IdSubProceso")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdSubProceso"));
+
+                    b.Property<string>("DescripcionSubProceso")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("IdSubProceso");
+
+                    b.ToTable("TSubProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TUbicacion", b =>
+                {
+                    b.Property<int>("IdUbicacion")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUbicacion"));
+
+                    b.Property<string>("DescripcionUbicacion")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.HasKey("IdUbicacion");
+
+                    b.ToTable("TUbicaciones");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>
@@ -396,13 +591,89 @@ namespace SiaesServer.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("SiaesLibraryShared.Models.IEMUsuarioInforme", b =>
+            modelBuilder.Entity("SiaesLibraryShared.Models.TDetalleProceso", b =>
                 {
-                    b.HasOne("SiaesLibraryShared.Models.IEMInforme", "Informe")
-                        .WithMany()
-                        .HasForeignKey("InformeCOD_INFORME");
+                    b.HasOne("SiaesLibraryShared.Models.TActividadSustantiva", "ActividadSustantiva")
+                        .WithMany("DetallesProcesos")
+                        .HasForeignKey("IdActividad")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                    b.Navigation("Informe");
+                    b.HasOne("SiaesLibraryShared.Models.TProceso", "Proceso")
+                        .WithMany("DetallesProcesos")
+                        .HasForeignKey("IdProceso")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.TSubProceso", "SubProceso")
+                        .WithMany("DetallesProcesos")
+                        .HasForeignKey("IdSubProceso")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ActividadSustantiva");
+
+                    b.Navigation("Proceso");
+
+                    b.Navigation("SubProceso");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TDetalleProcesoSubArea", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.TDetalleProceso", "DetalleProceso")
+                        .WithMany("DetallesProcesosSubAreas")
+                        .HasForeignKey("IdDetalleProceso")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.SubArea", "SubArea")
+                        .WithMany()
+                        .HasForeignKey("IdSubArea")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("DetalleProceso");
+
+                    b.Navigation("SubArea");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TRegistroDiario", b =>
+                {
+                    b.HasOne("SiaesLibraryShared.Models.TActividadMacro", "ActividadMacro")
+                        .WithMany("RegistrosDiarios")
+                        .HasForeignKey("IdActividadMacro")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.TDetalleProceso", "DetalleProceso")
+                        .WithMany("RegistrosDiarios")
+                        .HasForeignKey("IdDetalleProceso")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("IdFuncionario")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SiaesLibraryShared.Models.SubArea", "SubArea")
+                        .WithMany()
+                        .HasForeignKey("IdSubArea")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiaesLibraryShared.Models.TUbicacion", "Ubicacion")
+                        .WithMany("RegistrosDiarios")
+                        .HasForeignKey("IdUbicacion")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("ActividadMacro");
+
+                    b.Navigation("DetalleProceso");
+
+                    b.Navigation("SubArea");
+
+                    b.Navigation("Ubicacion");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.UsuarioEstablecimiento", b =>
@@ -535,6 +806,38 @@ namespace SiaesServer.Migrations
             modelBuilder.Entity("SiaesLibraryShared.Models.SubArea", b =>
                 {
                     b.Navigation("UsuarioRolesSubAreas");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TActividadMacro", b =>
+                {
+                    b.Navigation("RegistrosDiarios");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TActividadSustantiva", b =>
+                {
+                    b.Navigation("DetallesProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TDetalleProceso", b =>
+                {
+                    b.Navigation("DetallesProcesosSubAreas");
+
+                    b.Navigation("RegistrosDiarios");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TProceso", b =>
+                {
+                    b.Navigation("DetallesProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TSubProceso", b =>
+                {
+                    b.Navigation("DetallesProcesos");
+                });
+
+            modelBuilder.Entity("SiaesLibraryShared.Models.TUbicacion", b =>
+                {
+                    b.Navigation("RegistrosDiarios");
                 });
 
             modelBuilder.Entity("SiaesLibraryShared.Models.Usuario", b =>

@@ -16,6 +16,8 @@ namespace SiaesCliente.Pages.Autenticacion
         public bool MostrarErroresRegistro { get; set; }
 
         public IEnumerable<string> Errores { get; set; }
+        [Inject]
+        public IServicioBitacora ServicioBitacora { get; set; }
 
         [Inject]
         public IServicioUsuarioRepositorio servicioUsuarioRepositorio { get; set; }

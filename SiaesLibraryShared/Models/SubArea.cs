@@ -14,5 +14,7 @@ namespace SiaesLibraryShared.Models
         public string DescripcionSubArea { get; set; }
    
         public List<UsuarioRolSubArea> UsuarioRolesSubAreas { get; set; }
+     
+        
     }
 }

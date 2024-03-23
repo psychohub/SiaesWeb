@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using SiaesCliente;
+using SiaesCliente.Helpers;
 using SiaesCliente.Servicios;
 using SiaesLibraryShared.Contracts;
 
@@ -24,8 +25,10 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<IServicioAutenticacion, ServicioAutenticacion>();
 builder.Services.AddScoped<IServicioUsuarioRepositorio, ServicioUsuarioRepositorio>();
 builder.Services.AddScoped<IServicioIEMUsuarioInforme, ServicioIEMUsuarioInforme>();
+builder.Services.AddScoped<IServicioBitacora, ServicioBitacoraCliente>();
 
-
+// Configurar BitacoraHelper
+BitacoraHelper.ConfigurarServicioBitacora(builder.Services);
 //Para usar el LocalStorage
 builder.Services.AddBlazoredLocalStorage();
 

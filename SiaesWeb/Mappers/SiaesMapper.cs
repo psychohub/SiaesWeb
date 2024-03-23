@@ -15,6 +15,14 @@ namespace SiaesServer.Mappers
             CreateMap<UsuarioPerfil, UsuarioPerfilDTO>().ReverseMap();
             CreateMap<IEMInforme, IEMInformeDTO>().ReverseMap();
             CreateMap<IEMUsuarioInforme, IEMUsuarioInformeDTO>().ReverseMap();
+            CreateMap<TProceso, ProcesoDTO>().ReverseMap();
+            CreateMap<TSubProceso, SubProcesoDTO>().ReverseMap();
+            CreateMap<TActividadSustantiva, ActividadSustantivaDTO>().ReverseMap();
+            CreateMap<TDetalleProceso, DetalleProcesoDTO>().ReverseMap();
+            CreateMap<TDetalleProcesoSubArea, DetalleProcesoSubAreaDTO>().ReverseMap();
+            CreateMap<TUbicacion, TUbicacionDTO>().ReverseMap();
+            CreateMap<TActividadMacro, TActividadMacroDTO>().ReverseMap();
+            CreateMap<TRegistroDiario, TRegistroDiarioDTO>().ReverseMap();
         }
     }
 }
