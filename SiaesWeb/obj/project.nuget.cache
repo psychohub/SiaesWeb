@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VW0bDjkN4FmZtl5uNb/jCTeN63NHJNsoVF4Km9aEgG9EX58TmzrGEQVy+BCIeVTZWtdD0WbbU+DKayA/FGmcbw==",
+  "dgSpecHash": "uyJDHsYhdl+21MxeQrwq1+VoWzSz1NeIB0Vtuy7qzC6wkMj7kFuZyUM+FYJB4/W6A0r1u08kuOZSrBlJ15Ejqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesWeb\\SiaesServer.csproj",
   "expectedPackageFiles": [
@@ -86,7 +86,7 @@
     "C:\\Users\\huber\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\huber\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\huber\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
-    "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\sweetalert2.1.0.0.nupkg.sha512",
+    "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\sweetalert2.1.0.1.nupkg.sha512",
     "C:\\Users\\huber\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\huber\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\huber\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

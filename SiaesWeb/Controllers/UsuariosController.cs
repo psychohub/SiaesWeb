@@ -232,5 +232,27 @@ namespace SiaesServer.Controllers
             return Ok(itemUsuarioDTO);
         }
 
+        [Authorize]
+        [HttpGet("obtenerusuarioId/{nombreUsuario}/{codEstablecimiento}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<Usuario>> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
+        {
+            var usuario = await _usRepo.ObtenerUsuarioId(nombreUsuario, codEstablecimiento);
+            if (usuario != null)
+            {
+                return Ok(usuario);
+            }
+            else
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.NotFound;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add("Usuario no encontrado");
+                return NotFound(_respuestasAPI);
+            }
+        }
+
+
     }
 }

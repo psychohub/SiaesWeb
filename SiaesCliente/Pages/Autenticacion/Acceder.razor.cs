@@ -63,7 +63,7 @@ namespace SiaesCliente.Pages.Autenticacion
                 await _localStorage.SetItemAsync("nombreUsuario", nombreUsuario);
                 Console.WriteLine($"Nombre de usuario almacenado: {nombreUsuario}");
                 await _localStorage.SetItemAsync("unidad", unidad);
-                await BitacoraHelper.RegistrarAccionEnBitacora("Acceso", 1, "Usuario", nombreUsuario, JSRuntime);
+                await BitacoraHelper.RegistrarAccionEnBitacora("Acceso al modulo principal", 1, "AccesoUsuario", nombreUsuario, JSRuntime);
                 if (string.IsNullOrEmpty(UrlRetorno))
                 {
                     navigationManager.NavigateTo("/inicio");

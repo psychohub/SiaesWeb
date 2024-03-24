@@ -27,14 +27,14 @@ namespace SiaesServer.Data
         public DbSet<IEMInforme> IEMInformes { get; set; }
         public DbSet<IEMUsuarioInforme> IEMUsuariosInformes { get; set; }
 
-        public DbSet<TProceso> TProcesos { get; set; }
-        public DbSet<TSubProceso> TSubProcesos { get; set; }
-        public DbSet<TActividadSustantiva> TActividadesSustantivas { get; set; }
-        public DbSet<TDetalleProceso> TDetallesProcesos { get; set; }
-        public DbSet<TDetalleProcesoSubArea> TDetallesProcesosSubAreas { get; set; }
-        public DbSet<TActividadMacro> TActividadesMacro { get; set; }
-        public DbSet<TUbicacion> TUbicaciones { get; set; }
-        public DbSet<TRegistroDiario> TRegistrosDiarios { get; set; }
+        public DbSet<TProceso> T_Proceso { get; set; }
+        public DbSet<TSubProceso> T_SubProceso { get; set; }
+        public DbSet<TActividadSustantiva> T_ActividadSustantiva { get; set; }
+        public DbSet<TDetalleProceso> T_DetalleProceso { get; set; }
+        public DbSet<TDetalleProcesoSubArea> T_DetalleProcesoSubArea { get; set; }
+        public DbSet<TActividadMacro> T_ActividadMacro { get; set; }
+        public DbSet<TUbicacion> T_Ubicacion { get; set; }
+        public DbSet<TRegistroDiario> T_RegistroDiario { get; set; }
 
         public DbSet<Bitacora> Bitacora { get; set; }
 
@@ -189,6 +189,11 @@ namespace SiaesServer.Data
             modelBuilder.Entity<Bitacora>()
            .ToTable("Bitacora");
 
+            modelBuilder.Entity<TRegistroDiario>()
+            .ToTable("T_RegistroDiario");
+
+            modelBuilder.Entity<TUbicacion>()
+           .ToTable("T_Ubicacion");
         }
 
     }

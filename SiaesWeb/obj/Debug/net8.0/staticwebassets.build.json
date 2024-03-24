@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0LXzdZA8eqLJHZA6ZQ3tPyLNUwEbkjFcBAK3eQlic08=",
+  "Hash": "f5kiraQzb38NnbkD8u+fL+fOLJeMjH08/ZnjpNnmiZo=",
   "Source": "SiaesServer",
   "BasePath": "_content/SiaesServer",
   "Mode": "Default",
@@ -2100,10 +2100,10 @@
       "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\radzen.blazor\\4.26.1\\staticwebassets\\Radzen.Blazor.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bootstrap4Theme.css",
       "AssetKind": "All",
@@ -2116,13 +2116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bootstrap4Theme.js",
       "AssetKind": "All",
@@ -2135,13 +2135,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bootstrap4Theme.min.css",
       "AssetKind": "All",
@@ -2154,13 +2154,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bootstrap4Theme.min.js",
       "AssetKind": "All",
@@ -2173,13 +2173,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bootstrap4Theme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bootstrap4Theme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "borderlessTheme.css",
       "AssetKind": "All",
@@ -2192,13 +2192,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "borderlessTheme.js",
       "AssetKind": "All",
@@ -2211,13 +2211,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "borderlessTheme.min.css",
       "AssetKind": "All",
@@ -2230,13 +2230,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "borderlessTheme.min.js",
       "AssetKind": "All",
@@ -2249,13 +2249,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\borderlessTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\borderlessTheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bulmaTheme.css",
       "AssetKind": "All",
@@ -2268,13 +2268,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bulmaTheme.js",
       "AssetKind": "All",
@@ -2287,13 +2287,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bulmaTheme.min.css",
       "AssetKind": "All",
@@ -2306,13 +2306,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "bulmaTheme.min.js",
       "AssetKind": "All",
@@ -2325,13 +2325,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\bulmaTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\bulmaTheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "darkTheme.css",
       "AssetKind": "All",
@@ -2344,13 +2344,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "darkTheme.js",
       "AssetKind": "All",
@@ -2363,13 +2363,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "darkTheme.min.css",
       "AssetKind": "All",
@@ -2382,13 +2382,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "darkTheme.min.js",
       "AssetKind": "All",
@@ -2401,13 +2401,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\darkTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\darkTheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "defaultTheme.css",
       "AssetKind": "All",
@@ -2420,13 +2420,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "defaultTheme.js",
       "AssetKind": "All",
@@ -2439,13 +2439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "defaultTheme.min.css",
       "AssetKind": "All",
@@ -2458,13 +2458,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "defaultTheme.min.js",
       "AssetKind": "All",
@@ -2477,13 +2477,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\defaultTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\defaultTheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "materialUITheme.css",
       "AssetKind": "All",
@@ -2496,13 +2496,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "materialUITheme.js",
       "AssetKind": "All",
@@ -2515,13 +2515,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "materialUITheme.min.css",
       "AssetKind": "All",
@@ -2534,13 +2534,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "materialUITheme.min.js",
       "AssetKind": "All",
@@ -2553,13 +2553,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\materialUITheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\materialUITheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "minimalTheme.css",
       "AssetKind": "All",
@@ -2572,13 +2572,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "minimalTheme.js",
       "AssetKind": "All",
@@ -2591,13 +2591,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "minimalTheme.min.css",
       "AssetKind": "All",
@@ -2610,13 +2610,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "minimalTheme.min.js",
       "AssetKind": "All",
@@ -2629,13 +2629,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\minimalTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\minimalTheme.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\sweetAlert2.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\sweetAlert2.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "sweetAlert2.js",
       "AssetKind": "All",
@@ -2648,13 +2648,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\sweetAlert2.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\sweetAlert2.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\sweetAlert2.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\sweetAlert2.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "sweetAlert2.min.js",
       "AssetKind": "All",
@@ -2667,13 +2667,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\sweetAlert2.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\sweetAlert2.min.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "wordpressAdminTheme.css",
       "AssetKind": "All",
@@ -2686,13 +2686,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "wordpressAdminTheme.js",
       "AssetKind": "All",
@@ -2705,13 +2705,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.js"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.min.css",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.min.css",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "wordpressAdminTheme.min.css",
       "AssetKind": "All",
@@ -2724,13 +2724,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.min.css"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.min.css"
     },
     {
-      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.min.js",
+      "Identity": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.min.js",
       "SourceId": "SweetAlert2",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\",
       "BasePath": "_content/SweetAlert2",
       "RelativePath": "wordpressAdminTheme.min.js",
       "AssetKind": "All",
@@ -2743,7 +2743,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.0\\staticwebassets\\wordpressAdminTheme.min.js"
+      "OriginalItemSpec": "C:\\Users\\huber\\.nuget\\packages\\sweetalert2\\1.0.1\\staticwebassets\\wordpressAdminTheme.min.js"
     },
     {
       "Identity": "C:\\Users\\huber\\Documents\\Source\\Proyectos\\BlazorNet8\\siaesweb\\SiaesAPISolution\\SiaesCliente\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",

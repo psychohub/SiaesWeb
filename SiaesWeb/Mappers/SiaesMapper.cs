@@ -22,6 +22,8 @@ namespace SiaesServer.Mappers
             CreateMap<TDetalleProcesoSubArea, DetalleProcesoSubAreaDTO>().ReverseMap();
             CreateMap<TUbicacion, TUbicacionDTO>().ReverseMap();
             CreateMap<TActividadMacro, TActividadMacroDTO>().ReverseMap();
+            CreateMap<RegistroDiarioCreacionDTO, TRegistroDiario>();
+            CreateMap<RegistroDiarioCreacionDTO, TRegistroDiarioDTO>();
             CreateMap<TRegistroDiario, TRegistroDiarioDTO>().ReverseMap();
         }
     }

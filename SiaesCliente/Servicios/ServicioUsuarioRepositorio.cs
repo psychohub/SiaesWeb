@@ -146,6 +146,20 @@ namespace SiaesCliente.Servicios
             }
         }
 
-     
+        public async Task<Usuario> ObtenerUsuarioId(string nombreUsuario, int  codEstablecimiento)
+        {
+            var response = await _cliente.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/obtenerusuarioId/{nombreUsuario}/{codEstablecimiento}");
+            var respuestaApi = await response.Content.ReadFromJsonAsync<RespuestasAPI>();
+
+            if (response.IsSuccessStatusCode && respuestaApi.IsSuccess)
+            {
+                return (Usuario)respuestaApi.Result;
+            }
+            else
+            {
+                throw new Exception($"Error al obtener el usuario por Id: {string.Join(", ", respuestaApi.ErrorsMessages)}");
+            }
+        }
+
     }
 }

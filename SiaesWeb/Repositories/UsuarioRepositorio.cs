@@ -31,6 +31,9 @@ namespace SiaesServer.Repositories
 
         }
 
+    
+    
+
         public ICollection<Usuario> GetUsuarios()
         {
             return  _bd.Usuario.OrderBy(c => c.Id).ToList();
@@ -257,5 +260,11 @@ namespace SiaesServer.Repositories
         {
             return await _bd.Usuario.FirstOrDefaultAsync(u => u.NombreUsuario == nombreUsuario);
         }
+
+        public async Task<Usuario?> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
+        {
+            return _bd.Usuario.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.CodEstablecimiento == codEstablecimiento);
+        }
+
     }
 }

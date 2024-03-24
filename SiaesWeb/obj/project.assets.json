@@ -1582,7 +1582,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SweetAlert2/1.0.0": {
+      "SweetAlert2/1.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Components": "8.0.0",
@@ -4893,10 +4893,10 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
-    "SweetAlert2/1.0.0": {
-      "sha512": "Q59xhVixg5MbiPt4jRLfKJZEuwlArEj41zly0fFBMucdUBkHbnQvnMdso8FvzT+fVebTw2QQJ6hIITFCZqTxQw==",
+    "SweetAlert2/1.0.1": {
+      "sha512": "p9BhxDikaRYR+kKf0rDpQUnHNn+d3h1nnujx8GYbLfa6/yjm90VACifPOWaOpN52xGxPDy1rBRi4u3M7Pezmiw==",
       "type": "package",
-      "path": "sweetalert2/1.0.0",
+      "path": "sweetalert2/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4943,7 +4943,7 @@
         "staticwebassets/wordpressAdminTheme.js",
         "staticwebassets/wordpressAdminTheme.min.css",
         "staticwebassets/wordpressAdminTheme.min.js",
-        "sweetalert2.1.0.0.nupkg.sha512",
+        "sweetalert2.1.0.1.nupkg.sha512",
         "sweetalert2.nuspec"
       ]
     },
@@ -6062,7 +6062,7 @@
       "SiaesCliente >= 1.0.0",
       "SiaesLibraryShared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
-      "SweetAlert2 >= 1.0.0",
+      "SweetAlert2 >= 1.0.1",
       "XAct.Core.PCL >= 0.0.5014"
     ]
   },
@@ -6164,7 +6164,7 @@
           },
           "SweetAlert2": {
             "target": "Package",
-            "version": "[1.0.0, )"
+            "version": "[1.0.1, )"
           },
           "XAct.Core.PCL": {
             "target": "Package",

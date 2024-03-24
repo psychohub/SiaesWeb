@@ -13,8 +13,9 @@ namespace SiaesLibraryShared.Models
         [Key]
           public int IdRegistro { get; set; }
 
-        [Required]
         public int IdFuncionario { get; set; }
+        public string NombreUsuario { get; set; }
+        public int UP { get; set; }
 
         [Required]
         public DateTime FechaActividad { get; set; }
@@ -41,6 +42,10 @@ namespace SiaesLibraryShared.Models
         public int? IdSubArea { get; set; }
 
         public int? IdUbicacion { get; set; }
+        public string UsuarioIngreso { get; set; }
+        public DateTime? FechaIngreso { get; set; }
+        public string UsuarioModificacion { get; set; }
+        public DateTime? FechaModificacion { get; set; }
 
         // Propiedades de navegación
         public virtual TDetalleProceso DetalleProceso { get; set; }

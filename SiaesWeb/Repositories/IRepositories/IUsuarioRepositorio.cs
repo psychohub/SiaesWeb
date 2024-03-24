@@ -7,6 +7,7 @@ namespace SiaesServer.Repositories.IRepositories
     {
         ICollection<Usuario> GetUsuarios();
         Usuario GetUsuario(int usuarioId);
+        Task<Usuario?> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento);
         bool IsUniqueUser(string usuario);
 
         Task<IEnumerable<Rol>> GetRoles();

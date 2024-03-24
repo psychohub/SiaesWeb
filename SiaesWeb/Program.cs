@@ -40,8 +40,11 @@ builder.Services.AddScoped<ITanu, TanuRepository>();
 builder.Services.AddScoped<IIEMUsuarioInforme, IEMUsuarioInformeRepositorio>();
 builder.Services.AddScoped<IServicioBitacora, ServicioBitacora>();
 builder.Services.AddScoped<IBitacora, BitacoraRepositorio>();
+builder.Services.AddScoped<ITRegistroDiario, TRegistroDiarioRepositorio>();
 
-
+builder.Services.AddScoped<IProcesoRepositorio, ProcesoRepositorio>();
+builder.Services.AddScoped<ISubProcesoRepositorio, SubProcesoRepositorio>();
+builder.Services.AddScoped<IActividadMacroRepositorio, ActividadMacroRepositorio>();
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 

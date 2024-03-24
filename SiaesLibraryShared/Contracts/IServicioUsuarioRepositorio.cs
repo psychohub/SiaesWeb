@@ -13,6 +13,7 @@ namespace SiaesLibraryShared.Contracts
         Task<IEnumerable<SubArea>> GetSubAreas();
         Task<Usuario?> GetUsuarioByNombreUsuario(string nombreUsuario);
 
+        Task<Usuario?> ObtenerUsuarioId(string NombreUsuario, int codEstablecimiento);
         Task<AsociarUsuarioResponse> ActualizarUsuario(Usuario usuario);
 
     }
