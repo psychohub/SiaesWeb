@@ -1,0 +1,167 @@
+﻿@page "/registrar-actividad-realizada"
+@using SiaesLibraryShared.Contracts;
+@using SiaesLibraryShared.Dtos;
+@using SiaesCliente.Servicios;
+@inject IProcesoService ProcesoService
+@inject ISubProcesoService SubProcesoService
+@inject IActividadMacroService ActividadMacroService
+@inject ITUbicacionService TUbicacionService
+@inject IRegistroDiarioService RegistroDiarioService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+
+<h1 class="text-center">Registrar Actividad Realizada</h1>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title text-dark">Nueva Actividad</h4>
+    </div>
+    <div class="card-body">
+        <EditForm Model="@RegistroDiario" OnValidSubmit="@ManejadorOnRegistrarActividad">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+
+            <div class="form-group">
+                <label>Tiempo Invertido Hoy:</label>
+                <span>@TiempoInvertidoHoy.ToString("0.00") horas</span>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha Actividad:</label>
+                <InputDate @bind-Value="RegistroDiario.FechaActividad" class="form-control"></InputDate>
+                <ValidationMessage For="() => RegistroDiario.FechaActividad"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Modalidad:</label>
+                <InputSelect @bind-Value="RegistroDiario.IdUbicacion" class="form-control">
+                    @foreach (var ubicacion in Ubicaciones)
+                    {
+                        <option value="@ubicacion.IdUbicacion">@ubicacion.DescripcionUbicacion</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => RegistroDiario.IdUbicacion"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Proceso:</label>
+                <InputSelect @bind-Value="ProcesoSeleccionado" class="form-control" @onchange="OnProcesoChange">
+                    <option value="">Seleccione un proceso</option>
+                    @foreach (var proceso in Procesos)
+                    {
+                        <option value="@proceso.IdProceso">@proceso.DescripcionProceso</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => ProcesoSeleccionado"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Subproceso:</label>
+                <InputSelect @bind-Value="RegistroDiario.IdDetalleProceso" class="form-control">
+                    <option value="">Seleccione un subproceso</option>
+                    @foreach (var subproceso in SubProcesos)
+                    {
+                        <option value="@subproceso.IdSubProceso">@subproceso.DescripcionSubProceso</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => RegistroDiario.IdDetalleProceso"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Actividad Macro:</label>
+                <InputSelect @bind-Value="RegistroDiario.IdActividadMacro" class="form-control">
+                    <option value="">Seleccione una actividad macro</option>
+                    @foreach (var actividadMacro in ActividadesMacro)
+                    {
+                        <option value="@actividadMacro.IdActividadMacro">@actividadMacro.DescripcionActividadMacro</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => RegistroDiario.IdActividadMacro"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Observaciones:</label>
+                <InputTextArea @bind-Value="RegistroDiario.Observacion" class="form-control"></InputTextArea>
+                <ValidationMessage For="() => RegistroDiario.Observacion"></ValidationMessage>
+            </div>
+
+            <div class="form-group">
+                <label>Tiempo Invertido:</label>
+                <InputSelect @bind-Value="RegistroDiario.TiempoInvertido" class="form-control">
+                    <option value="">Seleccione el tiempo invertido</option>
+                    <option value="0.25">15 minutos</option>
+                    <option value="0.50">30 minutos</option>
+                    <option value="0.75">45 minutos</option>
+                    <option value="1.00">1 hora</option>
+                    <!-- Agregar más opciones según sea necesario -->
+                </InputSelect>
+                <ValidationMessage For="() => RegistroDiario.TiempoInvertido"></ValidationMessage>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar Actividad</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private RegistroDiarioCreacionDTO RegistroDiario { get; set; } = new RegistroDiarioCreacionDTO();
+    private decimal TiempoInvertidoHoy { get; set; }
+    private IEnumerable<ProcesoDTO> Procesos { get; set; }
+    private IEnumerable<SubProcesoDTO> SubProcesos { get; set; }
+    private IEnumerable<ActividadMacroDTO> ActividadesMacro { get; set; }
+    private IEnumerable<TUbicacionDTO> Ubicaciones { get; set; }
+    private int ProcesoSeleccionado { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        RegistroDiario.FechaActividad = DateTime.Today;
+        RegistroDiario.IdUbicacion = 1; // Valor por defecto para Teletrabajo
+
+        await CargarTiempoInvertidoHoy();
+        await CargarProcesos();
+        await CargarActividadesMacro();
+        await CargarUbicaciones();
+    }
+
+    private async Task CargarTiempoInvertidoHoy()
+    {
+        var idFuncionario = 0; // Obtener el idFuncionario del localStorage
+        var fechaActividad = DateTime.Today;
+
+        TiempoInvertidoHoy = await RegistroDiarioService.GetTotalTiempoInvertidoAsync(idFuncionario, fechaActividad);
+    }
+
+    private async Task CargarProcesos()
+    {
+        Procesos = await ProcesoService.GetProcesosAsync();
+    }
+
+    private async Task CargarSubProcesos(int procesoId)
+    {
+        SubProcesos = await SubProcesoService.GetSubProcesosByProcesoIdAsync(procesoId);
+    }
+
+    private async Task CargarActividadesMacro()
+    {
+        ActividadesMacro = await ActividadMacroService.GetActividadesMacroAsync();
+    }
+
+    private async Task CargarUbicaciones()
+    {
+        Ubicaciones = await TUbicacionService.GetUbicacionesAsync();
+    }
+
+    private async Task OnProcesoChange(ChangeEventArgs e)
+    {
+        ProcesoSeleccionado = Convert.ToInt32(e.Value);
+        await CargarSubProcesos(ProcesoSeleccionado);
+    }
+
+    private async Task ManejadorOnRegistrarActividad()
+    {
+        RegistroDiario.IdFuncionario = 0; // Obtener el idFuncionario del localStorage
+        RegistroDiario.NombreUsuario = ""; // Obtener el nombre de usuario del localStorage
+        RegistroDiario.UP = 0; // Obtener el UP del localStorage
+        RegistroDiario.IdSubArea = 0; // Obtener el idSubArea del localStorage
+        RegistroDiario.UsuarioIngreso = ""; // Obtener el usuario de ingreso del localStorage
+        RegistroDiario.FechaIngreso = DateTime.Now

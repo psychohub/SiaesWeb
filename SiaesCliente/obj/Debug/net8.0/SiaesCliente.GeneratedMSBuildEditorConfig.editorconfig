@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/ActividadesDiarias/RegistroDiario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpZGFkZXNEaWFyaWFzXFJlZ2lzdHJvRGlhcmlvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Acceder.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxBY2NlZGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

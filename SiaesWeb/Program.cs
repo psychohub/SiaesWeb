@@ -45,6 +45,8 @@ builder.Services.AddScoped<ITRegistroDiario, TRegistroDiarioRepositorio>();
 builder.Services.AddScoped<IProcesoRepositorio, ProcesoRepositorio>();
 builder.Services.AddScoped<ISubProcesoRepositorio, SubProcesoRepositorio>();
 builder.Services.AddScoped<IActividadMacroRepositorio, ActividadMacroRepositorio>();
+builder.Services.AddScoped<ITUbicacionRepositorio, TUbicacionRepositorio>();
+builder.Services.AddScoped<ITiempoInvertidoRepositorio, TiempoInvertidoRepositorio>();
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 

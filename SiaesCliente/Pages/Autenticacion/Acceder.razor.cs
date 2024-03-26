@@ -54,6 +54,7 @@ namespace SiaesCliente.Pages.Autenticacion
                 var parametroQuery = HttpUtility.ParseQueryString(urlAbsoluta.Query);
                 UrlRetorno = parametroQuery["returnUrl"];
 
+             
                 var perfil = result.Perfil;
                 var nombreUsuario = result.NombreUsuario;
                 var unidad = result.CodEstablecimiento;

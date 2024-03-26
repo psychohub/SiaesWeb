@@ -22,7 +22,7 @@ namespace SiaesServer.Controllers
             this._respuestasAPI = new();
         }
 
-        [HttpGet("registrodiario/actividadesmacros/{procesoId}")]
+        [HttpGet("registrodiario/actividadesmacros")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
@@ -21,6 +22,7 @@ namespace SiaesServer.Controllers
             this._respuestasAPI = new();
         }
 
+        [Authorize]
         [HttpGet("registrodiario/subproceso/{procesoId}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

@@ -25,6 +25,7 @@ namespace SiaesServer.Mappers
             CreateMap<RegistroDiarioCreacionDTO, TRegistroDiario>();
             CreateMap<RegistroDiarioCreacionDTO, TRegistroDiarioDTO>();
             CreateMap<TRegistroDiario, TRegistroDiarioDTO>().ReverseMap();
+            CreateMap<TRegistroDiario, TTiempoInvertidoDTO>().ReverseMap();
         }
     }
 }
