@@ -5,7 +5,7 @@ using SiaesLibraryShared.Models.Dtos;
 
 namespace SiaesServer.Controllers
 {
-    [Authorize]
+   
     [Route("api/siaes/bitacora")]
     [ApiController]
     public class BitacoraController : ControllerBase

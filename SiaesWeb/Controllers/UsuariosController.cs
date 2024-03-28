@@ -233,13 +233,14 @@ namespace SiaesServer.Controllers
         }
 
         [Authorize]
-        [HttpGet("obtenerusuarioId/{nombreUsuario}/{codEstablecimiento}")]
+        [HttpGet("obtenerusuarioId")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Usuario>> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
         {
             var usuario = await _usRepo.ObtenerUsuarioId(nombreUsuario, codEstablecimiento);
+
             if (usuario != null)
             {
                 return Ok(usuario);

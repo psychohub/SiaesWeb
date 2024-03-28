@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.JSInterop;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
 using SiaesServer.Data;
@@ -17,11 +20,14 @@ namespace SiaesServer.Repositories
     {
         private readonly AppDbContext _bd;
         private string claveSecreta;
-        public UsuarioRepositorio(AppDbContext bd, IConfiguration config)
+        private readonly ILocalStorageService _localStorage;
+        public UsuarioRepositorio(AppDbContext bd, IConfiguration config, ILocalStorageService localStorage)
         {
             _bd = bd;
+            _localStorage = localStorage;
             claveSecreta = config.GetValue<string>("ApiSettings:Secreta");
-        }
+          
+    }
 
         public Usuario GetUsuario(int usuarioId)
         {
@@ -261,7 +267,7 @@ namespace SiaesServer.Repositories
             return await _bd.Usuario.FirstOrDefaultAsync(u => u.NombreUsuario == nombreUsuario);
         }
 
-        public async Task<Usuario?> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
+        public async Task<Usuario> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
         {
             return _bd.Usuario.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.CodEstablecimiento == codEstablecimiento);
         }

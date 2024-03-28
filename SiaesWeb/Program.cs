@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
@@ -47,7 +48,7 @@ builder.Services.AddScoped<ISubProcesoRepositorio, SubProcesoRepositorio>();
 builder.Services.AddScoped<IActividadMacroRepositorio, ActividadMacroRepositorio>();
 builder.Services.AddScoped<ITUbicacionRepositorio, TUbicacionRepositorio>();
 builder.Services.AddScoped<ITiempoInvertidoRepositorio, TiempoInvertidoRepositorio>();
-
+builder.Services.AddBlazoredLocalStorage();
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 
 //Agregar Automapper
@@ -120,7 +121,6 @@ builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
 {
     build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
 }));
-
 
 
 var app = builder.Build();

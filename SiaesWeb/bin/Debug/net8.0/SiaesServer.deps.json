@@ -9,6 +9,7 @@
       "SiaesServer/1.0.0": {
         "dependencies": {
           "AutoMapper": "13.0.1",
+          "Blazored.LocalStorage": "4.5.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.3",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.3",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "8.0.3",

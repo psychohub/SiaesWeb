@@ -43,9 +43,9 @@ namespace SiaesServer.Services
             throw new NotImplementedException();
         }
 
-        public async Task<Usuario?> ObtenerUsuarioId(string NombreUsuario, int codEstablecimiento)
+        public async Task<Usuario?> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
         {
-            return await _usuarioRepositorio.ObtenerUsuarioId(NombreUsuario, codEstablecimiento);
+            return await _usuarioRepositorio.ObtenerUsuarioId(nombreUsuario, codEstablecimiento);
         }
 
     }

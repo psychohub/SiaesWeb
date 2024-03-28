@@ -38,9 +38,17 @@ namespace SiaesCliente.Servicios
 
             var response = await _cliente.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/registrodiario/tiempoinvertido/{idFuncionario}/{fechaActividad}");
             response.EnsureSuccessStatusCode();
+            if (response.IsSuccessStatusCode)
+            {
+                var totalTiempoInvertido = await response.Content.ReadFromJsonAsync<decimal>();
+                return totalTiempoInvertido;
+            }
 
-            var totalTiempoInvertido = await response.Content.ReadFromJsonAsync<decimal>();
-            return totalTiempoInvertido;
+            // Devolver un valor predeterminado si la respuesta no tiene éxito.
+            return 0;
+
+
         }
     }
 }
+

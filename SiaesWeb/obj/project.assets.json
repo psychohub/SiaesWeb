@@ -6049,6 +6049,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
+      "Blazored.LocalStorage >= 4.5.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.3",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 8.0.3",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.3",
@@ -6115,6 +6116,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "Blazored.LocalStorage": {
+            "target": "Package",
+            "version": "[4.5.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

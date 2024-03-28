@@ -1,5 +1,7 @@
 ﻿using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SiaesCliente.Helpers;
@@ -12,6 +14,7 @@ using System.Text;
 
 namespace SiaesCliente.Servicios
 {
+  
     public class ServicioUsuarioRepositorio : IServicioUsuarioRepositorio
     {
         private readonly HttpClient? _cliente;
@@ -146,18 +149,38 @@ namespace SiaesCliente.Servicios
             }
         }
 
-        public async Task<Usuario> ObtenerUsuarioId(string nombreUsuario, int  codEstablecimiento)
+        public async Task<Usuario> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento)
         {
-            var response = await _cliente.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/obtenerusuarioId/{nombreUsuario}/{codEstablecimiento}");
-            var respuestaApi = await response.Content.ReadFromJsonAsync<RespuestasAPI>();
+            // Obtener el token de autenticación desde el almacenamiento local
+            var token = await _localStorage.GetItemAsync<string>(Inicializar.Token_Local);
 
-            if (response.IsSuccessStatusCode && respuestaApi.IsSuccess)
+            // Verificar si el token está disponible
+            if (string.IsNullOrEmpty(token))
             {
-                return (Usuario)respuestaApi.Result;
+                // Lanzar una excepción con el mensaje de error
+                throw new Exception("No se encontró el token de autenticación");
+            }
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await client.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/obtenerusuarioId?nombreUsuario={nombreUsuario}&codEstablecimiento={codEstablecimiento}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var usuario = await response.Content.ReadFromJsonAsync<Usuario>();
+                return usuario;
+            }
+            else if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                // El usuario no existe, retornar null
+                return null;
             }
             else
             {
-                throw new Exception($"Error al obtener el usuario por Id: {string.Join(", ", respuestaApi.ErrorsMessages)}");
+                // Manejar otros errores de la API
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                throw new Exception($"Error al obtener el usuario por nombre de usuario: {errorMessage}");
             }
         }
 
