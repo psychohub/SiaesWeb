@@ -12,6 +12,8 @@ namespace SiaesLibraryShared.Models.Dtos
         public string NombreUsuario { get; set; }
         public int UP { get; set; }
         public DateTime FechaActividad { get; set; }
+        public int IdProceso { get; set; }
+        public int IdSubProceso { get; set; }
         public int IdDetalleProceso { get; set; }
         public int IdActividadMacro { get; set; }
         public string Observacion { get; set; }

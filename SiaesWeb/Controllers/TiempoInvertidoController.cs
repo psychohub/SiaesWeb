@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiaesLibraryShared.Models;
 using SiaesServer.Repositories.IRepositories;
+using System.Globalization;
 
 namespace SiaesServer.Controllers
 {
@@ -26,9 +27,10 @@ namespace SiaesServer.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<decimal> GetTotalTiempoInvertidoAsync(int idFuncionario, DateTime fechaActividad)
+        public async Task<decimal> GetTotalTiempoInvertidoAsync(int idFuncionario, string fechaActividad)
         {
-            var totalTiempoInvertido = await _usRepo.GetTotalTiempoInvertidoAsync(idFuncionario, fechaActividad);
+            var fechaActividadDateTime = DateTime.ParseExact(fechaActividad, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            var totalTiempoInvertido = await _usRepo.GetTotalTiempoInvertidoAsync(idFuncionario, fechaActividadDateTime);
             return totalTiempoInvertido;
         }
     }

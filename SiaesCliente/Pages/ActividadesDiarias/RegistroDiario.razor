@@ -1,8 +1,10 @@
 ﻿@page "/registrodiario"
+@attribute [Authorize]
 @using SiaesLibraryShared.Contracts;
 @using SiaesLibraryShared.Models.Dtos;
 @using SiaesCliente.Servicios;
 @using System.Net.Http.Headers
+@using SiaesCliente.Components;
 @inject IServicioProcesoRepositorio ProcesoService
 @inject IServicioSubProcesoRepositorio SubProcesoService
 @inject IServicioActividadMacroRepositorio ActividadMacroService
@@ -10,13 +12,32 @@
 @inject IServicioTRegistroDiario RegistroDiarioService
 @inject IServicioTiempoInvertidoServicio TiempoInvertido
 @inject IServicioUsuarioRepositorio UsuarioService
+@inject IServicioDetalleProceso DetalleProceso
 @inject ILocalStorageService LocalStorage
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @inject ILogger<RegistroDiario> Logger
 
-<h1 class="text-center">Registrar Actividad Realizada</h1>
+<style>
+    .calendar-label {
+        display: inline-block;
+        cursor: pointer;
+        padding: 0.375rem 0.75rem;
+        background-color: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
 
+        .calendar-label:hover {
+            background-color: #d3d9df;
+        }
+
+        .calendar-label span {
+            margin-right: 0.5rem;
+        }
+</style>
+<h1 class="text-center">Registrar Actividad Realizada</h1>
+<AlertMessage Message="@AlertMessageText" Type="@AlertType" ShowMessage="@ShowAlert" OnCloseClicked="@(() => ShowAlert = false)" />
 <div class="card">
     <div class="card-header">
         <h4 class="card-title text-dark">Nueva Actividad</h4>
@@ -32,8 +53,10 @@
             </div>
 
             <div class="form-group">
-                <label>Fecha Actividad:</label>
-                <InputDate @bind-Value="RegistroDiarioModel.FechaActividad" class="form-control"></InputDate>
+                <label class="calendar-label">
+                    <span>Fecha Actividad:</span>
+                    <InputDate @bind-Value="FechaActividadSeleccionada" class="form-control"></InputDate>
+                </label>
                 <ValidationMessage For="() => RegistroDiarioModel.FechaActividad"></ValidationMessage>
             </div>
 
@@ -53,7 +76,7 @@
 
             <div class="form-group">
                 <label>Proceso:</label>
-                <InputSelect @bind-Value="ProcesoSeleccionado" class="form-control" @onchange="OnProcesoChange">
+                <InputSelect @bind-Value="ProcesoSeleccionado" class="form-control" >
                     <option value="">Seleccione un proceso</option>
                     @if (Procesos != null)
                     {
@@ -68,7 +91,7 @@
 
             <div class="form-group">
                 <label>Subproceso:</label>
-                <InputSelect @bind-Value="RegistroDiarioModel.IdDetalleProceso" class="form-control">
+                <InputSelect @bind-Value="RegistroDiarioModel.IdSubProceso" class="form-control">
                     <option value="">Seleccione un subproceso</option>
                     @if (SubProcesos != null)
                     {
@@ -78,7 +101,7 @@
                         }
                     }
                 </InputSelect>
-                <ValidationMessage For="() => RegistroDiarioModel.IdDetalleProceso"></ValidationMessage>
+                <ValidationMessage For="() => RegistroDiarioModel.IdSubProceso"></ValidationMessage>
             </div>
 
             <div class="form-group">
@@ -121,9 +144,24 @@
     private IEnumerable<TActividadMacroDTO> ActividadesMacro { get; set; }
     private IEnumerable<TUbicacionDTO> Ubicaciones { get; set; }
     private UsuarioLocalStorage Usuario { get; set; }
-    private int ProcesoSeleccionado { get; set; }
-    private string tiempoInvertidoSeleccionado;
+    private string AlertMessageText { get; set; }
+    private string AlertType { get; set; }
+    private bool ShowAlert { get; set; }
+    private DateTime _fechaActividadSeleccionada = DateTime.Today;
 
+    public DateTime FechaActividadSeleccionada
+    {
+        get => _fechaActividadSeleccionada;
+        set
+        {
+            if (_fechaActividadSeleccionada != value)
+            {
+                _fechaActividadSeleccionada = value;
+                CargarTiempoInvertidoHoy(_fechaActividadSeleccionada);
+            }
+        }
+    }
+    private string tiempoInvertidoSeleccionado;
     private string TiempoInvertidoSeleccionado
     {
         get => tiempoInvertidoSeleccionado;
@@ -140,12 +178,12 @@
             }
         }
     }
-  
+
 
     protected override async Task OnInitializedAsync()
     {
         RegistroDiarioModel.FechaActividad = DateTime.Today;
-       
+
 
         // Obtener el nombre de usuario y el código de establecimiento del almacenamiento local
         var nombreUsuario = await LocalStorage.GetItemAsync<string>("nombreUsuario");
@@ -154,37 +192,63 @@
         // Llamar al servicio ObtenerUsuarioId pasando los valores obtenidos del almacenamiento local
         var usuario = await UsuarioService.ObtenerUsuarioId(nombreUsuario, codEstablecimiento);
 
-         
 
-            if (usuario != null)
-            {
-                // Guardar los datos del usuario en el localStorage
-                var usuarioLocalStorage = new UsuarioLocalStorage
+
+        if (usuario != null)
+        {
+            // Guardar los datos del usuario en el localStorage
+            var usuarioLocalStorage = new UsuarioLocalStorage
                     {
                         Id = usuario.Id,
                         IdRol = usuario.IdRol,
                         IdSubArea = usuario.IdSubArea
                     };
-                await LocalStorage.SetItemAsync("UsuarioLocalStorage", usuarioLocalStorage);
-            }
-        
+            await LocalStorage.SetItemAsync("UsuarioLocalStorage", usuarioLocalStorage);
+        }
 
-        await CargarTiempoInvertidoHoy();
+
+        await CargarTiempoInvertidoHoy(RegistroDiarioModel.FechaActividad);
         await CargarProcesos();
         await CargarActividadesMacro();
         await CargarUbicaciones();
         RegistroDiarioModel.IdUbicacion = 1; // Valor por defecto para Teletrabajo
     }
 
-    private async Task CargarTiempoInvertidoHoy()
+    private async Task CargarTiempoInvertidoHoy(DateTime fechaActividad)
     {
+        RegistroDiarioModel.FechaActividad = fechaActividad;
+
         var usuarioLocalStorage = await LocalStorage.GetItemAsync<UsuarioLocalStorage>("UsuarioLocalStorage");
         var idFuncionario = usuarioLocalStorage?.Id ?? 0;
-        var fechaActividad = DateTime.Today;
-
-
         TiempoInvertidoHoy = await TiempoInvertido.GetTotalTiempoInvertidoAsync(idFuncionario, fechaActividad);
+        StateHasChanged();
     }
+
+
+
+    private async Task OnProcesoChangeAsync(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int procesoId))
+        {
+            ProcesoSeleccionado = procesoId;
+            await CargarSubProcesos(ProcesoSeleccionado);
+        }
+    }
+
+    private int _procesoSeleccionado;
+    public int ProcesoSeleccionado
+    {
+        get => _procesoSeleccionado;
+        set
+        {
+            if (_procesoSeleccionado != value)
+            {
+                _procesoSeleccionado = value;
+                CargarSubProcesos(_procesoSeleccionado);
+            }
+        }
+    }
+
 
     private async Task CargarProcesos()
     {
@@ -194,6 +258,7 @@
     private async Task CargarSubProcesos(int procesoId)
     {
         SubProcesos = await SubProcesoService.GetSubProcesosByProcesoIdAsync(procesoId);
+        StateHasChanged();
     }
 
     private async Task CargarActividadesMacro()
@@ -212,38 +277,58 @@
         await CargarSubProcesos(ProcesoSeleccionado);
     }
 
+    private void LimpiarFormulario()
+    {
+        RegistroDiarioModel.Observacion = string.Empty;
+        TiempoInvertidoSeleccionado = null;
+    }
+
     private async Task ManejadorOnRegistrarActividad()
     {
         var nombreUsuario = await LocalStorage.GetItemAsync<string>("nombreUsuario");
         var codEstablecimiento = await LocalStorage.GetItemAsync<int>("unidad");
+        var usuarioLocalStorage = await LocalStorage.GetItemAsync<UsuarioLocalStorage>("UsuarioLocalStorage");
+        var idDetalleProceso = await DetalleProceso.ObtenerIdDetalleProceso(_procesoSeleccionado, RegistroDiarioModel.IdSubProceso);
         try
         {
             // Convertir RegistroDiarioCreacionDTO a TRegistroDiarioDTO
             var registroDiarioDTO = new TRegistroDiarioDTO
                 {
-                    IdFuncionario = RegistroDiarioModel.IdFuncionario,
-                    NombreUsuario = RegistroDiarioModel.NombreUsuario,
-                    UP = RegistroDiarioModel.UP,
+                    IdFuncionario = usuarioLocalStorage?.Id ?? 0,
+                    NombreUsuario = nombreUsuario,
+                    UP = codEstablecimiento,
                     FechaActividad = RegistroDiarioModel.FechaActividad,
-                    IdDetalleProceso = RegistroDiarioModel.IdDetalleProceso,
+                    IdDetalleProceso = idDetalleProceso,
                     IdActividadMacro = RegistroDiarioModel.IdActividadMacro,
                     Observacion = RegistroDiarioModel.Observacion,
                     TiempoInvertido = (int)RegistroDiarioModel.TiempoInvertido,
-                    IdSubArea = RegistroDiarioModel.IdSubArea ?? 0,
+                    IdSubArea = usuarioLocalStorage?.IdSubArea ?? 0,
                     IdUbicacion = RegistroDiarioModel.IdUbicacion ?? 0,
-                    UsuarioIngreso = RegistroDiarioModel.UsuarioIngreso,
-                    FechaIngreso = RegistroDiarioModel.FechaIngreso
+                    UsuarioIngreso = nombreUsuario,
+                    FechaIngreso = DateTime.Today
                 };
 
             var resultado = await RegistroDiarioService.CrearRegistroDiario(registroDiarioDTO);
 
             if (resultado)
             {
-                await JSRuntime.ToastrSuccess("Registro diario creado correctamente");
+                AlertMessageText = "Registro diario creado correctamente";
+                AlertType = "success";
+                ShowAlert = true;
+                await BitacoraHelper.RegistrarAccionEnBitacora("RegistroDiarioActividades", 2, "Inserta registro", nombreUsuario, JSRuntime);
+                LimpiarFormulario();
+                await CargarTiempoInvertidoHoy(RegistroDiarioModel.FechaActividad);
+                await CargarProcesos();
+                await CargarActividadesMacro();
+                await CargarUbicaciones();
+                RegistroDiarioModel.IdUbicacion = 1;
             }
             else
             {
-                await JSRuntime.ToastrError("Error al crear el registro diario");
+                AlertMessageText = "Error al crear el registro diario";
+                AlertType = "danger";
+                ShowAlert = true;
+                await BitacoraHelper.RegistrarAccionEnBitacora("RegistroDiarioActividades", 2, "Error insertar registro", nombreUsuario, JSRuntime);
             }
         }
         catch (Exception ex)

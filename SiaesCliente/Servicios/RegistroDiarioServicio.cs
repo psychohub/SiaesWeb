@@ -44,20 +44,27 @@ namespace SiaesCliente.Servicios
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var response = await _cliente.PostAsJsonAsync($"{Inicializar.UrlBaseApi}api/siaes/registrodiario/crear", registroDiario);
-            response.EnsureSuccessStatusCode();
-
-            var contentTemp = await response.Content.ReadAsStringAsync();
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                var response = await _cliente.PostAsJsonAsync($"{Inicializar.UrlBaseApi}api/siaes/registrodiario/crear", registroDiario);
+                response.EnsureSuccessStatusCode();
 
+                var contentTemp = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (HttpRequestException ex)
+            {
+                // Manejar la excepción y proporcionar detalles del error
+                throw new Exception($"Error al crear el registro diario: {ex.Message}", ex);
+            }
 
         }
 

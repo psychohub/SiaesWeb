@@ -6,12 +6,12 @@ namespace SiaesCliente.Helpers
     {
         public static async ValueTask ToastrSuccess(this IJSRuntime JSRuntime, string message)
         {
-            await JSRuntime.InvokeVoidAsync("ShowToastr", "success", message);
+            await JSRuntime.InvokeAsync<object>("ShowToastr", "success", message);
         }
 
         public static async ValueTask ToastrError(this IJSRuntime JSRuntime, string message)
         {
-            await JSRuntime.InvokeVoidAsync("ShowToastr", "error", message);
+            await JSRuntime.InvokeAsync<object>("ShowToastr", "error", message);
         }
     }
 

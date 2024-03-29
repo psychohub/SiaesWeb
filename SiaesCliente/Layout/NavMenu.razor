@@ -1,6 +1,6 @@
 ﻿@inject ILocalStorageService _localStorage
 @inject NavigationManager navigationManager
-
+@attribute [Authorize]
 <RadzenLayout Style="grid-template-areas: 'rz-sidebar rz-header' 'rz-sidebar rz-body' 'rz-sidebar rz-footer'">
     <RadzenHeader>
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">

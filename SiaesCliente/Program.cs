@@ -12,6 +12,7 @@ using SiaesLibraryShared.Contracts;
 
 
 
+
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
@@ -32,6 +33,7 @@ builder.Services.AddScoped<IServicioSubProcesoRepositorio, SubProcesoServicio>()
 builder.Services.AddScoped<IServicioTiempoInvertidoServicio, TiempoInvertidoServicio>();
 builder.Services.AddScoped<IServicioTRegistroDiario, RegistroDiarioServicio>();
 builder.Services.AddScoped<IServicioTUbicacion, TUbicacionService>();
+builder.Services.AddScoped<IServicioDetalleProceso, ServicioDetalleProceso>();
 builder.Services.AddBlazoredLocalStorage();
 // Configurar BitacoraHelper
 BitacoraHelper.ConfigurarServicioBitacora(builder.Services);

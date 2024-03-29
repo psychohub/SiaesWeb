@@ -11,3 +11,4 @@ namespace SiaesLibraryShared.Contracts
         Task<decimal> GetTotalTiempoInvertidoAsync(int idFuncionario, DateTime fechaActividad);
     }
 }
+

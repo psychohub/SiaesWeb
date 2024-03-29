@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Radzen.Blazor.Rendering;
 using SiaesLibraryShared.Models;
@@ -52,23 +53,35 @@ namespace SiaesServer.Controllers
             return Ok(registroDiario);
         }
 
+        [Authorize]
         [HttpPost("registrodiario/crear")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
           public async Task<ActionResult<TRegistroDiarioDTO>> CrearRegistroDiario(RegistroDiarioCreacionDTO registroDiarioCreacionDTO)
         {
-            var resultado = await _usRepo.CrearRegistroDiario(registroDiarioCreacionDTO);
-            if (!resultado)
+            try
             {
-                _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
-                _respuestasAPI.IsSuccess = false;
-                _respuestasAPI.ErrorsMessages.Add("Error al crear el registro");
-                return BadRequest(_respuestasAPI);
-            }
+                var resultado = await _usRepo.CrearRegistroDiario(registroDiarioCreacionDTO);
+                if (!resultado)
+                {
+                    _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
+                    _respuestasAPI.IsSuccess = false;
+                    _respuestasAPI.ErrorsMessages.Add("Error al crear el registro");
+                    return BadRequest(_respuestasAPI);
+                }
 
-            var registroDiarioDTO = _mapper.Map<TRegistroDiarioDTO>(registroDiarioCreacionDTO);
-            return CreatedAtAction(nameof(ObtenerRegistroDiarioPorId), new { id = registroDiarioDTO.IdRegistro }, registroDiarioDTO);
+                var registroDiarioDTO = _mapper.Map<TRegistroDiarioDTO>(registroDiarioCreacionDTO);
+                return CreatedAtAction(nameof(ObtenerRegistroDiarioPorId), new { id = registroDiarioDTO.IdRegistro }, registroDiarioDTO);
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción y devolver una respuesta de error adecuada
+                _respuestasAPI.StatusCode = HttpStatusCode.InternalServerError;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add($"Error interno del servidor: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, _respuestasAPI);
+            }
         }
 
         [HttpPut("registrodiario/actualizar{id}")]

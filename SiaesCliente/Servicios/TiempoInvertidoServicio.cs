@@ -36,8 +36,10 @@ namespace SiaesCliente.Servicios
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var response = await _cliente.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/registrodiario/tiempoinvertido/{idFuncionario}/{fechaActividad}");
+            var fechaActividadString = fechaActividad.ToString("yyyy-MM-dd");
+            var response = await _cliente.GetAsync($"{Inicializar.UrlBaseApi}api/siaes/registrodiario/tiempoinvertido/{idFuncionario}/{fechaActividadString}");
             response.EnsureSuccessStatusCode();
+
             if (response.IsSuccessStatusCode)
             {
                 var totalTiempoInvertido = await response.Content.ReadFromJsonAsync<decimal>();
@@ -46,8 +48,6 @@ namespace SiaesCliente.Servicios
 
             // Devolver un valor predeterminado si la respuesta no tiene éxito.
             return 0;
-
-
         }
     }
 }
