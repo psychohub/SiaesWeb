@@ -186,3 +186,10 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.pdb
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.genruntimeconfig.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\ref\SiaesServer.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Irony.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\XLParser.dll

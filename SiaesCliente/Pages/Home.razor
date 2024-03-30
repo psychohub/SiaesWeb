@@ -3,14 +3,90 @@
 @inject IJSRuntime JSRuntime
 
 
-<PageTitle>Inicio</PageTitle>
 
-<h1 class="Ultimos posts">Hello, world!</h1>
+<!-- Page Heading -->
+<header class="py-10 mb-4 bg-light">
+    <div class="container-xl px-4">
+        <div class="text-center">
+            <h1 class="display-4 fw-bold text-primary">Bienvenidos al Sitio del Área de Estadística de Salud</h1>
+            <p class="lead mb-0 fw-bold text-primary">Esta herramienta contribuirá con nuestro trabajo cotidiano, propiciando el intercambio de información y la gestión del conocimiento al alcance de todos, facilitando así la participación de forma interactiva y colaborativa</p>
+        </div>
+    </div>
+</header>
 
-<div class="col-4">
-    <button class="btn btn-success" @onclick="DemoSucces">Demo Toastr Success</button>
-    <button class="btn btn-danger" @onclick="DemoError">Demo Toastr Error</button>
+<!-- Content Row -->
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <i class="feather-xl text-primary mb-3" data-feather="package"></i>
+                <h5 class="text-center">Registrar</h5>
+                <p class="text-muted text-center">Para registrar los cuadros Estadísticos lo puede hacer aquí</p>
+                <a href="/registrodiario" class="btn btn-primary mt-auto">Ir a Registrar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <i class="feather-xl text-success mb-3" data-feather="layout"></i>
+                <h5 class="text-center">Mostrar Cuadros</h5>
+                <p class="text-muted text-center">Para ir a Mostrar Cuadros los cuadros Estadísticos lo puede hacer aquí</p>
+                <a href="/mostrarregistrodiario" class="btn btn-success mt-auto">Ir a Mostrar Cuadros</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                <i class="feather-xl text-secondary mb-3" data-feather="book"></i>
+                <h5 class="text-center">Reportes</h5>
+                <p class="text-muted text-center">Para ir a la opción de reportes lo puede hacer aquí</p>
+                <a href="Reportes_Cuadros" class="btn btn-secondary mt-auto">Ir a Reportes</a>
+            </div>
+        </div>
+    </div>
 </div>
+<!--Section: FAQ-->
+<section>
+    <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
+    <p class="text-center mb-5">
+        Encuentre las respuestas a las preguntas más frecuentes a continuación
+    </p>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3 text-primary"><i class="fa fa-paper-plane text-primary pe-2"></i>Gestión de accesos SIAES?</h6>
+            <p>
+                Mediante la Mesa Servicios TIC  <a class="theme-link" href="https://serviciostic.ccss.sa.cr/CAisd/pdmweb.exe" target="_blank">CA Service Desk Manager </a>.
+                En la opción de Sistemas Institucionales / Solicitud / Sistema de Información del Área de Estadística en Salud /Gestión de accesos al sistema.
+            </p>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3 text-primary"><i class="fa fa-rocket text-primary pe-2"></i>Reporte de Incidentes SIAES</h6>
+            <p>
+                Mediante la Mesa Servicios TIC  <a class="theme-link" href="https://serviciostic.ccss.sa.cr/CAisd/pdmweb.exe" target="_blank">CA Service Desk Manager </a>.
+                En la opción de Sistemas Institucionales / Reportar Incidente / Sistema de Información del Área de Estadística en Salud.
+            </p>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <h6 class="mb-3 text-primary">
+                <i class="fa fa-home text-primary pe-2"></i>Canales de comunicación con la Mesa de Servicios TIC
+            </h6>
+
+            <div class="card-block">
+                <ul>
+                    <li>Portal Web Mesa de Servicios TIC:    <a class="theme-link" href="https://serviciostic.ccss.sa.cr/CAisd/pdmweb.exe" target="_blank">Mesa Servicios TIC </a></li>
+                    <li>Central telefónica: 2539-1000</li>
+                    <li>Correo electrónico: servicios-tic@ccss.sa.cr</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Section: FAQ-->
 
 
 @code {

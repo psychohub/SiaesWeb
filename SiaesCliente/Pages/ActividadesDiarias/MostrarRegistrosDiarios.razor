@@ -10,6 +10,7 @@
 @inject SiaesLibraryShared.Contracts.IServicioUsuarioRepositorio UsuarioService
 @inject ILocalStorageService LocalStorage
 @inject IJSRuntime JsRuntime
+@inject IJSRuntime JS
 @inject ILogger<RegistroDiario> Logger
 @attribute [Authorize]
 
@@ -81,7 +82,10 @@
             </tbody>
         </table>
     </div>
+    <button class="btn btn-success" @onclick="ExportarAExcel">Exportar a Excel</button>
+
 </div>
+
 
 <ConfirmacionBorrado ProcesandoComponentePadre="estaProcesando" CambioConfirmacion="Click_Confirmacion_Borrado"></ConfirmacionBorrado>
 @code {
@@ -218,4 +222,61 @@
         // await JsRuntime.InvokeVoidAsync("OcultarModalConfirmacionBorrado");
         estaProcesando = false;
     }
+
+    private async Task ExportarAExcel()
+    {
+        var workbook = new ClosedXML.Excel.XLWorkbook();
+        var worksheet = workbook.Worksheets.Add("Registros Diarios");
+
+        // Encabezados
+        worksheet.Cell(1, 1).Value = "Id";
+        worksheet.Cell(1, 2).Value = "Fecha Actividad";
+        worksheet.Cell(1, 3).Value = "Proceso";
+        worksheet.Cell(1, 4).Value = "Subproceso";
+        worksheet.Cell(1, 5).Value = "Actividad";
+        worksheet.Cell(1, 6).Value = "Subárea";
+        worksheet.Cell(1, 7).Value = "Observación";
+        worksheet.Cell(1, 8).Value = "Tiempo Invertido";
+        worksheet.Cell(1, 9).Value = "Ubicación";
+        worksheet.Cell(1, 10).Value = "Usuario";
+        worksheet.Cell(1, 11).Value = "UP";
+        worksheet.Cell(1, 12).Value = "Fecha Ingreso";
+
+        int currentRow = 2;
+        foreach (var registro in RegistrosDiarios)
+        {
+            worksheet.Cell(currentRow, 1).Value = registro.IdRegistro;
+            worksheet.Cell(currentRow, 2).Value = registro.FechaActividad.ToShortDateString();
+            worksheet.Cell(currentRow, 3).Value = registro.DescripcionProceso;
+            worksheet.Cell(currentRow, 4).Value = registro.DescripcionSubProceso;
+            worksheet.Cell(currentRow, 5).Value = registro.DescripcionActividad;
+            worksheet.Cell(currentRow, 6).Value = registro.DescripcionSubArea;
+            worksheet.Cell(currentRow, 7).Value = registro.Observacion;
+            worksheet.Cell(currentRow, 8).Value = registro.TiempoInvertido;
+            worksheet.Cell(currentRow, 9).Value = registro.DescripcionUbicacion;
+            worksheet.Cell(currentRow, 10).Value = registro.NombreUsuario;
+            worksheet.Cell(currentRow, 11).Value = registro.UP;
+            worksheet.Cell(currentRow, 12).Value = registro.FechaIngreso.HasValue ? registro.FechaIngreso.Value.ToShortDateString() : "";
+            currentRow++;
+        }
+
+        // Ajustar las columnas al contenido
+        worksheet.Columns().AdjustToContents();
+
+        // Guardar el archivo Excel en memoria
+        using var stream = new MemoryStream();
+        workbook.SaveAs(stream);
+        var content = stream.ToArray();
+
+        // Convertir el array de bytes a una cadena base64
+        string base64StringDelArchivo = Convert.ToBase64String(content);
+
+        // Llamar a la función JavaScript 'saveAsFile', pasando el nombre del archivo y la cadena base64
+        await JS.InvokeVoidAsync("saveAsFile", "RegistrosDiarios.xlsx", base64StringDelArchivo);
+
+
+    }
+
+
+
 }

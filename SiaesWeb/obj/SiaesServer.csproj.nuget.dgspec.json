@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[4.5.0, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
               "version": "[8.0.3, )"

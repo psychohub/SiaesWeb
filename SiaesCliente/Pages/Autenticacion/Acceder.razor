@@ -56,10 +56,14 @@
                                     <button type="submit" class="btn btn-success" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Acceder</button>
                                 }
                             </div>
-                            <div class="col-6">
-                                <a href="/registrarse"
-                                   class="btn btn-primary text-white" style="vertical-align:middle;line-height:30px;"><i class="fas fa-user-plus"></i> Olvidó contraseña</a>
-                            </div>
+                            @if (mostrarBotonOlvidarContrasena)
+                            {
+                                <div class="col-6">
+                                    <a href="/registrarse"
+                                       class="btn btn-primary text-white" style="vertical-align:middle;line-height:30px;"><i class="fas fa-user-plus"></i> Olvidó contraseña</a>
+                                </div>
+                            }
+
                         </div>
 
                     </div>
@@ -71,6 +75,8 @@
 </EditForm>
 
 @code {
+    private bool mostrarBotonOlvidarContrasena = false;
+
     private bool mostrarPassword = false;
 
     private void TogglePasswordVisibility()
