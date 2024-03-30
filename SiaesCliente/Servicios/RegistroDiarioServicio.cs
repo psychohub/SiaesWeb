@@ -24,10 +24,7 @@ namespace SiaesCliente.Servicios
             _estadoProveedorAutenticacion = estadoProveedorAutenticacion;
         }
 
-        public Task<bool> ActualizarRegistroDiario(TRegistroDiarioDTO registroDiario)
-        {
-            throw new NotImplementedException();
-        }
+  
 
         public async Task<bool> CrearRegistroDiario(TRegistroDiarioDTO registroDiario)
         {
@@ -68,19 +65,13 @@ namespace SiaesCliente.Servicios
 
         }
 
-        public Task<bool> EliminarRegistroDiario(int id)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public Task<TRegistroDiarioDTO> ObtenerRegistroDiarioPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<TRegistroDiarioDTO>> ObtenerRegistrosDiarios()
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

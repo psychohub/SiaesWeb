@@ -9,10 +9,9 @@ namespace SiaesLibraryShared.Contracts
 {
     public interface IServicioTRegistroDiario
     {
-        Task<List<TRegistroDiarioDTO>> ObtenerRegistrosDiarios();
+   
         Task<TRegistroDiarioDTO> ObtenerRegistroDiarioPorId(int id);
         Task<bool> CrearRegistroDiario(TRegistroDiarioDTO registroDiario);
-        Task<bool> ActualizarRegistroDiario(TRegistroDiarioDTO registroDiario);
-        Task<bool> EliminarRegistroDiario(int id);
+ 
     }
 }

@@ -1,3 +1,5 @@
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\netstandard.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.sourcelink.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm
@@ -617,7 +619,6 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\System.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\WindowsBase.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\mscorlib.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\netstandard.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\System.Private.CoreLib.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\dotnet.js
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\bin\Debug\net8.0\dotnet.js.map
@@ -636,7 +637,6 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.AssemblyInfo.cs
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.csproj.CoreCompileInputs.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\SiaesCliente.sourcelink.json
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\webcil\Blazored.LocalStorage.wasm
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm

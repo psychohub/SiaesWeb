@@ -34,6 +34,7 @@ builder.Services.AddScoped<IServicioTiempoInvertidoServicio, TiempoInvertidoServ
 builder.Services.AddScoped<IServicioTRegistroDiario, RegistroDiarioServicio>();
 builder.Services.AddScoped<IServicioTUbicacion, TUbicacionService>();
 builder.Services.AddScoped<IServicioDetalleProceso, ServicioDetalleProceso>();
+builder.Services.AddScoped<IRegistroDiarioServicio, ObtenerRegistroDiarioServicio>();
 builder.Services.AddBlazoredLocalStorage();
 // Configurar BitacoraHelper
 BitacoraHelper.ConfigurarServicioBitacora(builder.Services);

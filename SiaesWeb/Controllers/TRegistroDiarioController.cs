@@ -25,16 +25,7 @@ namespace SiaesServer.Controllers
             this._respuestasAPI = new();
         }
 
-        [HttpGet("registrodiario/obtener")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<List<TRegistroDiarioDTO>>> ObtenerRegistrosDiarios()
-        {
-            var registrosDiarios = await _usRepo.ObtenerRegistrosDiarios();
 
-            return Ok(registrosDiarios);
-        }
 
         [HttpGet("registrodiario/obtenerPorId/{id}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -84,48 +75,8 @@ namespace SiaesServer.Controllers
             }
         }
 
-        [HttpPut("registrodiario/actualizar{id}")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ActualizarRegistroDiario(int id, TRegistroDiario registroDiarioDTO)
-        {
-            if (id != registroDiarioDTO.IdRegistro)
-            {
-                _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
-                _respuestasAPI.IsSuccess = false;
-                _respuestasAPI.ErrorsMessages.Add("Error al realizarl el registro");
-                return BadRequest(_respuestasAPI);
-            }
+ 
 
-            var resultado = await _usRepo.ActualizarRegistroDiario(registroDiarioDTO);
-            if (!resultado)
-            {
-                _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
-                _respuestasAPI.IsSuccess = false;
-                _respuestasAPI.ErrorsMessages.Add("Error al actualizar registros");
-                return BadRequest(_respuestasAPI);
-            }
 
-            return Ok(resultado);
-        }
-
-        [HttpDelete("registrodiario/eliminar/{id}")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> EliminarRegistroDiario(int id)
-        {
-            var resultado = await _usRepo.EliminarRegistroDiario(id);
-            if (!resultado)
-            {
-                _respuestasAPI.StatusCode = HttpStatusCode.BadRequest;
-                _respuestasAPI.IsSuccess = false;
-                _respuestasAPI.ErrorsMessages.Add("Error al eliminar el registro");
-                return BadRequest(_respuestasAPI);
-            }
-
-            return Ok(resultado);
-        }
     }
 }

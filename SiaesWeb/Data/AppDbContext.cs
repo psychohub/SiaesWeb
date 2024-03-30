@@ -194,6 +194,9 @@ namespace SiaesServer.Data
 
             modelBuilder.Entity<TUbicacion>()
            .ToTable("T_Ubicacion");
+
+            modelBuilder.Entity<TDetalleProceso>()
+          .ToTable("T_DetalleProceso");
         }
 
     }

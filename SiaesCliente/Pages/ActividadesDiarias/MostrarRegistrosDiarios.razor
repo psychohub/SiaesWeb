@@ -1,0 +1,221 @@
+﻿@page "/mostrarregistrodiario"
+@using SiaesLibraryShared.Contracts
+@using SiaesLibraryShared.Models.Dtos;
+@using SiaesCliente.Servicios.IServicio;
+@using Microsoft.AspNetCore.Authorization;
+@using SiaesCliente.Servicios;
+@using System.Net.Http.Headers
+@using SiaesCliente.Components;
+@inject IRegistroDiarioServicio registroDiarioServicio
+@inject SiaesLibraryShared.Contracts.IServicioUsuarioRepositorio UsuarioService
+@inject ILocalStorageService LocalStorage
+@inject IJSRuntime JsRuntime
+@inject ILogger<RegistroDiario> Logger
+@attribute [Authorize]
+
+<h1 class="text-center">Mostrar Registros Diarios</h1>
+<AlertMessage Message="@AlertMessageText" Type="@AlertType" ShowMessage="@ShowAlert" OnCloseClicked="@(() => ShowAlert = false)" />
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-7">
+                <h4 class="card-title text-dark">Lista de Registros Diarios</h4>
+            </div>
+            <div class="form-group">
+                <label class="calendar-label">
+                    <span>Fecha Actividad:</span>
+                    <InputDate @bind-Value="FechaActividadSeleccionada" class="form-control"></InputDate>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha Actividad</th>
+                    <th>Proceso</th>
+                    <th>Subproceso</th>
+                    <th>Actividad</th>
+                    <th>Subárea</th>
+                    <th>Observación</th>
+                    <th>Tiempo Invertido</th>
+                    <th>Ubicación</th>
+                    <th>Usuario</th>
+                    <th>UP</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (RegistrosDiarios.Count() > 0)
+                {
+                    @foreach (var registro in RegistrosDiarios)
+                    {
+                        <tr>
+                            <td>@registro.IdRegistro</td>
+                            <td>@registro.FechaActividad.ToShortDateString()</td>
+                            <td>@registro.DescripcionProceso</td>
+                            <td>@registro.DescripcionSubProceso</td>
+                            <td>@registro.DescripcionActividad</td>
+                            <td>@registro.DescripcionSubArea</td>
+                            <td>@registro.Observacion</td>
+                            <td>@registro.TiempoInvertido</td>
+                            <td>@registro.DescripcionUbicacion</td>
+                            <td>@registro.NombreUsuario</td>
+                            <td>@registro.UP</td>
+                            <td>@registro.FechaIngreso</td>
+                            <td>
+                                <button class="btn btn-danger" @onclick="()=>ManejadorOnBorrar(registro.IdRegistro)"><i class="bi bi-trash-fill"></i>&nbsp; Borrar</button>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="13">@mensajeEstado</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ConfirmacionBorrado ProcesandoComponentePadre="estaProcesando" CambioConfirmacion="Click_Confirmacion_Borrado"></ConfirmacionBorrado>
+@code {
+    public IEnumerable<RegistroDiarioDTO> RegistrosDiarios { get; set; } = new List<RegistroDiarioDTO>();
+    private bool estaProcesando { get; set; } = false;
+    private int? BorrarIdRegistro { get; set; } = null;
+    private string mensajeEstado = "Cargando...";
+    private string AlertMessageText { get; set; }
+    private string AlertType { get; set; }
+    private bool ShowAlert { get; set; }
+
+    [Parameter]
+    public int IdRol { get; set; }
+
+    [Parameter]
+    public int IdSubArea { get; set; }
+
+    [Parameter]
+    public int IdFuncionario { get; set; }
+
+    [Parameter]
+    public DateTime FechaActividad { get; set; }
+
+    private DateTime _fechaActividadSeleccionada = DateTime.Today;
+    public DateTime FechaActividadSeleccionada
+    {
+        get => _fechaActividadSeleccionada;
+        set
+        {
+            if (_fechaActividadSeleccionada != value)
+            {
+                _fechaActividadSeleccionada = value;
+                CargarRegistrosDiarios(_fechaActividadSeleccionada).Wait();
+               
+            }
+        }
+    }
+
+
+ 
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Obtener el nombre de usuario y el código de establecimiento del almacenamiento local
+        var nombreUsuario = await LocalStorage.GetItemAsync<string>("nombreUsuario");
+        var codEstablecimiento = await LocalStorage.GetItemAsync<int>("unidad");
+
+        // Llamar al servicio ObtenerUsuarioId pasando los valores obtenidos del almacenamiento local
+        var usuario = await UsuarioService.ObtenerUsuarioId(nombreUsuario, codEstablecimiento);
+
+        if (usuario != null)
+        {
+            // Guardar los datos del usuario en el localStorage
+            var usuarioLocalStorage = new UsuarioLocalStorage
+                {
+                    Id = usuario.Id,
+                    IdRol = usuario.IdRol,
+                    IdSubArea = usuario.IdSubArea
+                };
+            await LocalStorage.SetItemAsync("UsuarioLocalStorage", usuarioLocalStorage);
+        }
+
+        await CargarRegistrosDiarios(_fechaActividadSeleccionada);
+    }
+
+    private async Task CargarRegistrosDiarios(DateTime fechaActividad)
+    {
+        
+        RegistrosDiarios = new List<RegistroDiarioDTO>();
+        try
+        {
+            var usuarioLocalStorage = await LocalStorage.GetItemAsync<UsuarioLocalStorage>("UsuarioLocalStorage");
+            var IdFuncionario = usuarioLocalStorage?.Id ?? 0;
+            var IdSubArea = usuarioLocalStorage?.IdSubArea ?? 0;
+            var IdRol = usuarioLocalStorage?.IdRol ?? 0;
+
+            RegistrosDiarios = await registroDiarioServicio.ObtenerRegistros(IdFuncionario, IdSubArea, fechaActividad, IdRol);
+            if (RegistrosDiarios == null || !RegistrosDiarios.Any())
+            {
+                mensajeEstado = "No hay registros para la fecha seleccionada.";
+            }
+            StateHasChanged();
+        }
+        catch (HttpRequestException httpEx) when (httpEx.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            mensajeEstado = "No hay registros para la fecha seleccionada.";
+            await InvokeAsync(StateHasChanged);
+        }
+        catch (Exception ex)
+        {
+            // Para otros tipos de errores, puedes definir un mensaje genérico
+            mensajeEstado = "Error al cargar los registros diarios.";
+            Console.WriteLine($"Error al cargar los registros diarios: {ex.Message}");
+            StateHasChanged();
+        }
+        StateHasChanged();
+    }
+
+    public async Task ManejadorOnBorrar(int registroId)
+    {
+        estaProcesando = true;
+        BorrarIdRegistro = registroId;
+        var usuarioLocalStorage = await LocalStorage.GetItemAsync<UsuarioLocalStorage>("UsuarioLocalStorage");
+        var IdFuncionario = usuarioLocalStorage?.Id ?? 0;
+
+        var dto = new RegistroDiarioEliminarDTO
+            {
+                IdRegistro = BorrarIdRegistro.Value,
+                IdFuncionario = IdFuncionario
+            };
+
+        var resultado = await registroDiarioServicio.EliminarRegistroDiario(dto);
+        if (resultado)
+        {
+            await CargarRegistrosDiarios(_fechaActividadSeleccionada);
+        }
+        else
+        {
+        
+        }
+
+        estaProcesando = false;
+
+        
+    }
+
+    public async Task Click_Confirmacion_Borrado(bool confirmado)
+    {
+        estaProcesando = true;
+        if (confirmado && BorrarIdRegistro != null)
+        {
+           
+        }
+        // await JsRuntime.InvokeVoidAsync("OcultarModalConfirmacionBorrado");
+        estaProcesando = false;
+    }
+}
