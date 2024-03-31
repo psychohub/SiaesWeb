@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD6AbVZitikeqyiDx9YgsuAAAAAACAAAAAAAQZgAAAAEAACAAAADt4JF7fcbuyefL59WQsLAMSn/2HLfLKz2c9f4+Ix+a9wAAAAAOgAAAAAIAACAAAAB9sB5aSGPZMbzU5UYVxiaIgvuDcWen/nNvanIcJ5u9DYAAAADue5jqWDVhkzrHTJNwTfCbRvQsifPYUAekFIJsoQ8Wj1nwkA3YY2BirTzmlHgFzlan50mBDa9lt8aoAN4eglECJafovmKV1LajV8dG12fDjFjompZ0Zu7FLWEXnswkBJVwUrJDJv4NzwtsDjlH80ksymLPQmdgw+w+e5SmhS86mkAAAADxdCekRjegTfe401Dz8l37Bmpop3Vu1f78TyGg7lGH31cN4yI050ZDsjIRPFLze695PgRbArTIrGuXB0Zqvum0</EncryptedPassword>
+    <History>True|2024-03-31T06:39:46.0032255Z;True|2024-03-31T00:26:55.5596203-06:00;True|2024-03-31T00:12:11.8810710-06:00;True|2024-03-30T23:55:50.3358133-06:00;True|2024-03-30T23:47:40.8629255-06:00;True|2024-03-30T23:42:13.0017670-06:00;True|2024-03-30T23:22:54.3136501-06:00;True|2024-03-30T23:18:12.8108143-06:00;True|2024-03-30T23:15:35.3962948-06:00;True|2024-03-30T22:06:14.6547549-06:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Default">
+      <Value>Server=tcp:basedbtest.database.windows.net,1433%3bInitial Catalog=BD_SIAES%3bPersist Security Info=False%3bUser ID=AzureAdmin%3bPassword=HcdrdxyGG369%2a%2a%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

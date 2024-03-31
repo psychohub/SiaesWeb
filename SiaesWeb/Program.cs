@@ -119,10 +119,15 @@ builder.Services.AddSwaggerGen(options =>
 //3-cualquier dominio (Tener en cuenta seguridad)
 //Usamos de ejemplo el dominio: http://localhost:3223, se debe cambiar por el correcto
 //Se usa (*) para todos los dominios
-builder.Services.AddCors(p => p.AddPolicy("PolicyCors", build =>
+builder.Services.AddCors(options =>
 {
-    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-}));
+    options.AddPolicy("PolicyCors", builder =>
+    {
+        builder.WithOrigins("http://localhost:7271/") // Reemplaza con la URL de tu aplicación cliente
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 
 
 var app = builder.Build();

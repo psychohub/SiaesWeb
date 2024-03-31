@@ -1,0 +1,2211 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SiaesServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/siaes/registrodiario/actividadesmacros": {
+      "get": {
+        "tags": [
+          "ActividadMacro"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TActividadMacroDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/bitacora": {
+      "post": {
+        "tags": [
+          "Bitacora"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/BitacoraDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/siaes/detalleProceso/{idProceso}/{idSubProceso}": {
+      "get": {
+        "tags": [
+          "DetalleProceso"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idProceso",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "idSubProceso",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/informes": {
+      "get": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IEMInforme"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/informes/codigo/{codigoInforme}": {
+      "get": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "codigoInforme",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/IEMInforme"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/asociar/{nombreUsuario}/{codEstablecimiento}": {
+      "post": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nombreUsuario",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "codEstablecimiento",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/desasociar/{nombreUsuario}/{codEstablecimiento}": {
+      "delete": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nombreUsuario",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "codEstablecimiento",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/informes/disponibles/{nombreUsuario}/{codEstablecimiento}": {
+      "get": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nombreUsuario",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "codEstablecimiento",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IEMInforme"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/informes/asociados/{nombreUsuario}/{codEstablecimiento}": {
+      "get": {
+        "tags": [
+          "IEMUsuarioInforme"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nombreUsuario",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "codEstablecimiento",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IEMInforme"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/procesos": {
+      "get": {
+        "tags": [
+          "Proceso"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProcesoDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/obtener/{idFuncionario}/{idSubArea}/{fechaActividad}/{idRol}": {
+      "get": {
+        "tags": [
+          "RegistroDiario"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idFuncionario",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "idSubArea",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "fechaActividad",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "idRol",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/RegistroDiarioDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/eliminar": {
+      "delete": {
+        "tags": [
+          "RegistroDiario"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RegistroDiarioEliminarDTO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/subproceso/{procesoId}": {
+      "get": {
+        "tags": [
+          "SubProceso"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "procesoId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SubProcesoDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/Tanu": {
+      "get": {
+        "tags": [
+          "Tanu"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "NumeroIdentificacionRecienNacido",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Model_Tanu"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Tanu"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Model_Tanu"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/tiempoinvertido/{idFuncionario}/{fechaActividad}": {
+      "get": {
+        "tags": [
+          "TiempoInvertido"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "idFuncionario",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "fechaActividad",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "format": "double",
+              "type": "number"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/obtenerPorId/{id}": {
+      "get": {
+        "tags": [
+          "TRegistroDiario"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/TRegistroDiarioDTO"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/crear": {
+      "post": {
+        "tags": [
+          "TRegistroDiario"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/RegistroDiarioCreacionDTO"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/TRegistroDiarioDTO"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registrodiario/modalidad": {
+      "get": {
+        "tags": [
+          "TUbicacion"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TUbicacionDTO"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/registro": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UsuarioRegistroDTO"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/login": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UsuarioLoginDTO"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/roles": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Rol"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/subareas": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SubArea"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/asociar": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RespuestasAPI"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/nombreUsuario/{nombreUsuario}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "nombreUsuario",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/siaes/{usuarioId}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "operationId": "GetUsuario",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "usuarioId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/obtenerusuarioId": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "nombreUsuario",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "codEstablecimiento",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Usuario"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/siaes/cambiarclave": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UsuarioCambiarClaveDTO"
+            }
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          }
+        }
+      }
+    },
+    "/api/siaes/olvidocontrasena": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/OlvidoContrasenaDTO"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BitacoraDTO": {
+      "type": "object",
+      "properties": {
+        "idBitacora": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioRegistro": {
+          "type": "string"
+        },
+        "fechaRegistro": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "accion": {
+          "type": "string"
+        },
+        "idRegistroAfectado": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombreTabla": {
+          "type": "string"
+        },
+        "valoresAnteriores": {
+          "type": "string"
+        },
+        "valoresNuevos": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "host": {
+          "type": "string"
+        },
+        "nombreEquipo": {
+          "type": "string"
+        },
+        "remoteIPAddress": {
+          "type": "string"
+        },
+        "remoteHostIPAddress": {
+          "type": "string"
+        },
+        "geolocalizacion": {
+          "type": "string"
+        }
+      }
+    },
+    "Establecimiento": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "codEstablecimiento": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuario": {
+          "$ref": "#/definitions/Usuario"
+        },
+        "usuarioEstablecimientoPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimientoPerfil"
+          }
+        },
+        "usuarioEstablecimientos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimiento"
+          }
+        }
+      }
+    },
+    "HttpStatusCode": {
+      "format": "int32",
+      "enum": [
+        100,
+        101,
+        102,
+        103,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        226,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        400,
+        401,
+        402,
+        403,
+        404,
+        405,
+        406,
+        407,
+        408,
+        409,
+        410,
+        411,
+        412,
+        413,
+        414,
+        415,
+        416,
+        417,
+        421,
+        422,
+        423,
+        424,
+        426,
+        428,
+        429,
+        431,
+        451,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505,
+        506,
+        507,
+        508,
+        510,
+        511
+      ],
+      "type": "integer"
+    },
+    "IEMInforme": {
+      "type": "object",
+      "properties": {
+        "coD_INFORME": {
+          "type": "string"
+        },
+        "dsC_INFORME": {
+          "type": "string"
+        },
+        "log_Activo": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "tipo": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "log_Activo_SACCE": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "Model_Tanu": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombreHospital": {
+          "type": "string"
+        },
+        "numeroIdentificacionMadre": {
+          "type": "string"
+        },
+        "nombreMadre": {
+          "type": "string"
+        },
+        "apellidosMadre": {
+          "type": "string"
+        },
+        "telefono1Madre": {
+          "type": "string"
+        },
+        "telefono2Madre": {
+          "type": "string"
+        },
+        "numeroIdentificacionRecienNacido": {
+          "type": "string"
+        },
+        "nombreRecienNacido": {
+          "type": "string"
+        },
+        "apellidosRecienNacido": {
+          "type": "string"
+        },
+        "fechaNacimientoRecienNacido": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "sexoRecienNacido": {
+          "type": "string"
+        },
+        "fechaPrimerTamizaje": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "pasaDerechoEOA": {
+          "type": "boolean"
+        },
+        "pasaIzquierdoEOA": {
+          "type": "boolean"
+        },
+        "centroDiagnosticoReferencia": {
+          "type": "string"
+        },
+        "valoracionDiagnostica": {
+          "type": "string"
+        },
+        "peaaV0_1": {
+          "type": "boolean"
+        },
+        "peaaV0_2": {
+          "type": "boolean"
+        },
+        "lateralidadDerechaTipoSordera": {
+          "type": "string"
+        },
+        "lateralidadDerechaGradoSordera": {
+          "type": "string"
+        },
+        "lateralidadIzquierdaTipoSordera": {
+          "type": "string"
+        },
+        "lateralidadIzquierdaGradoSordera": {
+          "type": "string"
+        }
+      }
+    },
+    "OlvidoContrasenaDTO": {
+      "required": [
+        "correo",
+        "nombreUsuario"
+      ],
+      "type": "object",
+      "properties": {
+        "nombreUsuario": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "correo": {
+          "format": "email",
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    },
+    "Perfil": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "usuarioPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioPerfil"
+          }
+        },
+        "usuarioEstablecimientoPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimientoPerfil"
+          }
+        }
+      }
+    },
+    "ProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": { }
+    },
+    "ProcesoDTO": {
+      "type": "object",
+      "properties": {
+        "idProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcionProceso": {
+          "type": "string"
+        }
+      }
+    },
+    "RegistroDiarioCreacionDTO": {
+      "type": "object",
+      "properties": {
+        "idFuncionario": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombreUsuario": {
+          "type": "string"
+        },
+        "up": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fechaActividad": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "idProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idSubProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idDetalleProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idActividadMacro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "observacion": {
+          "type": "string"
+        },
+        "tiempoInvertido": {
+          "format": "double",
+          "type": "number"
+        },
+        "idSubArea": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idUbicacion": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioIngreso": {
+          "type": "string"
+        },
+        "fechaIngreso": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "RegistroDiarioDTO": {
+      "type": "object",
+      "properties": {
+        "idRegistro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fechaActividad": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "descripcionProceso": {
+          "type": "string"
+        },
+        "descripcionSubProceso": {
+          "type": "string"
+        },
+        "descripcionActividad": {
+          "type": "string"
+        },
+        "descripcionSubArea": {
+          "type": "string"
+        },
+        "observacion": {
+          "type": "string"
+        },
+        "tiempoInvertido": {
+          "format": "double",
+          "type": "number"
+        },
+        "descripcionUbicacion": {
+          "type": "string"
+        },
+        "nombreUsuario": {
+          "type": "string"
+        },
+        "up": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioIngreso": {
+          "type": "string"
+        },
+        "fechaIngreso": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "usuarioModificacion": {
+          "type": "string"
+        },
+        "fechaModificacion": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "idSubArea": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idFuncionario": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "RegistroDiarioEliminarDTO": {
+      "type": "object",
+      "properties": {
+        "idRegistro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idFuncionario": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "RespuestasAPI": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "$ref": "#/definitions/HttpStatusCode"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "errorsMessages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "result": { },
+        "nombreUsuario": {
+          "type": "string"
+        },
+        "codEstablecimiento": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "perfil": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "Rol": {
+      "type": "object",
+      "properties": {
+        "idRol": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcion_Rol": {
+          "type": "string"
+        },
+        "usuarioRolesSubAreas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioRolSubArea"
+          }
+        }
+      }
+    },
+    "ServiceResponse": {
+      "type": "object",
+      "properties": {
+        "flag": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "SubArea": {
+      "type": "object",
+      "properties": {
+        "idSubArea": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcionSubArea": {
+          "type": "string"
+        },
+        "usuarioRolesSubAreas": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioRolSubArea"
+          }
+        }
+      }
+    },
+    "SubProcesoDTO": {
+      "type": "object",
+      "properties": {
+        "idSubProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcionSubProceso": {
+          "type": "string"
+        }
+      }
+    },
+    "TActividadMacroDTO": {
+      "type": "object",
+      "properties": {
+        "idActividadMacro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcionMacro": {
+          "type": "string"
+        }
+      }
+    },
+    "TRegistroDiarioDTO": {
+      "type": "object",
+      "properties": {
+        "idRegistro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idFuncionario": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombreUsuario": {
+          "type": "string"
+        },
+        "up": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fechaActividad": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "idDetalleProceso": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idActividadMacro": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "justificacionRegAtrasado": {
+          "type": "string"
+        },
+        "fechaRegistro": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "observacion": {
+          "type": "string"
+        },
+        "tiempoInvertido": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idSubArea": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idUbicacion": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioIngreso": {
+          "type": "string"
+        },
+        "fechaIngreso": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "usuarioModificacion": {
+          "type": "string"
+        },
+        "fechaModificacion": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "TUbicacionDTO": {
+      "type": "object",
+      "properties": {
+        "idUbicacion": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "descripcionUbicacion": {
+          "type": "string"
+        }
+      }
+    },
+    "Usuario": {
+      "required": [
+        "apellidos",
+        "clave",
+        "codEstablecimiento",
+        "correo",
+        "nombre",
+        "nombreUsuario"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "nombreUsuario": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "nombre": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "apellidos": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "correo": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "codEstablecimiento": {
+          "format": "int32",
+          "pattern": "^\\d{1,4}$",
+          "type": "integer"
+        },
+        "clave": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "perfil": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "estado": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idRol": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "idSubArea": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fechaCaducidad": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "usuarioCreacion": {
+          "type": "string"
+        },
+        "usuarioModificacion": {
+          "type": "string"
+        },
+        "fechaCreacion": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "fechaActualizacion": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "usuarioEstablecimientos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimiento"
+          }
+        },
+        "usuarioPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioPerfil"
+          }
+        },
+        "usuarioEstablecimientoPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimientoPerfil"
+          }
+        }
+      }
+    },
+    "UsuarioCambiarClaveDTO": {
+      "required": [
+        "nombreUsuario",
+        "nuevaClave"
+      ],
+      "type": "object",
+      "properties": {
+        "nombreUsuario": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "nuevaClave": {
+          "minLength": 1,
+          "type": "string"
+        }
+      }
+    },
+    "UsuarioEstablecimiento": {
+      "type": "object",
+      "properties": {
+        "usuarioId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuario": {
+          "$ref": "#/definitions/Usuario"
+        },
+        "establecimientoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "establecimiento": {
+          "$ref": "#/definitions/Establecimiento"
+        },
+        "usuarioEstablecimientoPerfiles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UsuarioEstablecimientoPerfil"
+          }
+        }
+      }
+    },
+    "UsuarioEstablecimientoPerfil": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuarioId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuario": {
+          "$ref": "#/definitions/Usuario"
+        },
+        "establecimientoId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "establecimiento": {
+          "$ref": "#/definitions/Establecimiento"
+        },
+        "perfilId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "perfil": {
+          "$ref": "#/definitions/Perfil"
+        },
+        "nombreUsuario": {
+          "type": "string"
+        }
+      }
+    },
+    "UsuarioLoginDTO": {
+      "required": [
+        "clave",
+        "codEstablecimiento",
+        "nombreUsuario"
+      ],
+      "type": "object",
+      "properties": {
+        "nombreUsuario": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "clave": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "codEstablecimiento": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "perfil": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "UsuarioPerfil": {
+      "type": "object",
+      "properties": {
+        "usuarioId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuario": {
+          "$ref": "#/definitions/Usuario"
+        },
+        "perfilId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "perfil": {
+          "$ref": "#/definitions/Perfil"
+        }
+      }
+    },
+    "UsuarioRegistroDTO": {
+      "required": [
+        "apellidos",
+        "clave",
+        "codEstablecimiento",
+        "correo",
+        "nombre",
+        "nombreUsuario"
+      ],
+      "type": "object",
+      "properties": {
+        "nombreUsuario": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "nombre": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "apellidos": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "correo": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "codEstablecimiento": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "clave": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "perfil": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "estado": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "fechaCaducidad": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "usuarioCreacion": {
+          "type": "string"
+        },
+        "fechaCreacion": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
+    "UsuarioRolSubArea": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "usuario": {
+          "$ref": "#/definitions/Usuario"
+        },
+        "rolId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "rol": {
+          "$ref": "#/definitions/Rol"
+        },
+        "subAreaId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subArea": {
+          "$ref": "#/definitions/SubArea"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Autenticación JWT usando el esquema Bearer. \r\n\r\n Ingresa la palabra 'Bearer' seguida de un [espacio] y despues su token en el campo de abajo \r\n\r\nEjemplo: \"Bearer tkdknkdllskd\""
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}

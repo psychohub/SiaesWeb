@@ -1,0 +1,91 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = SiaesCliente
+build_property.RootNamespace = SiaesCliente
+build_property.ProjectDir = C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesCliente
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Components/AlertMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBbGVydE1lc3NhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Layout/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/ActividadesDiarias/MostrarRegistrosDiarios.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpZGFkZXNEaWFyaWFzXE1vc3RyYXJSZWdpc3Ryb3NEaWFyaW9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/ActividadesDiarias/RegistroDiario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0aXZpZGFkZXNEaWFyaWFzXFJlZ2lzdHJvRGlhcmlvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Acceder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxBY2NlZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/AsociarUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxBc29jaWFyVXN1YXJpby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/CambiarClave.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxDYW1iaWFyQ2xhdmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/OlvidoContrasena.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxPbHZpZG9Db250cmFzZW5hLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Registro.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxSZWdpc3Ryby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/RegistroUsuarioInforme.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxSZWdpc3Ryb1VzdWFyaW9JbmZvcm1lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Autenticacion/Salir.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhY2lvblxTYWxpci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Pages/RedireccionarAlAcceso.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY2Npb25hckFsQWNjZXNvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7us56ys992
+
+[C:/Users/huber/Documents/Source/Proyectos/BlazorNet8/siaesweb/SiaesAPISolution/SiaesCliente/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-vk06iwyt5n
