@@ -1,0 +1,92 @@
+﻿@page "/cambiarclave"
+@attribute [Authorize]
+@using SiaesLibraryShared.Models
+@using SiaesLibraryShared.Contracts
+@using System.ComponentModel.DataAnnotations
+@inject IUsuarioService UsuarioServicio
+@inject ILocalStorageService LocalStorage
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+<h3>Cambiar Clave</h3>
+
+<EditForm Model="@model" OnValidSubmit="CambiarClaveUsuario">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    @if (MostrarErroresAutenticacion)
+    {
+        <p class="text-center text-danger">@Errores</p>
+    }
+
+    <div class="form-group">
+        <label for="nuevaClave">Nueva Clave:</label>
+        <InputText type="password" id="nuevaClave" class="form-control" @bind-Value="model.NuevaClave" />
+        <ValidationMessage For="@(() => model.NuevaClave)" />
+    </div>
+
+    <div class="form-group">
+        <label for="confirmarClave">Confirmar Clave:</label>
+        <InputText type="password" id="confirmarClave" class="form-control" @bind-Value="model.ConfirmarClave" />
+        <ValidationMessage For="@(() => model.ConfirmarClave)" />
+    </div>
+    <div class="row">
+        <div class="col-6">
+            @if (EstaProcesando)
+            {
+                <button type="submit" class="btn btn-success disabled" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Por favor espera...</button>
+            }
+            else
+            {
+                <button type="submit" class="btn btn-success" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Cambiar Clave</button>
+            }
+        </div>
+
+
+    </div>
+
+</EditForm>
+
+@code {
+    public bool EstaProcesando { get; set; } = false;
+    public bool MostrarErroresAutenticacion { get; set; }
+    public string Errores { get; set; }
+    private CambiarClaveModel model = new CambiarClaveModel();
+
+    private async Task CambiarClaveUsuario()
+    {
+        EstaProcesando = true;
+
+        var nombreUsuario = await LocalStorage.GetItemAsync<string>("nombreUsuario");
+
+        if (!string.IsNullOrEmpty(nombreUsuario))
+        {
+            var resultado = await UsuarioServicio.CambiarClave(nombreUsuario, model.NuevaClave);
+
+            if (resultado)
+            {
+                EstaProcesando = false;
+                // Mostrar mensaje de éxito y redirigir a la página de inicio
+                await BitacoraHelper.RegistrarAccionEnBitacora("Cambiar clave", 4, "CambiarClave", nombreUsuario, JSRuntime);
+                NavigationManager.NavigateTo("/inicio");
+            }
+            else
+            {
+                EstaProcesando = false;
+                MostrarErroresAutenticacion = true;
+                Errores = "Error al cambiar la clave";
+
+            }
+        }
+    }
+
+    public class CambiarClaveModel
+    {
+        [Required(ErrorMessage = "La nueva clave es requerida.")]
+        [StringLength(20, MinimumLength = 7, ErrorMessage = "La clave debe tener al menos 7 caracteres.")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{7,}$", ErrorMessage = "La clave debe contener al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.")]
+        public string NuevaClave { get; set; }
+
+        [Required(ErrorMessage = "Confirmar clave es requerido.")]
+        [Compare("NuevaClave", ErrorMessage = "La nueva clave y la confirmación no coinciden.")]
+        public string ConfirmarClave { get; set; }
+    }
+}

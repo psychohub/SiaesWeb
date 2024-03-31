@@ -1,0 +1,125 @@
+﻿@page "/olvidocontrasena"
+@layout LoginLayout
+@using SiaesLibraryShared.Contracts
+@using SiaesLibraryShared.Models
+@using System.ComponentModel.DataAnnotations
+@using SiaesLibraryShared.Models.Dtos
+@inject IUsuarioService UsuarioServicio
+@inject NavigationManager NavigationManager
+@inject ILogger<OlvidoContrasenaDTO> Logger
+
+
+<EditForm Model="@model" OnValidSubmit="EnviarNuevaContrasena">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="py-4">
+        <div class=" row form-group ">
+            <div class="col-6 offset-3 ">
+                <div class="card border">
+                    <div class="card-body px-lg-5 pt-4">
+                        <h3 class="col-12 text-success text-center py-2">
+                            <strong>Olvidó contraseña</strong>
+                        </h3>
+                        @if (MostrarErroresAutenticacion)
+                        {
+                            <p class="text-center text-danger">@Errores</p>
+                        }
+
+                        <div class="form-group">
+                            <label for="usuario">Usuario:</label>
+                            <InputText id="usuario" class="form-control" @bind-Value="model.NombreUsuario" />
+                            <ValidationMessage For="@(() => model.NombreUsuario)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo">Correo:</label>
+                            <InputText id="correo" class="form-control" @bind-Value="model.Correo" />
+                            <ValidationMessage For="@(() => model.Correo)" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                @if (EstaProcesando)
+                                {
+                                    <button type="submit" class="btn btn-success disabled" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Por favor espera...</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-success" style="vertical-align:middle;line-height:30px;"><i class="fas fa-sign-in-alt"></i> Enviar nueva clave</button>
+                                }
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-secondary" @onclick="RegresarAPaginaPrincipal">Regresar</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(Mensaje))
+{
+    <div class="alert alert-info">@Mensaje</div>
+}
+
+@code {
+    public bool EstaProcesando { get; set; } = false;
+    public bool MostrarErroresAutenticacion { get; set; }
+    public string Errores { get; set; }
+    private OlvidoContrasenaModel model = new OlvidoContrasenaModel();
+    private string Mensaje = string.Empty;
+
+    private async Task EnviarNuevaContrasena()
+    {
+        EstaProcesando = true;
+        try
+        {
+            var olvidoContrasenaDTO = new OlvidoContrasenaDTO
+                {
+                    NombreUsuario = model.NombreUsuario,
+                    Correo = model.Correo
+                };
+
+            var resultado = await UsuarioServicio.EnviarNuevaContrasena(olvidoContrasenaDTO);
+
+            if (resultado)
+            {
+                Mensaje = "Se ha enviado una nueva contraseña a su correo electrónico.";
+                await Task.Delay(3000); // Esperar 3 segundos antes de redirigir
+                NavigationManager.NavigateTo("/login");
+            }
+            else
+            {
+                EstaProcesando = false;
+                MostrarErroresAutenticacion = true;
+                Mensaje = "Su usuario no es válido o su correo electrónico no está registrado.";
+            }
+        }
+        catch (Exception ex)
+        {
+            EstaProcesando = false;
+            MostrarErroresAutenticacion = true;
+            Mensaje = "Ocurrió un error al procesar la solicitud. Por favor, inténtelo nuevamente más tarde.";
+            Logger.LogError(ex, "Ocurrió un error al procesar la solicitud. Por favor, inténtelo nuevamente más tarde.");
+        }
+    }
+
+    private void RegresarAPaginaPrincipal()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    public class OlvidoContrasenaModel
+    {
+        [Required(ErrorMessage = "El nombre de usuario es obligatorio.")]
+        public string NombreUsuario { get; set; }
+
+        [Required(ErrorMessage = "El correo electrónico es obligatorio.")]
+        [EmailAddress(ErrorMessage = "El correo electrónico no es válido.")]
+        public string Correo { get; set; }
+    }
+}

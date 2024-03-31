@@ -10,5 +10,7 @@ namespace SiaesLibraryShared.Contracts
     public interface IUsuarioService
     {
         Task<UsuarioLocalStorage> ObtenerUsuarioId(string nombreUsuario, int codEstablecimiento);
+        Task<bool> CambiarClave(string nombreUsuario, string nuevaClave);
+        Task<bool> EnviarNuevaContrasena(OlvidoContrasenaDTO model);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
+using static SiaesCliente.Pages.Autenticacion.OlvidoContrasena;
 
 namespace SiaesServer.Repositories.IRepositories
 {
@@ -20,5 +21,8 @@ namespace SiaesServer.Repositories.IRepositories
         Task<Usuario> Registro(UsuarioRegistroDTO usuarioRegistroDTO);
 
         Task<bool> ExisteAsociacionUsuarioEstablecimientoPerfil(UsuarioAsociacionDTO usuarioAsociacionDTO);
+        Task<bool> CambiarClave(UsuarioCambiarClaveDTO usuarioCambiarClaveDTO);
+
+        Task<bool> EnviarNuevaContrasena(OlvidoContrasenaDTO model);
     }
 }

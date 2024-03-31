@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.JSInterop;
+using SiaesCliente.Pages.Autenticacion;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
 using SiaesServer.Data;
@@ -13,6 +14,9 @@ using System.Linq.Dynamic.Core;
 using System.Security.Claims;
 using System.Text;
 using XSystem.Security.Cryptography;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using MimeKit;
 
 namespace SiaesServer.Repositories
 {
@@ -271,6 +275,86 @@ namespace SiaesServer.Repositories
         {
             return _bd.Usuario.FirstOrDefault(c => c.NombreUsuario == nombreUsuario && c.CodEstablecimiento == codEstablecimiento);
         }
+
+        public async Task<bool> CambiarClave(UsuarioCambiarClaveDTO usuarioCambiarClaveDTO)
+        {
+            var passwordEncriptado = obtenermd5(usuarioCambiarClaveDTO.NuevaClave);
+
+            var usuarioExistente = await _bd.Usuario.FirstOrDefaultAsync(u => u.NombreUsuario == usuarioCambiarClaveDTO.NombreUsuario);
+
+            if (usuarioExistente != null)
+            {
+                usuarioExistente.Clave = passwordEncriptado;
+                await _bd.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> EnviarNuevaContrasena(OlvidoContrasenaDTO model)
+        {
+            var usuario = await _bd.Usuario.FirstOrDefaultAsync(u => u.NombreUsuario == model.NombreUsuario && u.Correo == model.Correo);
+
+            if (usuario != null)
+            {
+                var nuevaContrasena = CrearPassword();
+                usuario.Clave = obtenermd5(nuevaContrasena);
+                await _bd.SaveChangesAsync();
+
+                // Enviar correo electrónico con la nueva contraseña
+                EnviarNuevaClaveCorreo(usuario.NombreUsuario, nuevaContrasena, usuario.Correo);
+
+                return true;
+            }
+
+            return false;
+        }
+
+        private string CrearPassword()
+        {
+            int longitud = 8;
+            string caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            StringBuilder res = new StringBuilder(longitud);
+            Random rnd = new Random();
+
+            for (int i = 0; i < longitud; i++)
+            {
+                int index = rnd.Next(caracteres.Length);
+                res.Append(caracteres[index]);
+            }
+
+            return res.ToString();
+        }
+
+        private void EnviarNuevaClaveCorreo(string usuario, string clave, string email)
+        {
+            try
+            {
+                var mensaje = new MimeMessage();
+                mensaje.From.Add(new MailboxAddress("Soporte", "soporte@gmail"));
+                mensaje.To.Add(new MailboxAddress("", email));
+                mensaje.Subject = "Olvidó contraseña (SIAES)";
+
+                var builder = new BodyBuilder();
+                builder.HtmlBody = $"Hola {usuario}, Su nueva contraseña es: {clave}<br/><br/>\n\n\nAVISO DE CONFIDENCIALIDAD La información contenida en este mensaje es estrictamente confidencial, y está destinada para uso exclusivo de su destinatario.La CCSS no se hace responsable por su copia, divulgación o distribución a terceros, sin que medie el consentimiento expreso de éste. \n\n\nFavor no responder a este correo";
+
+                mensaje.Body = builder.ToMessageBody();
+
+                using (var client = new SmtpClient())
+                {
+                    client.Connect("xxx.xx.x.x", 25, SecureSocketOptions.None);
+                    client.Authenticate("xxxxx@gmail.com", "xxxxxxxxx**");
+                    client.Send(mensaje);
+                    client.Disconnect(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener las subareas: {ex.Message}", ex);
+            }
+        }
+
 
     }
 }

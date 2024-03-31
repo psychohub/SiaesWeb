@@ -22,8 +22,14 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ClosedXML.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ExcelNumberFormat.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Humanizer.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Irony.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\MailKit.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
@@ -72,10 +78,12 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\MimeKit.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Radzen.Blazor.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -89,6 +97,7 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Runtime.Caching.dll
@@ -96,6 +105,7 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\XAct.Core.PCL.dll
+C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\XLParser.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -186,10 +196,3 @@ C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\S
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.pdb
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\SiaesServer.genruntimeconfig.cache
 C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\obj\Debug\net8.0\ref\SiaesServer.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ClosedXML.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\ExcelNumberFormat.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\Irony.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\SixLabors.Fonts.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\System.IO.Packaging.dll
-C:\Users\huber\Documents\Source\Proyectos\BlazorNet8\siaesweb\SiaesAPISolution\SiaesWeb\bin\Debug\net8.0\XLParser.dll

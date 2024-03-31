@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using SiaesLibraryShared.Models;
 using SiaesLibraryShared.Models.Dtos;
+using SiaesServer.Repositories;
 using SiaesServer.Repositories.IRepositories;
 using System.Net;
 
@@ -251,6 +252,60 @@ namespace SiaesServer.Controllers
                 _respuestasAPI.IsSuccess = false;
                 _respuestasAPI.ErrorsMessages.Add("Usuario no encontrado");
                 return NotFound(_respuestasAPI);
+            }
+        }
+
+        [Authorize]
+        [HttpPut("cambiarclave")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> CambiarClave(UsuarioCambiarClaveDTO usuarioCambiarClaveDTO)
+        {
+            var resultado = await _usRepo.CambiarClave(usuarioCambiarClaveDTO);
+
+            if (resultado)
+            {
+
+                _respuestasAPI.StatusCode = HttpStatusCode.OK;
+                _respuestasAPI.IsSuccess = true;
+                _respuestasAPI.Result = "clave actualizada con éxito";
+                return Ok(_respuestasAPI);
+            }
+            else
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.NotFound;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add("No se pudo cambiar la clave.");
+                return NotFound(_respuestasAPI);
+        
+            }
+        }
+
+        [HttpPost("olvidocontrasena")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> OlvidoContrasena(OlvidoContrasenaDTO model)
+        {
+            var resultado = await _usRepo.EnviarNuevaContrasena(model);
+
+            if (resultado)
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.OK;
+                _respuestasAPI.IsSuccess = true;
+                _respuestasAPI.Result = "contraseña enviada al correo";
+                return Ok(_respuestasAPI);
+            }
+            else
+            {
+                _respuestasAPI.StatusCode = HttpStatusCode.NotFound;
+                _respuestasAPI.IsSuccess = false;
+                _respuestasAPI.ErrorsMessages.Add("Su usuario no es válido o su correo electrónico no está registrado");
+                return NotFound(_respuestasAPI);
+
             }
         }
 
