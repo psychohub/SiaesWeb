@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SiaesLibraryShared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1f33a25eb08ba096c67c34cde8d60d7cd761771")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5d0475b2004d04961630e559ea4f4a3fef64b63")]
 [assembly: System.Reflection.AssemblyProductAttribute("SiaesLibraryShared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SiaesLibraryShared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
